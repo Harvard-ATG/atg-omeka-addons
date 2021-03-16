@@ -10,37 +10,13 @@ import shutil
 import requests
 import zipfile
 
-
-# In[2]:
-
-
 with open("plugins.yml", 'r') as fp:
     plugins = yaml.load(fp, Loader=yaml.FullLoader)
 
-
-# In[3]:
-
-
-# nuke everything with a few exceptions
-doNotRemove = [
-    '.git',
-    '.gitignore',
-    'plugins.yml',
-    'update.py'
-]
-
-
-# In[4]:
-
-
-for thing in os.listdir('.'):
-    if thing not in doNotRemove and os.path.isdir(thing):
-        shutil.rmtree(thing)
+# nuke everything in the plugins dir
+for thing in os.listdir('plugins'):
+    shutil.rmtree(os.path.join('plugins', thing))
 print('Old plugins removed')
-
-
-# In[5]:
-
 
 def update_plugin(pluginName, pluginInfo):
     print(f'Downloading {pluginName}...')
@@ -62,7 +38,7 @@ def update_plugin(pluginName, pluginInfo):
             print(f'{pluginName} has multiple root directories/files, which is not the expected directory structure. This script probably needs to be updated.')
             return False
         zip_ref.extractall('.')
-        os.rename(root_dir, pluginInfo['name'])
+        os.rename(root_dir, os.path.join('plugins', pluginInfo['name']))
 
     print(f'Removing zip file for {pluginName}...')
     os.remove(filename)
@@ -70,10 +46,6 @@ def update_plugin(pluginName, pluginInfo):
     print(f'Update of {pluginName} complete!')
     
     return True
-
-
-# In[6]:
-
 
 for pluginName, pluginInfo in plugins.items():
     update_plugin(pluginName, pluginInfo)
