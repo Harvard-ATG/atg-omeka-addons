@@ -1,31 +1,39 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import yaml
 import os
 import shutil
 import requests
 import zipfile
+import sys
 
-with open("plugins.yml", 'r') as fp:
-    plugins = yaml.load(fp, Loader=yaml.FullLoader)
+try:
+    thingToUpdate = sys.argv[1]
+except IndexError:
+    print('Usage: python update.py [plugins|themes]')
+    exit()
+
+if thingToUpdate not in ['plugins', 'themes']:
+    print('Must specify "plugins" or "themes" exactly')
+    exit()
+
+with open(f"{thingToUpdate}.yml", 'r') as fp:
+    addons = yaml.load(fp, Loader=yaml.FullLoader)
 
 # nuke everything in the plugins dir
-for thing in os.listdir('plugins'):
-    shutil.rmtree(os.path.join('plugins', thing))
-print('Old plugins removed')
+for thing in os.listdir(thingToUpdate):
+    shutil.rmtree(os.path.join(thingToUpdate, thing))
+print(f'Old {thingToUpdate} removed')
 
-def update_plugin(pluginName, pluginInfo):
-    print(f'Downloading {pluginName}...')
-    filename = pluginInfo['name'] + '.zip'
-    R = requests.get(pluginInfo['url'])
+def update_addon(addonName, addonInfo):
+    print(f'Downloading {addonName}...')
+    filename = addonInfo['name'] + '.zip'
+    R = requests.get(addonInfo['url'])
     with open(filename, 'wb') as fp:
         fp.write(R.content)
 
-    print(f'Unzipping {pluginName}...')
+    print(f'Unzipping {addonName}...')
     with zipfile.ZipFile(filename,"r") as zip_ref:
         roots = []
         for name in zip_ref.namelist():
@@ -35,18 +43,18 @@ def update_plugin(pluginName, pluginInfo):
         if len(roots) == 1:
             root_dir = roots[0]
         else:
-            print(f'{pluginName} has multiple root directories/files, which is not the expected directory structure. This script probably needs to be updated.')
+            print(f'{addonName} has multiple root directories/files, which is not the expected directory structure. This script probably needs to be updated.')
             return False
         zip_ref.extractall('.')
-        os.rename(root_dir, os.path.join('plugins', pluginInfo['name']))
+        os.rename(root_dir, os.path.join(thingToUpdate, addonInfo['name']))
 
-    print(f'Removing zip file for {pluginName}...')
+    print(f'Removing zip file for {addonName}...')
     os.remove(filename)
 
-    print(f'Update of {pluginName} complete!')
+    print(f'Update of {addonName} complete!')
     
     return True
 
-for pluginName, pluginInfo in plugins.items():
-    update_plugin(pluginName, pluginInfo)
+for addonName, addonInfo in addons.items():
+    update_addon(addonName, addonInfo)
 

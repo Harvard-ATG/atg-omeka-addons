@@ -1,0 +1,42 @@
+Avant Garde:
+  name: Avantgarde
+  url: https://github.com/CJPfontaine/Omeka-Avantgarde/archive/master.zip
+Big Picture:
+  name: bigpicture
+  url: https://github.com/omeka/theme-bigpicture/releases/download/v1.4.2/bigpicture-v1.4.2.zip
+Center Row:
+  name: centerrow
+  url: https://github.com/omeka/theme-centerrow/releases/download/v1.4.1/centerrow-v1.4.1.zip
+Chinalocal:
+  name: chinalocal-omeka-theme
+  url: https://github.com/bilbe/chinalocal-omeka-theme/archive/master.zip
+Emiglio:
+  name: emiglio
+  url: https://github.com/omeka/theme-emiglio/releases/download/v2.3/theme-emiglio-v2.3.zip
+Harvard DH Theme Historical Maps:
+  name: hvd-dh-omeka-theme-hist1952maps
+  url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/hist1952maps.zip
+Minimalist:
+  name: minimalist
+  url: https://github.com/omeka/theme-minimalist/releases/download/v2.4.2/minimalist-v2.4.2.zip
+Rhythm:
+  name: rhythm
+  url: https://github.com/omeka/theme-rhythm/releases/download/v2.3.1/rhythm-v2.3.1.zip
+Santa Fe:
+  name: santa-fe
+  url: https://github.com/omeka/theme-santa-fe/releases/download/v2.4/santa-fe-v2.4.zip
+The Daily:
+  name: thedaily
+  url: https://github.com/omeka/theme-thedaily/releases/download/v1.4.1/thedaily-v1.4.1.zip
+Berlin:
+  name: berlin
+  url: https://github.com/omeka/theme-berlin/releases/download/v2.6.1/theme-berlin-v2.6.1.zip
+Default:
+  name: default
+  url: https://github.com/omeka/theme-thanksroy/releases/download/v2.5.1/thanksroy-2.5.1.zip
+Harvard DH Theme:
+  name: hvd-dh-omeka-theme
+  url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/master.zip
+Seasons:
+  name: seasons
+  url: https://github.com/omeka/theme-seasons/releases/download/v2.5.1/seasons-v2.5.1.zip
