@@ -44,6 +44,7 @@ def update_addon(addonName, addonInfo):
             root_dir = roots[0]
         else:
             print(f'{addonName} has multiple root directories/files, which is not the expected directory structure. This script probably needs to be updated.')
+            print(f'The directories are:\n{chr(10).join(roots)}')
             return False
         zip_ref.extractall('.')
         os.rename(root_dir, os.path.join(thingToUpdate, addonInfo['name']))
