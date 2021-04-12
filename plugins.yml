@@ -240,7 +240,7 @@ HarvardKey:
   url: https://github.com/Harvard-ATG/omeka-plugin-HarvardKey/archive/master.zip
 IiifItems:
   name: IiifItems
-  url: https://github.com/Harvard-ATG/IiifItems/archive/v1.0.1.zip
+  url: https://github.com/Harvard-ATG/IiifItems/archive/refs/tags/v1.2.0.zip
 IiifItemEmbed:
   name: IiifItemEmbed
   url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.0/IiifItemEmbed-1.0.zip
