@@ -62,7 +62,8 @@ Block Party:
   description: A collection of useful block types for exhibits in Omeka.
   download_url: https://github.com/jaguillette/BlockParty/archive/refs/tags/v1.0.zip
   name: Block Party
-  note: [Jeremy](https://github.com/jaguillette/) made this, so if it's broken it's his fault.
+  note: '[Jeremy](https://github.com/jaguillette/) made this, so if it''s broken it''s
+    his fault.'
   updated: April 26, 2021
   version: 1.0
 Blog Shortcode:
@@ -96,14 +97,6 @@ COinS:
   note: Default plugin on our instance
   updated: March 23, 2021
   version: '2.1'
-Course Tools:
-  available: true
-  description: Adds custmizable student role
-  download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/refs/tags/v1.0.zip
-  name: Course Tools
-  note: Default plugin on our instance
-  updated: March 16, 2018
-  version: 1.0
 CSS Editor:
   available: true
   description: Add public CSS styles through the admin interface.
@@ -131,10 +124,12 @@ CSV Import:
   version: 2.0.5
 Clean URL:
   available: true
-  description: Clean Url is a plugin for Omeka that creates clean, readable and search engine optimized URLs
+  description: Clean Url is a plugin for Omeka that creates clean, readable and search
+    engine optimized URLs
   download_url: https://github.com/Daniel-KM/Omeka-plugin-CleanUrl/archive/refs/tags/2.16.1.zip
   name: Clean URL
-  note: Works on Imperiia and Beautiful Spaces sites. Not currently on form, but could be.
+  note: Works on Imperiia and Beautiful Spaces sites. Not currently on form, but could
+    be.
   updated: March 18, 2018
   version: 2.16.1
 Clickable Links Plus:
@@ -150,7 +145,9 @@ Collection Tree:
     collections.
   download_url: https://github.com/omeka/plugin-CollectionTree/releases/download/v2.1/CollectionTree-2.1.zip
   name: Collection Tree
-  note: Works, but interacts weird with IIIF Toolkit. If Collections show sub-collection items, all item images are included in collection manifest in order. If not, only items directly in collection. IIIF Catalogue Tree maintains collection groups.
+  note: Works, but interacts weird with IIIF Toolkit. If Collections show sub-collection
+    items, all item images are included in collection manifest in order. If not, only
+    items directly in collection. IIIF Catalogue Tree maintains collection groups.
   updated: January 13, 2017
   version: '2.1'
 Commenting:
@@ -158,7 +155,7 @@ Commenting:
   description: Allows commenting on Items, Collections, Exhibits, and more
   download_url: https://github.com/omeka/plugin-Commenting/releases/download/v2.3/Commenting-2.3.zip
   name: Commenting
-  note: Doesn’t like being deactivated, causes errors but uninstall works
+  note: "Doesn\u2019t like being deactivated, causes errors but uninstall works"
   updated: May 29, 2020
   version: '2.3'
 Connected Carousel:
@@ -175,7 +172,10 @@ Contribution:
   description: Allows collecting items from visitors
   download_url: https://github.com/omeka/plugin-Contribution/releases/download/v3.2/Contribution-3.2.zip
   name: Contribution
-  note: Could well work, but isn’t something we should have available by default. It can stay in the cache, but shouldn’t be in the form. It allows for the site to accept contributions from the public, which there may be a good case for, but if someone wants that we should probably be in conversation with them
+  note: "Could well work, but isn\u2019t something we should have available by default.\
+    \ It can stay in the cache, but shouldn\u2019t be in the form. It allows for the\
+    \ site to accept contributions from the public, which there may be a good case\
+    \ for, but if someone wants that we should probably be in conversation with them"
   updated: February 14, 2018
   version: '3.2'
 Contributor Contact:
@@ -183,7 +183,8 @@ Contributor Contact:
   description: Supplies administrators with tools to contact contributors in bulk
   download_url: https://github.com/UCSCLibrary/ContributorContact/releases/download/1.1/ContributorContact.zip
   name: Contributor Contact
-  note: Requires “Contribution” and “Guest User”, relies on email which is broken and Contribution plugin which is a bad idea
+  note: "Requires \u201CContribution\u201D and \u201CGuest User\u201D, relies on email\
+    \ which is broken and Contribution plugin which is a bad idea"
   updated: July 17, 2017
   version: '1.1'
 Corrections:
@@ -194,6 +195,14 @@ Corrections:
   note: Fails to load correction page, wasn't able to locate the source of the error.
   updated: November 29, 2014
   version: '1.0'
+Course Tools:
+  available: true
+  description: Adds custmizable student role
+  download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/refs/tags/v1.0.zip
+  name: Course Tools
+  note: Default plugin on our instance
+  updated: March 16, 2018
+  version: 1.0
 Default Dublin Core:
   description: Omeka Plugin that allows administrators to specify default values for
     Dublin Core fields.  Dublin Core fields are then auto-filled with default values
@@ -212,12 +221,14 @@ Default Metadata:
   version: 3.0.1
 Default Sort:
   available: true
-  description: This plugin can be used to change Omeka's default sorting, which is set to date added.
+  description: This plugin can be used to change Omeka's default sorting, which is
+    set to date added.
   download_url: https://github.com/anuragji/DefaultSort/archive/refs/heads/master.zip
   name: Default Sort
-  note: Enabled on Beautiful Spaces and Imperiia, so it works, although it isn't one of the plugins currently on the form
+  note: Enabled on Beautiful Spaces and Imperiia, so it works, although it isn't one
+    of the plugins currently on the form
   updated: April 20, 2021
-  version: 'N/A'
+  version: N/A
 Derivative Images:
   available: false
   description: Recreate (or create) derivative images.
@@ -232,7 +243,9 @@ Disqus Engage:
     are moderated at disqus.com (account required).
   download_url: https://github.com/ebellempire/DisqusEngage/releases/download/v.1.0/DisqusEngage.zip
   name: Disqus Engage
-  note: Requires external account with Disqus, which manages all of the conversations, which could work if someone really wanted specifically disqus, but that isn't a platform we know or support.
+  note: Requires external account with Disqus, which manages all of the conversations,
+    which could work if someone really wanted specifically disqus, but that isn't
+    a platform we know or support.
   updated: October 19, 2017
   version: '1.0'
 Docs Viewer:
@@ -294,7 +307,8 @@ ElementManager:
   description: Delete or rename existing elements
   download_url: https://github.com/biblibre/omeka-plugin-ElementManager/releases/download/v0.1/ElementManager-0.1.zip
   name: ElementManager
-  note: No documentation to speak of, but seems to work if you can figure out how it works.
+  note: No documentation to speak of, but seems to work if you can figure out how
+    it works.
   updated: October 31, 2017
   version: '0.1'
 Email Notification:
@@ -333,7 +347,8 @@ Export:
   description: Extensible export plugin
   download_url: https://github.com/biblibre/omeka-plugin-Export/releases/download/v0.1.0/Export-0.1.0.zip
   name: Export
-  note: Not really an independent plugin, but rather a starting point and framework for a custom export plugin, so we don't need to offer it.
+  note: Not really an independent plugin, but rather a starting point and framework
+    for a custom export plugin, so we don't need to offer it.
   updated: October 31, 2017
   version: 0.1.0
 File Paginator:
@@ -348,7 +363,8 @@ Flickr Import:
     as items or collections, while preserving as much metadata as possible
   download_url: https://github.com/UCSCLibrary/FlickrImport/releases/download/1.3/FlickrImport.zip
   name: Flickr Import
-  note: Single import seems to work, but I wasn't able to get a gallery import to work. Does require an API key from Flickr to work fully.
+  note: Single import seems to work, but I wasn't able to get a gallery import to
+    work. Does require an API key from Flickr to work fully.
   updated: July 17, 2017
   version: '1.3'
 GDriveLinks Plugin:
@@ -396,7 +412,9 @@ Heist:
   description: Facilitates interaction between tables and mobile devices for OmekaEverywhere
   download_url: https://github.com/omeka/plugin-Heist/releases/download/v1.1/Heist-1.1.zip
   name: Heist
-  note: From plugin description: “Heist is a plugin to help the interaction between tabletop displays at a GLAM and mobile devices. It is only important to institutions using OmekaEverywhere.” (we don't do that here)
+  note: "From plugin description: \u201CHeist is a plugin to help the interaction\
+    \ between tabletop displays at a GLAM and mobile devices. It is only important\
+    \ to institutions using OmekaEverywhere.\u201D (we don't do that here)"
   updated: May 19, 2017
   version: '1.1'
 Hide Elements:
@@ -438,7 +456,8 @@ Import:
   description: Extensible import plugin
   download_url: https://github.com/biblibre/omeka-plugin-Import/releases/download/v0.2.0/Import-0.2.0.zip
   name: Import
-  note: Not really an independent plugin, but rather a starting point and framework for a custom import plugin, so we don't need to offer it.
+  note: Not really an independent plugin, but rather a starting point and framework
+    for a custom import plugin, so we don't need to offer it.
   updated: October 31, 2017
   version: 0.2.0
 Intense Debate:
@@ -447,7 +466,9 @@ Intense Debate:
     Comments are moderated at intensedebate.com (account required).
   download_url: https://github.com/ebellempire/IntenseDebate/releases/download/v.1.0/IntenseDebate.zip
   name: Intense Debate
-  note: Requires a separate "Intense Debate" account, where the discussions are managed. Could work, but involving another platform seems imprudent unless a user specifically requests it.
+  note: Requires a separate "Intense Debate" account, where the discussions are managed.
+    Could work, but involving another platform seems imprudent unless a user specifically
+    requests it.
   updated: October 19, 2017
   version: '1.0'
 Item Duplicate Check:
@@ -469,7 +490,8 @@ Item Neatline Display:
   description: adds Neatline view of an exhibit to item
   download_url: https://github.com/jaguillette/omeka_itemNeatlineDisplay/archive/refs/tags/v0.1.zip
   name: Item Neatline Display
-  note: Jeremy made it, so if it's broken, it's his fault. However, it was made specifically for something Kelly O'Neill wanted, so probably doesn't need to be generally avaialable.
+  note: Jeremy made it, so if it's broken, it's his fault. However, it was made specifically
+    for something Kelly O'Neill wanted, so probably doesn't need to be generally avaialable.
   updated: June 7, 2016
   version: 0.1
 Item Order:
@@ -514,16 +536,17 @@ LC Suggest:
   version: 2.0.3
 Limit visibility to own:
   description: Shows only items and collections contributed by the user
-  download_url: https://github.com/DBinaghi/plugin-LimitVisibilityToOwn/releases/download/v1.1/LimitVisibilityToOwn.zip
+  download_url: https://github.com/DBinaghi/plugin-LimitVisibilityToOwn/releases/download/v1.2/LimitVisibilityToOwn.zip
   name: Limit visibility to own
-  updated: April 25, 2021
-  version: '1.1'
+  updated: May 04, 2021
+  version: '1.2'
 Locale Switcher:
   available: false
   description: Provides a language switcher view helper to be used in themes
   download_url: https://github.com/biblibre/omeka-plugin-LocaleSwitcher/releases/download/v0.2.1/LocaleSwitcher-0.2.1.zip
   name: Locale Switcher
-  note: Requires some code to be added to theme, which a user can't do, and which none of the existing themes do.
+  note: Requires some code to be added to theme, which a user can't do, and which
+    none of the existing themes do.
   updated: August 28, 2017
   version: 0.2.1
 METS Export:
@@ -589,7 +612,8 @@ NeatlineFeatures:
     an Omeka item.
   download_url: https://github.com/scholarslab/NeatlineFeatures/releases/download/2.0.5/NeatlineFeatures-2.0.5.zip
   name: NeatlineFeatures
-  note: Currently installed on lagacy site eurasia.omeka.fas.harvard.edu. Listed as a default plugin, but not actually available.
+  note: Currently installed on lagacy site eurasia.omeka.fas.harvard.edu. Listed as
+    a default plugin, but not actually available.
   updated: August 12, 2014
   version: 2.0.5
 Ngram:
@@ -693,7 +717,9 @@ Record Relations:
   description: Facilitates plugins creating relations across record types
   download_url: https://github.com/omeka/plugin-RecordRelations/releases/download/v2.0.1/RecordRelations-2.0.1.zip
   name: Record Relations
-  note: Installs fine, but when used as a dependency for other plugins, it errors out, saying that "Column `timestamp` cannot be null". Could be related to [this github issue](https://github.com/omeka/plugin-RecordRelations/issues/2)
+  note: Installs fine, but when used as a dependency for other plugins, it errors
+    out, saying that "Column `timestamp` cannot be null". Could be related to [this
+    github issue](https://github.com/omeka/plugin-RecordRelations/issues/2)
   updated: May 23, 2016
   version: 2.0.1
 Redact Elements:
@@ -709,7 +735,8 @@ Reports:
   description: Generates item reports in HTML and QR Codes of items in PDFs.
   download_url: https://github.com/omeka/plugin-Reports/releases/download/v2.0.2/Reports-2.0.2.zip
   name: Reports
-  note: Requires a folder on the server to be writable within files, not compatible with our storage adapter currently
+  note: Requires a folder on the server to be writable within files, not compatible
+    with our storage adapter currently
   updated: November 22, 2016
   version: 2.0.2
 Scripto:
@@ -781,7 +808,8 @@ SimpleContactForm:
   description: Adds a simple contact form for users to contact the administrator.
   download_url: https://github.com/omeka/plugin-SimpleContactForm/releases/download/v0.6/SimpleContactForm-0.6.zip
   name: SimpleContactForm
-  note: Error in `sendEmailNotification` function, Zend framework can’t send mail
+  note: "Error in `sendEmailNotification` function, Zend framework can\u2019t send\
+    \ mail"
   updated: February 14, 2018
   version: '0.6'
 Sitemap 2:
@@ -853,7 +881,8 @@ User Profiles:
   description: Adds configurable user profiles to omeka
   download_url: https://github.com/omeka/plugin-UserProfiles/releases/download/v1.2.1/UserProfiles.zip
   name: User Profiles
-  note: Requires "Record Relations" plugin, but when using the dependency, it throws database errors.
+  note: Requires "Record Relations" plugin, but when using the dependency, it throws
+    database errors.
   updated: March 26, 2018
   version: 1.2.1
 VRA Core:
@@ -879,7 +908,8 @@ YouTube Import:
     preserving as much metadata as possible
   download_url: https://github.com/UCSCLibrary/YouTubeImport/releases/download/1.3/YouTubeImport.zip
   name: YouTube Import
-  note: Requires a youtube api key, uses a default key where requests are easily exceeded. See https://github.com/UCSCLibrary/YouTubeImport/issues/34
+  note: Requires a youtube api key, uses a default key where requests are easily exceeded.
+    See https://github.com/UCSCLibrary/YouTubeImport/issues/34
   updated: July 17, 2017
   version: '1.3'
 Zotero Import:
