@@ -20,7 +20,7 @@ Part of a larger "Avant" suite of plugins, all of which are fairly involved plug
 
 ## :white_check_mark: Block Party
 
-[Jeremy](@jaxguillette) made this, so if it's broken it's his fault.
+[Jeremy](https://github.com/jaguillette/) made this, so if it's broken it's his fault.
 
 ## :white_check_mark: Blog Shortcode
 
