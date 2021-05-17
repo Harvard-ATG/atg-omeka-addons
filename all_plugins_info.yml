@@ -33,11 +33,13 @@ Archive Repertory:
   updated: November 10, 2019
   version: 2.15.7
 AvantCommon:
+  available: false
   description: Provides common support for, and is required by, the AvantRelationships,
     AvantSearch, and AvantElements plugins. This plugin has no standalone features.
   description_url: https://omeka.org/classic/plugins/AvantCommon
   download_url: https://github.com/gsoules/AvantCommon/releases/download/v2.1.0/AvantCommon-v2.1.0.zip
   name: AvantCommon
+  note: Part of "Avant" family of plugins that make complex changes to how Omeka works
   updated: September 25, 2018
   version: 2.1.0
 AvantRelationships:
@@ -51,10 +53,12 @@ AvantRelationships:
   updated: August 31, 2018
   version: 2.0.0
 AvantSearch:
+  available: false
   description: Provides extended search results cababilites for the public interface.
   description_url: https://omeka.org/classic/plugins/AvantSearch
   download_url: https://github.com/gsoules/AvantSearch/releases/download/v2.1.0/AvantSearch-v2.1.0.zip
   name: AvantSearch
+  note: Part of "Avant" family of plugins that make complex changes to how Omeka works
   updated: March 19, 2019
   version: 2.1.0
 Batch Uploader:

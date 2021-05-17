@@ -11,7 +11,7 @@ import sys
 try:
     thingToUpdate = sys.argv[1]
 except IndexError:
-    print('Usage: python update.py [plugins|themes]')
+    print('Usage: python update_cache.py [plugins|themes]')
     exit()
 
 if thingToUpdate not in ['plugins', 'themes']:

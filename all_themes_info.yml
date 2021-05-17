@@ -1,0 +1,88 @@
+Berlin:
+  description: Abstraction of the Making the History of 1989 theme.
+  description_url: https://omeka.org/classic/themes/berlin
+  download_url: https://github.com/omeka/theme-berlin/releases/download/v2.7/theme-berlin-v2.7.zip
+  name: Berlin
+  updated: March 22, 2021
+  version: '2.7'
+Big Picture:
+  description: An image-centric theme geared towards art historians and students.
+  description_url: https://omeka.org/classic/themes/bigpicture
+  download_url: https://github.com/omeka/theme-bigpicture/releases/download/v1.5.1/theme-bigpicture-v1.5.1.zip
+  name: Big Picture
+  updated: May 13, 2021
+  version: 1.5.1
+BigStuff:
+  description: Theme for use with conference papers, based on Berlin.
+  description_url: https://omeka.org/classic/themes/bigstuff
+  download_url: https://github.com/charvolant/bigstuff/releases/download/v1.1/bigstuff.zip
+  name: BigStuff
+  updated: January 26, 2019
+  version: '1.0'
+Center Row:
+  description: Image-oriented theme for Omeka. This theme does not support nested
+    top navigation.
+  description_url: https://omeka.org/classic/themes/centerrow
+  download_url: https://github.com/omeka/theme-centerrow/releases/download/v1.5.1/theme-centerrow-v1.5.1.zip
+  name: Center Row
+  updated: May 14, 2021
+  version: 1.5.1
+Emiglio:
+  description: Named after our favorite robot. A simple, minimal theme with reds and
+    greens.
+  description_url: https://omeka.org/classic/themes/emiglio
+  download_url: https://github.com/omeka/theme-emiglio/releases/download/v2.4/theme-emiglio-v2.4.zip
+  name: Emiglio
+  updated: March 22, 2021
+  version: '2.4'
+Foundation:
+  description: A starter theme using the ZURB Foundation toolkit.
+  description_url: https://omeka.org/classic/themes/foundation
+  download_url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.1.1/theme-foundation-classic-v1.1.1.zip
+  name: Foundation
+  updated: April 07, 2021
+  version: 1.1.1
+Minimalist:
+  description: Clean lines, architectural.
+  description_url: https://omeka.org/classic/themes/minimalist
+  download_url: https://github.com/omeka/theme-minimalist/releases/download/v2.5/theme-minimalist-v2.5.zip
+  name: Minimalist
+  updated: March 22, 2021
+  version: '2.5'
+Rhythm:
+  description: An energetic two-column theme, with different style sheet options
+  description_url: https://omeka.org/classic/themes/rhythm
+  download_url: https://github.com/omeka/theme-rhythm/releases/download/v2.4/theme-rhythm-v2.4.zip
+  name: Rhythm
+  updated: March 22, 2021
+  version: 2.4.0
+Santa Fe:
+  description: Theme based on the Bracero History Archive.
+  description_url: https://omeka.org/classic/themes/santa-fe
+  download_url: https://github.com/omeka/theme-santa-fe/releases/download/v2.5/theme-santa-fe-v2.5.zip
+  name: Santa Fe
+  updated: March 22, 2021
+  version: '2.5'
+Seasons:
+  description: A colorful theme with a configuration option to switch style sheets
+    for a particular season, plus 'night'.
+  description_url: https://omeka.org/classic/themes/seasons
+  download_url: https://github.com/omeka/theme-seasons/releases/download/v2.6/theme-seasons-v2.6.zip
+  name: Seasons
+  updated: March 22, 2021
+  version: '2.6'
+Thanks, Roy:
+  description: A tribute to Roy Rosenzweig, with updated typography and responsive
+    styles.
+  description_url: https://omeka.org/classic/themes/default
+  download_url: https://github.com/omeka/theme-thanksroy/releases/download/v2.6.2/theme-thanksroy-v2.6.2.zip
+  name: Thanks, Roy
+  updated: April 29, 2021
+  version: 2.6.2
+The Daily:
+  description: Image-oriented theme for Omeka.
+  description_url: https://omeka.org/classic/themes/thedaily
+  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.1/theme-thedaily-v1.5.1.zip
+  name: The Daily
+  updated: May 14, 2021
+  version: 1.5.1
