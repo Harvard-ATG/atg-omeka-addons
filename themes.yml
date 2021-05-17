@@ -1,42 +1,48 @@
 Avant Garde:
   name: Avantgarde
   url: https://github.com/CJPfontaine/Omeka-Avantgarde/archive/master.zip
+Berlin:
+  name: berlin
+  url: https://github.com/omeka/theme-berlin/releases/download/v2.7/theme-berlin-v2.7.zip
 Big Picture:
   name: bigpicture
-  url: https://github.com/omeka/theme-bigpicture/releases/download/v1.4.2/bigpicture-v1.4.2.zip
+  url: https://github.com/omeka/theme-bigpicture/releases/download/v1.5.1/theme-bigpicture-v1.5.1.zip
+BigStuff:
+  name: BigStuff
+  url: https://github.com/charvolant/bigstuff/releases/download/v1.1/bigstuff.zip
 Center Row:
   name: centerrow
-  url: https://github.com/omeka/theme-centerrow/releases/download/v1.4.1/centerrow-v1.4.1.zip
+  url: https://github.com/omeka/theme-centerrow/releases/download/v1.5.1/theme-centerrow-v1.5.1.zip
 Chinalocal:
   name: chinalocal-omeka-theme
   url: https://github.com/bilbe/chinalocal-omeka-theme/archive/master.zip
 Emiglio:
   name: emiglio
-  url: https://github.com/omeka/theme-emiglio/releases/download/v2.3/theme-emiglio-v2.3.zip
+  url: https://github.com/omeka/theme-emiglio/releases/download/v2.4/theme-emiglio-v2.4.zip
+Foundation:
+  name: Foundation
+  url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.1.1/theme-foundation-classic-v1.1.1.zip
+Harvard DH Theme:
+  name: hvd-dh-omeka-theme
+  url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/master.zip
 Harvard DH Theme Historical Maps:
   name: hvd-dh-omeka-theme-hist1952maps
   url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/hist1952maps.zip
 Minimalist:
   name: minimalist
-  url: https://github.com/omeka/theme-minimalist/releases/download/v2.4.2/minimalist-v2.4.2.zip
+  url: https://github.com/omeka/theme-minimalist/releases/download/v2.5/theme-minimalist-v2.5.zip
 Rhythm:
   name: rhythm
-  url: https://github.com/omeka/theme-rhythm/releases/download/v2.3.1/rhythm-v2.3.1.zip
+  url: https://github.com/omeka/theme-rhythm/releases/download/v2.4/theme-rhythm-v2.4.zip
 Santa Fe:
   name: santa-fe
-  url: https://github.com/omeka/theme-santa-fe/releases/download/v2.4/santa-fe-v2.4.zip
-The Daily:
-  name: thedaily
-  url: https://github.com/omeka/theme-thedaily/releases/download/v1.4.1/thedaily-v1.4.1.zip
-Berlin:
-  name: berlin
-  url: https://github.com/omeka/theme-berlin/releases/download/v2.6.1/theme-berlin-v2.6.1.zip
-Default:
-  name: default
-  url: https://github.com/omeka/theme-thanksroy/releases/download/v2.5.1/thanksroy-2.5.1.zip
-Harvard DH Theme:
-  name: hvd-dh-omeka-theme
-  url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/master.zip
+  url: https://github.com/omeka/theme-santa-fe/releases/download/v2.5/theme-santa-fe-v2.5.zip
 Seasons:
   name: seasons
-  url: https://github.com/omeka/theme-seasons/releases/download/v2.5.1/seasons-v2.5.1.zip
+  url: https://github.com/omeka/theme-seasons/releases/download/v2.6/theme-seasons-v2.6.zip
+Thanks, Roy:
+  name: default
+  url: https://github.com/omeka/theme-thanksroy/releases/download/v2.6.2/theme-thanksroy-v2.6.2.zip
+The Daily:
+  name: thedaily
+  url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.1/theme-thedaily-v1.5.1.zip
