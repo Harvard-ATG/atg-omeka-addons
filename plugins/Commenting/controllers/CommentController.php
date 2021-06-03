@@ -4,10 +4,9 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
 {
     protected $_browseRecordsPerPage = 10;
 
-
     public function init()
     {
-        $this->_helper->db->setDefaultModelName('Comment');    
+        $this->_helper->db->setDefaultModelName('Comment');
     }
 
     public function browseAction()
@@ -32,17 +31,10 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         $response = array('status'=>'ok');
         $this->_helper->json($response);
     }
-    
+
     public function addAction()
     {
         $destination = $_POST['path'];
-        $module = isset($_POST['module']) ? Inflector::camelize($_POST['module']) : ''; 
-        $destArray = array(
-            'module' => $module,
-            'controller'=> strtolower(Inflector::pluralize($_POST['record_type'])),
-            'action' => 'show',
-            'id' => $_POST['record_id']
-        );
 
         $comment = new Comment();
         if($user = current_user()) {
@@ -57,21 +49,23 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
             $commentSession->post = serialize($_POST);
             $this->_helper->redirector->gotoUrl($destination);
         }
-        
-        $role = current_user()->role;
+
+        $user = current_user();
+        $role = $user ? $user->role : null;
         $reqAppCommentRoles = unserialize(get_option('commenting_reqapp_comment_roles'));
         $requiresApproval = in_array($role, $reqAppCommentRoles);
         //via Daniel Lind -- https://groups.google.com/forum/#!topic/omeka-dev/j-tOSAVdxqU
         $reqAppPublicComment = (bool) get_option('commenting_require_public_moderation');
         $requiresApproval = $requiresApproval || (!is_object(current_user()) && $reqAppPublicComment);
-        //end Daniel Lind contribution        
+        //end Daniel Lind contribution
         if($requiresApproval) {
             $this->_helper->flashMessenger(__("Your comment is awaiting moderation"), 'success');
         }
-        
-        //need getValue to run the filter
+
+        $purifier = $this->_getHtmlPurifier();
+
         $data = $_POST;
-        $data['body'] = $form->getElement('body')->getValue();
+        $data['body'] = $purifier->purify($form->getElement('body')->getValue());
         $data['ip'] = $_SERVER['REMOTE_ADDR'];
         $data['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
         $data['approved'] = !$requiresApproval;
@@ -157,12 +151,11 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         $this->_helper->json($response);
     }
 
-
     public function updateFlaggedAction()
     {
         $commentIds = $_POST['ids'];
         $flagged = $_POST['flagged'];
-    
+
         if($commentIds) {
             foreach($commentIds as $id) {
                 $comment = $this->_helper->db->getTable('Comment')->find($id);
@@ -180,7 +173,7 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         $response = array('status'=>'ok', 'action'=>$action, 'ids'=>$commentIds);
         $this->_helper->json($response);
     }
-    
+
     public function flagAction() {
         $commentId = $_POST['id'];
         $comment = $this->_helper->db->getTable('Comment')->find($commentId);
@@ -190,7 +183,7 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         $response = array('status'=>'ok', 'id'=>$commentId, 'action'=>'flagged');
         $this->_helper->json($response);
     }
-    
+
     public function unflagAction() {
         $commentId = $_POST['id'];
         $comment = $this->_helper->db->getTable('Comment')->find($commentId);
@@ -199,7 +192,7 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         $response = array('status'=>'ok', 'id'=>$commentId, 'action'=>'unflagged');
         $this->_helper->json($response);
     }
-    
+
     private function emailFlagged($comment)
     {
         $mail = new Zend_Mail('UTF-8');
@@ -216,7 +209,6 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         } catch(Exception $e) {
             _log($e);
         }
-    
     }
 
     private function sendEmailNotifications(Comment $comment)
@@ -239,4 +231,15 @@ class Commenting_CommentController extends Omeka_Controller_AbstractActionContro
         return new Commenting_CommentForm();
     }
 
+    private function _getHtmlPurifier()
+    {
+        require_once 'htmlpurifier/HTMLPurifier.auto.php';
+
+        $config = HTMLPurifier_Config::createDefault();
+        $config->set('HTML.Allowed', 'a[href],p,em,strong,ul,ol,li');
+        $config->set('HTML.TidyLevel', 'none');
+        $config->set('HTML.Nofollow', true);
+        $config->set('Cache.DefinitionImpl', null);
+        return new HTMLPurifier($config);
+    }
 }

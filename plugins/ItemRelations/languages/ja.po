@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
+# Naosuke Okamoto, 2018-2019
 # Naosuke Okamoto, 2018
-# Naosuke Okamoto, 2018
+# Yuki Shira <shirayuking@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-ItemRelations/issues\n"
 "POT-Creation-Date: 2014-01-13 12:59-0500\n"
-"PO-Revision-Date: 2018-05-24 11:05+0000\n"
+"PO-Revision-Date: 2019-07-13 04:47+0000\n"
 "Last-Translator: Naosuke Okamoto\n"
 "Language-Team: Japanese (http://www.transifex.com/omeka/omeka/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +99,7 @@ msgstr "改版である (Is Version Of)"
 msgid ""
 "A related resource of which the described resource is a version, edition, or"
 " adaptation."
-msgstr ""
+msgstr "記述されているリソースがバージョン、エディション、または翻案である関連リソース。"
 
 msgid "References"
 msgstr "引用している (References)"
@@ -202,7 +203,7 @@ msgstr "指導法 (Instructional Method)"
 msgid ""
 "A process, used to engender knowledge, attitudes and skills, that the "
 "described resource is designed to support."
-msgstr ""
+msgstr "説明されたリソースがサポートするように設計されているという知識、態度、およびスキルを生み出すために使用されるプロセス。"
 
 msgid "A language of the resource."
 msgstr "リソースの言語"
@@ -221,7 +222,7 @@ msgstr "仲介者 (Mediator)"
 msgid ""
 "An entity that mediates access to the resource and for whom the resource is "
 "intended or useful."
-msgstr ""
+msgstr "リソースへのアクセスを仲介し、リソースが意図されているかまたは有用であるエンティティ。"
 
 msgid "Medium"
 msgstr "媒体 (Medium)"
@@ -236,7 +237,7 @@ msgid ""
 "A statement of any changes in ownership and custody of the resource since "
 "its creation that are significant for its authenticity, integrity, and "
 "interpretation."
-msgstr ""
+msgstr "リソースの作成以降のその信頼性、完全性、および解釈にとって重要な、リソースの所有権および保管の変化に関する記述。"
 
 msgid "An entity responsible for making the resource available."
 msgstr "リソースの発行に責任を持つ（人や組織などの）エンティティ"
@@ -275,68 +276,68 @@ msgid "The nature or genre of the resource."
 msgstr "リソースの性質もしくはジャンル"
 
 msgid "annotates"
-msgstr ""
+msgstr "注釈（annotetes）"
 
 msgid "Critical or explanatory note for a Document."
-msgstr ""
+msgstr "文書に関する重要な注釈"
 
 msgid "cited by"
-msgstr ""
+msgstr "によって引用(cited by)"
 
 msgid "Relates a document to another document that cites the first document."
-msgstr ""
+msgstr "ある文書を、最初の文書を引用している別の文書に関連付けます。"
 
 msgid "cites"
-msgstr ""
+msgstr "引用(cites)"
 
 msgid ""
 "Relates a document to another document that is cited by the first document "
 "as reference, comment, review, quotation or for another purpose."
-msgstr ""
+msgstr "ある文書を、参照、コメント、レビュー、引用、または他の目的で最初の文書によって引用されている別の文書に関連付けます。"
 
 msgid "review of"
-msgstr ""
+msgstr "のレビュー(review of)"
 
 msgid "Relates a review document to a reviewed thing (resource, item, etc.)."
-msgstr ""
+msgstr "レビュードキュメントをレビュー済みのもの（リソース、アイテムなど）に関連付けます。"
 
 msgid "reproduced in"
-msgstr ""
+msgstr "で再現(reproduced in)"
 
 msgid "The resource in which another resource is reproduced."
-msgstr ""
+msgstr "他のリソースが再現されているリソース。"
 
 msgid "affirmed by"
-msgstr ""
+msgstr "によって確認された(affirmed by)"
 
 msgid "A legal decision that affirms a ruling."
-msgstr ""
+msgstr "A legal decision that affirms a ruling."
 
 msgid "reversed by"
-msgstr ""
+msgstr "によって逆転(reversed by)"
 
 msgid "A legal decision that reverses a ruling."
-msgstr ""
+msgstr "判決を覆す法的決定。"
 
 msgid "subsequent legal decision"
-msgstr ""
+msgstr "その後の法的決定"
 
 msgid ""
 "A legal decision on appeal that takes action on a case (affirming it, "
 "reversing it, etc.)."
-msgstr ""
+msgstr "訴訟に対して訴訟を起こす訴訟についての法的決定（それを肯定し、反対にするなど）。"
 
 msgid "transcript of"
-msgstr ""
+msgstr "の写し(transcript of)"
 
 msgid "Relates a document to some transcribed original."
-msgstr ""
+msgstr "ドキュメントを書き写したされた原本に関連付けます。"
 
 msgid "translation of"
-msgstr ""
+msgstr "の翻訳(translation of)"
 
 msgid "Relates a translated document to the original document."
-msgstr ""
+msgstr "翻訳済みドキュメントを元のドキュメントに関連付けます。"
 
 msgid "based near"
 msgstr ""
@@ -347,37 +348,37 @@ msgid ""
 msgstr ""
 
 msgid "depiction"
-msgstr ""
+msgstr "描写(depiction)"
 
 msgid "A depiction of some thing."
 msgstr "何かの説明"
 
 msgid "depicts"
-msgstr ""
+msgstr "描く(depicts)"
 
 msgid "A thing depicted in this representation."
-msgstr ""
+msgstr "この表現に描かれているもの。"
 
 msgid "funded by"
-msgstr ""
+msgstr "によって資金を供給(funded by)"
 
 msgid "An organization funding a project or person."
-msgstr ""
+msgstr "プロジェクトまたは個人に資金を提供する組織。"
 
 msgid "image"
-msgstr ""
+msgstr "画像(image)"
 
 msgid ""
 "An image that can be used to represent some thing (ie. those depictions "
 "which are particularly representative of something, eg. one’s photo on a "
 "homepage)."
-msgstr ""
+msgstr "何かを表すために使用できる画像（例：ホームページ上の写真など、特に何かを表すもの）。"
 
 msgid "is primary topic of"
 msgstr ""
 
 msgid "A document that this thing is the primary topic of."
-msgstr ""
+msgstr "これが主要な話題であるという文書。"
 
 msgid "knows"
 msgstr ""
@@ -385,13 +386,13 @@ msgstr ""
 msgid ""
 "A person known by this person (indicating some level of reciprocated "
 "interaction between the parties)."
-msgstr ""
+msgstr "この人に知られている人（パーティー間のあるレベルの相互作用の対話を示す）。"
 
 msgid "logo"
-msgstr ""
+msgstr "ロゴ"
 
 msgid "A logo representing some thing."
-msgstr ""
+msgstr "何かを表すロゴ。"
 
 msgid "made"
 msgstr ""
@@ -412,7 +413,7 @@ msgid "Indicates a member of a Group."
 msgstr ""
 
 msgid "page"
-msgstr ""
+msgstr "ページ"
 
 msgid "A page or document about this thing."
 msgstr ""
@@ -457,7 +458,7 @@ msgid "alternate"
 msgstr ""
 
 msgid "A property representing an alternative to a manifestation."
-msgstr ""
+msgstr "体現形に代わるものを表す特性。"
 
 msgid "alternate of"
 msgstr ""
@@ -708,7 +709,7 @@ msgid "A property representing a work or expression that is transformed."
 msgstr ""
 
 msgid "translation"
-msgstr ""
+msgstr "翻訳"
 
 msgid "A property representing a translation of an expression."
 msgstr ""
@@ -730,7 +731,7 @@ msgstr ""
 #: ItemRelationsPlugin.php:375 item_relations_form.php:17
 #: views/shared/common/item-relations-advanced-search.php:17
 msgid "Object"
-msgstr ""
+msgstr "オブジェクト"
 
 #: ItemRelationsPlugin.php:380
 msgid "These Items"
@@ -790,7 +791,7 @@ msgstr ""
 
 #: models/ItemRelationsProperty.php:62
 msgid "[unknown]"
-msgstr ""
+msgstr "[不明]"
 
 #: views/admin/common/item-relations-show.php:5
 #: views/public/common/item-relations-show.php:4
