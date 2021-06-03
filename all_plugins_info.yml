@@ -62,10 +62,12 @@ AvantSearch:
   updated: March 19, 2019
   version: 2.1.0
 Batch Uploader:
+  available: false
   description: Plugin for quickly uploading many files to Omeka.
   description_url: https://omeka.org/classic/plugins/BatchUpload
   download_url: https://github.com/utlib/BatchUpload/releases/download/v1.0.0/BatchUpload.zip
   name: Batch Uploader
+  note: Errors on install, db user lacks REFERENCES permission
   updated: April 02, 2018
   version: 1.0.0
 Block Party:
@@ -87,10 +89,13 @@ Blog Shortcode:
   updated: October 19, 2017
   version: '1.0'
 Blogger:
+  available: false
   description: Consume and inject an RSS feed into an Omeka site.
   description_url: https://omeka.org/classic/plugins/Blogger
   download_url: https://github.com/lib-uoguelph-ca/omeka-blogger/releases/download/v1.1/Blogger.zip
   name: Blogger
+  note: I was not able to get the plugin to do what it describes in the documentation,
+    nor was I able to get any information from error logs
   updated: February 26, 2018
   version: '1.1'
 Bulk Metadata Editor:
@@ -151,11 +156,13 @@ Clean URL:
   updated: March 18, 2018
   version: 2.16.1
 Clickable Links Plus:
+  available: false
   description: "Turns URLs in non-HTML text fields into \xBBtarget='_blank'\xAB clickable\
     \ hyperlinks."
   description_url: https://omeka.org/classic/plugins/ClickableLinksPlus
   download_url: https://github.com/DBinaghi/plugin-ClickableLinksPlus/releases/download/v1.3/ClickableLinksPlus.zip
   name: Clickable Links Plus
+  note: Doesn't work, missing a required css file according to logged error message
   updated: April 07, 2021
   version: '1.3'
 Collection Tree:
@@ -180,6 +187,7 @@ Commenting:
   updated: May 29, 2020
   version: '2.3'
 Connected Carousel:
+  available: true
   description: Shortcode embeds code for creating linked carousels, one with thumbnails
     and one with full image. The thumbnail carousel can be used to navigate the full
     image carousel. You can also just have a carousel of full size images you can
@@ -187,6 +195,7 @@ Connected Carousel:
   description_url: https://omeka.org/classic/plugins/ConnectedCarousel
   download_url: https://github.com/wgcowan/ConnectedCarousel/releases/download/2.2/ConnectedCarousel.zip
   name: Connected Carousel
+  note: Works, albeit complicated
   updated: August 17, 2018
   version: '2.2'
 Contribution:
@@ -229,21 +238,25 @@ Course Tools:
   updated: March 16, 2018
   version: 1.0
 Default Dublin Core:
+  available: true
   description: Omeka Plugin that allows administrators to specify default values for
     Dublin Core fields.  Dublin Core fields are then auto-filled with default values
     when records are created or edited.
   description_url: https://omeka.org/classic/plugins/DefaultDC
   download_url: https://github.com/libmanuk/DefaultDC/releases/download/v1.0/DefaultDC.zip
   name: Default Dublin Core
+  note: Does what it says on the tin
   updated: March 13, 2019
   version: '1.0'
 Default Metadata:
+  available: true
   description: Omeka Plugin that allows administrators to specify default values for
     item metadata fields, including Dublin Core and Item Type Metadata fields. Metadata
     fields are then auto-filled with default values when items are created or edited.
   description_url: https://omeka.org/classic/plugins/DefaultMetadata
   download_url: https://github.com/Bosterm/DefaultMetadata/releases/download/v3.0.1/DefaultMetadata.zip
   name: Default Metadata
+  note: Does the same thing as DefaultDC but a bit more expansive
   updated: May 11, 2020
   version: 3.0.1
 Default Sort:
@@ -348,11 +361,13 @@ ElementManager:
   updated: October 31, 2017
   version: '0.1'
 Email Notification:
+  available: false
   description: Send e-mail notification when new Item or Collection or Exhibit is
     added.
   description_url: https://omeka.org/classic/plugins/EmailNotification
   download_url: https://github.com/DBinaghi/EmailNotification/releases/download/v.1.3/EmailNotification.zip
   name: Email Notification
+  note: Errors on item creation because it fails to send mail
   updated: April 10, 2020
   version: '1.3'
 Embed Codes:
@@ -393,10 +408,12 @@ Export:
   updated: October 31, 2017
   version: 0.1.0
 File Paginator:
+  available: false
   description: Allow users to page through files on an item page.
   description_url: https://omeka.org/classic/plugins/FilePaginator
   download_url: https://github.com/kalbers/FilePaginator/releases/download/v1.0/FilePaginator.zip
   name: File Paginator
+  note: Can't determine purpose, no available documentation
   updated: January 30, 2020
   version: '1.0'
 Flickr Import:
@@ -411,11 +428,14 @@ Flickr Import:
   updated: July 17, 2017
   version: '1.3'
 GDriveLinks Plugin:
+  available: true
   description: Uses the URL Item Type Metadata field to create links to Google Drive
     documents and/or embeds Google Drive documents within Omeka item views.
   description_url: https://omeka.org/classic/plugins/GDriveLinks
   download_url: https://github.com/libmanuk/GdriveLinks/releases/download/v1.0/GDriveLinks.zip
   name: GDriveLinks Plugin
+  note: Only works for files uploaded to Google Drive, and requires some manual editing
+    of a url for different behavior, but it does work
   updated: February 24, 2020
   version: 1.0.0
 Geolocation:
@@ -485,11 +505,13 @@ History Log:
   updated: November 28, 2017
   version: '2.10'
 Honor Thy Librarians:
+  available: true
   description: Give credit to people who have added or edited items in your Omeka
     database
   description_url: https://omeka.org/classic/plugins/HonorThyLibrarians
   download_url: https://github.com/DBinaghi/plugin-HonorThyLibrarians/releases/download/v1.1/HonorThyLibrarians.zip
   name: Honor Thy Librarians
+  note: Works as advertised
   updated: May 07, 2020
   version: '1.1'
 IIIF Toolkit:
@@ -535,10 +557,14 @@ Item Duplicate Check:
   updated: October 31, 2017
   version: 0.2.0
 Item Duplicator:
+  available: true
   description: Allows duplicating items
   description_url: https://omeka.org/classic/plugins/ItemDuplicator
   download_url: https://github.com/DBinaghi/ItemDuplicator/releases/download/v1.3/ItemDuplicator.zip
   name: Item Duplicator
+  note: Duplicates items, not exactly sure what's happening with IIIF annotations,
+    as initial test suggests they might be associated with both the original and the
+    duplicate?
   updated: December 30, 2020
   version: '1.3'
 Item Neatline Display:
@@ -579,10 +605,14 @@ Item Review:
   updated: August 01, 2017
   version: '1.1'
 Job Diagnostics:
+  available: false
   description: View running jobs and diagnose problems with the job dispatcher.
   description_url: https://omeka.org/classic/plugins/JobDiagnostics
   download_url: https://github.com/utlib/JobDiagnostics/releases/download/v1.0.0/JobDiagnostics.zip
   name: Job Diagnostics
+  note: 'Not the kind of thing most people need, and the results are similar to this
+    (which ran in less than 51 years) - Latest result (Jun 2, 2021): Response in 1622665923
+    seconds. Queue nearing capacity, or re-test required. '
   updated: April 05, 2018
   version: 1.0.0
 LC Suggest:
@@ -596,10 +626,15 @@ LC Suggest:
   updated: November 07, 2019
   version: 2.0.3
 Limit visibility to own:
+  available: false
   description: Shows only items and collections contributed by the user
   description_url: https://omeka.org/classic/plugins/LimitVisibilityToOwn
   download_url: https://github.com/DBinaghi/plugin-LimitVisibilityToOwn/releases/download/v1.2/LimitVisibilityToOwn.zip
   name: Limit visibility to own
+  note: Redundant with course tools plugin, which is more flexible, and this introduces
+    an issue where the first item someone makes can only be created from the dashboard,
+    as the items page lacks an add item button until it has an item to show for limited
+    users with this plugin enabled.
   updated: May 04, 2021
   version: '1.2'
 Locale Switcher:
@@ -724,18 +759,23 @@ Omeka Api Import:
   updated: February 10, 2017
   version: 1.1.2
 Omeka Footnotes JS:
+  available: true
   description: A plugin to add bigfoot.js footnote functionality to the WYSIWYG on
     simple or exhibit pages.
   description_url: https://omeka.org/classic/plugins/OmekaFootnotesJS
   download_url: https://github.com/DigitalCarleton/OmekaFootnotesJS/releases/download/v1.1/OmekaFootnotesJS.zip
   name: Omeka Footnotes JS
+  note: Works as advertised
   updated: March 04, 2021
   version: '1.1'
 PBCore 2:
+  available: true
   description: Adds elements for describing resources with the PBCore metadata standard
   description_url: https://omeka.org/classic/plugins/PBCore2
   download_url: https://github.com/omeka/plugin-PBCore2/releases/download/v1.0.0/PBCore2-1.0.0.zip
   name: PBCore 2
+  note: Does what it says, although it does make this metadata standard the default
+    instead of DC
   updated: October 14, 2019
   version: 1.0.0
 PDF Embed:
@@ -757,10 +797,15 @@ PDF Text:
   updated: January 13, 2017
   version: '1.3'
 Podcast Feed:
+  available: true
   description: Adds a custom podcast feed and a new Podcast Episode item type.
   description_url: https://omeka.org/classic/plugins/PodcastFeed
   download_url: https://github.com/ebellempire/PodcastFeed/releases/download/v1.0/PodcastFeed.zip
   name: Podcast Feed
+  note: It does actually work, although in my test I only created and used the RSS
+    feed. I didn't try submitting it to Google or Apple for broader avaialbility.
+    There also seems to be some issue with episode descriptions not appearing in Pocket
+    Casts, where I tested it, but I don't know why.
   updated: November 08, 2018
   version: '1.0'
 Posters:
@@ -773,27 +818,33 @@ Posters:
   updated: February 14, 2018
   version: '1.1'
 Project Guide:
+  available: true
   description: Omeka Plugin which allows administrators to configure a link to a custom
     project guide.  The link displays at the admin item view level and on the admin
     dashboard.
   description_url: https://omeka.org/classic/plugins/ProjectGuide
   download_url: https://github.com/libmanuk/ProjectGuide/releases/download/v1.1/ProjectGuide.zip
   name: Project Guide
+  note: Does what it says, although it only adds a link to some very specific pages.
   updated: February 18, 2019
   version: '1.0'
 Public Edit Link:
+  available: true
   description: Adds link to public UI to edit current Item/Collection/File when logged
     in.
   description_url: https://omeka.org/classic/plugins/PublicEditLink
   download_url: https://github.com/DBinaghi/plugin-PublicEditLink/releases/download/v1.1/PublicEditLink.zip
   name: Public Edit Link
+  note: Only works for items, collections, and files, but pretty handy nonetheless.
   updated: April 01, 2021
   version: 1.1.0
 Reassign Files:
+  available: true
   description: Reassignes files from one Item to another.
   description_url: https://omeka.org/classic/plugins/ReassignFiles
   download_url: https://github.com/DBinaghi/plugin-ReassignFiles/releases/download/v1.1/ReassignFiles.zip
   name: Reassign Files
+  note: Works as advertised. Ability to remove empty items was not tested
   updated: April 20, 2021
   version: '1.1'
 Record Relations:
@@ -855,10 +906,12 @@ Select2:
   updated: September 30, 2015
   version: '0.3'
 Shortcode Anyfile:
+  available: false
   description: Adds a shortcode to insert a file
   description_url: https://omeka.org/classic/plugins/ShortcodeAnyfile
   download_url: https://github.com/wgcowan/ShortcodeAnyfile/releases/download/v1.0.1/ShortcodeAnyfile.zip
   name: Shortcode Anyfile
+  note: Files fail to load, breaking the page where they are used.
   updated: August 04, 2018
   version: 1.0.1
 Shortcode Carousel:
