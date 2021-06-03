@@ -58,9 +58,6 @@ Corrections:
 Course Tools:
   name: CourseTools
   url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/refs/tags/v1.0.zip
-CourseTools:
-  name: CourseTools
-  url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/master.zip
 Default Dublin Core:
   name: DefaultDC
   url: https://github.com/libmanuk/DefaultDC/releases/download/v1.0/DefaultDC.zip
@@ -145,9 +142,6 @@ IIIF Toolkit:
 IiifItemEmbed:
   name: IiifItemEmbed
   url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.0/IiifItemEmbed-1.0.zip
-IiifItems:
-  name: IiifItems
-  url: https://github.com/Harvard-ATG/IiifItems/archive/refs/tags/v1.3.0.zip
 Import:
   name: Import
   url: https://github.com/biblibre/omeka-plugin-Import/releases/download/v0.2.0/Import-0.2.0.zip
@@ -202,18 +196,6 @@ Neatline Widget ~ Waypoints:
 NeatlineFeatures:
   name: NeatlineFeatures
   url: https://github.com/scholarslab/NeatlineFeatures/releases/download/2.0.5/NeatlineFeatures-2.0.5.zip
-NeatlineSimile:
-  name: NeatlineSimile
-  url: https://github.com/scholarslab/NeatlineSimile/releases/download/2.0.4/Neatline-Widget-SIMILE-Timeline-2.0.4.zip
-NeatlineText:
-  name: NeatlineText
-  url: https://github.com/scholarslab/NeatlineText/releases/download/1.1.0/Neatline-Widget-Text-1.1.0.zip
-NeatlineTime:
-  name: NeatlineTime
-  url: https://github.com/scholarslab/NeatlineTime/releases/download/v2.1.1/NeatlineTime.zip
-NeatlineWaypoints:
-  name: NeatlineWaypoints
-  url: https://github.com/scholarslab/NeatlineWaypoints/releases/download/2.0.2/NeatlineWaypoints-2.0.2.zip
 Ngram:
   name: Ngram
   url: https://github.com/omeka/plugin-Ngram/releases/download/v1.2/Ngram-1.2.zip
@@ -229,9 +211,6 @@ Omeka Api Import:
 Omeka Footnotes JS:
   name: OmekaFootnotesJS
   url: https://github.com/DigitalCarleton/OmekaFootnotesJS/releases/download/v1.1/OmekaFootnotesJS.zip
-OmekaApiImport:
-  name: OmekaApiImport
-  url: https://github.com/omeka/plugin-OmekaApiImport/releases/download/v1.1.2/OmekaApiImport.zip
 PBCore 2:
   name: PBCore2
   url: https://github.com/omeka/plugin-PBCore2/releases/download/v1.0.0/PBCore2-1.0.0.zip
@@ -289,9 +268,6 @@ Simple Vocab Plus:
 SimpleContactForm:
   name: SimpleContactForm
   url: https://github.com/omeka/plugin-SimpleContactForm/releases/download/v0.6/SimpleContactForm-0.6.zip
-SimplePages:
-  name: SimplePages
-  url: https://github.com/omeka/plugin-SimplePages/releases/download/v3.1.2/SimplePages-3.1.2.zip
 Sitemap 2:
   name: Sitemap
   url: https://github.com/UCSCLibrary/Sitemap/releases/download/2.3/Sitemap.zip
