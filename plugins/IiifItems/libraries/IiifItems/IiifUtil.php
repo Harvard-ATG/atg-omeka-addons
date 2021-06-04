@@ -50,43 +50,38 @@ class IiifItems_IiifUtil {
      * @param array $jsonData
      * @param Record $record
      */
-    protected static function addMetadata(&$jsonData, $record) {
+    protected static function addDublinCoreMetadata(&$jsonData, $record) {
         $elements = all_element_texts($record, array(
             'return_type' => 'array',
             'show_element_set_headings' => true,
         ));
         if (isset($elements['Dublin Core'])) {
             if (isset($elements['Dublin Core']['Title'])) {
-                $jsonData['label'] = join(' ', $elements['Dublin Core']['Title']);
+                $jsonData['label'] = join($elements['Dublin Core']['Title'], ' ');
                 unset($elements['Dublin Core']['Title']);
             }
             if (isset($elements['Dublin Core']['Description'])) {
-                $jsonData['description'] = join('<br>', $elements['Dublin Core']['Description']);
+                $jsonData['description'] = join($elements['Dublin Core']['Description'], '<br>');
                 unset($elements['Dublin Core']['Description']);
             }
             if (isset($elements['Dublin Core']['Publisher'])) {
-                $jsonData['attribution'] = join('<br>', $elements['Dublin Core']['Publisher']);
+                $jsonData['attribution'] = join($elements['Dublin Core']['Publisher'], '<br>');
                 unset($elements['Dublin Core']['Publisher']);
             }
             if (isset($elements['Dublin Core']['Rights'])) {
-                $jsonData['license'] = join('<br>', $elements['Dublin Core']['Rights']);
+                $jsonData['license'] = join($elements['Dublin Core']['Rights'], '<br>');
                 unset($elements['Dublin Core']['Rights']);
             }
-        }
-        if (!isset($jsonData['metadata'])) {
-            $jsonData['metadata'] = array(
-                array(
-                    'label' => __('Record in Omeka'),
-                    'value' => '<a href="' . record_url($record) . '">View page</a>'
-                )
-            );
-        }
-        foreach ($elements as $elementSetName => $elementSet) {
-            foreach ($elementSet as $elementName => $elementContent) {
-                $jsonData['metadata'][] = array(
-                    'label' => $elementName,
-                    'value' => trim(join('<br/>', $elementContent))
-                );
+            if (!empty($elements['Dublin Core'])) {
+                if (!isset($jsonData['metadata'])) {
+                    $jsonData['metadata'] = array();
+                }
+                foreach ($elements['Dublin Core'] as $elementName => $elementContent) {
+                    $jsonData['metadata'][] = array(
+                        'label' => $elementName,
+                        'value' => join($elementContent, '<br>')
+                    );
+                }
             }
         }
     }

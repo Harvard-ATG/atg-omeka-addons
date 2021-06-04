@@ -56,14 +56,14 @@ Part of a larger "Avant" suite of plugins, all of which are fairly involved plug
 
 Part of "Avant" family of plugins that make complex changes to how Omeka works
 
-## :question: Batch Uploader
+## :x: Batch Uploader
 
 * **Description:** Plugin for quickly uploading many files to Omeka.
 * **[Description page](https://omeka.org/classic/plugins/BatchUpload)**
 * **Version:** 1.0.0
 * **Updated:** April 02, 2018
 
-Not yet evaluated
+Errors on install, db user lacks REFERENCES permission
 
 ## :white_check_mark: Block Party
 
@@ -83,14 +83,14 @@ Not yet evaluated
 
 Works
 
-## :question: Blogger
+## :x: Blogger
 
 * **Description:** Consume and inject an RSS feed into an Omeka site.
 * **[Description page](https://omeka.org/classic/plugins/Blogger)**
 * **Version:** 1.1
 * **Updated:** February 26, 2018
 
-Not yet evaluated
+I was not able to get the plugin to do what it describes in the documentation, nor was I able to get any information from error logs
 
 ## :white_check_mark: Bulk Metadata Editor
 
@@ -146,14 +146,14 @@ Works
 
 Works on Imperiia and Beautiful Spaces sites. Not currently on form, but could be.
 
-## :question: Clickable Links Plus
+## :x: Clickable Links Plus
 
 * **Description:** Turns URLs in non-HTML text fields into »target='_blank'« clickable hyperlinks.
 * **[Description page](https://omeka.org/classic/plugins/ClickableLinksPlus)**
 * **Version:** 1.3
 * **Updated:** April 07, 2021
 
-Not yet evaluated
+Doesn't work, missing a required css file according to logged error message
 
 ## :white_check_mark: Collection Tree
 
@@ -173,14 +173,14 @@ Works, but interacts weird with IIIF Toolkit. If Collections show sub-collection
 
 Doesn’t like being deactivated, causes errors but uninstall works
 
-## :question: Connected Carousel
+## :white_check_mark: Connected Carousel
 
 * **Description:** Shortcode embeds code for creating linked carousels, one with thumbnails and one with full image. The thumbnail carousel can be used to navigate the full image carousel. You can also just have a carousel of full size images you can click through. Also contains code for embedding in Exhibits.
 * **[Description page](https://omeka.org/classic/plugins/ConnectedCarousel)**
 * **Version:** 2.2
 * **Updated:** August 17, 2018
 
-Not yet evaluated
+Works, albeit complicated
 
 ## :x: Contribution
 
@@ -218,23 +218,23 @@ Fails to load correction page, wasn't able to locate the source of the error.
 
 Default plugin on our instance
 
-## :question: Default Dublin Core
+## :white_check_mark: Default Dublin Core
 
 * **Description:** Omeka Plugin that allows administrators to specify default values for Dublin Core fields.  Dublin Core fields are then auto-filled with default values when records are created or edited.
 * **[Description page](https://omeka.org/classic/plugins/DefaultDC)**
 * **Version:** 1.0
 * **Updated:** March 13, 2019
 
-Not yet evaluated
+Does what it says on the tin
 
-## :question: Default Metadata
+## :white_check_mark: Default Metadata
 
 * **Description:** Omeka Plugin that allows administrators to specify default values for item metadata fields, including Dublin Core and Item Type Metadata fields. Metadata fields are then auto-filled with default values when items are created or edited.
 * **[Description page](https://omeka.org/classic/plugins/DefaultMetadata)**
 * **Version:** 3.0.1
 * **Updated:** May 11, 2020
 
-Not yet evaluated
+Does the same thing as DefaultDC but a bit more expansive
 
 ## :white_check_mark: Default Sort
 
@@ -326,14 +326,14 @@ Fails to install because database user does not have `REFERENCES` permission.
 
 No documentation to speak of, but seems to work if you can figure out how it works.
 
-## :question: Email Notification
+## :x: Email Notification
 
 * **Description:** Send e-mail notification when new Item or Collection or Exhibit is added.
 * **[Description page](https://omeka.org/classic/plugins/EmailNotification)**
 * **Version:** 1.3
 * **Updated:** April 10, 2020
 
-Not yet evaluated
+Errors on item creation because it fails to send mail
 
 ## :white_check_mark: Embed Codes
 
@@ -371,14 +371,14 @@ Works
 
 Not really an independent plugin, but rather a starting point and framework for a custom export plugin, so we don't need to offer it.
 
-## :question: File Paginator
+## :x: File Paginator
 
 * **Description:** Allow users to page through files on an item page.
 * **[Description page](https://omeka.org/classic/plugins/FilePaginator)**
 * **Version:** 1.0
 * **Updated:** January 30, 2020
 
-Not yet evaluated
+Can't determine purpose, no available documentation
 
 ## :white_check_mark: Flickr Import
 
@@ -389,14 +389,14 @@ Not yet evaluated
 
 Single import seems to work, but I wasn't able to get a gallery import to work. Does require an API key from Flickr to work fully.
 
-## :question: GDriveLinks Plugin
+## :white_check_mark: GDriveLinks Plugin
 
 * **Description:** Uses the URL Item Type Metadata field to create links to Google Drive documents and/or embeds Google Drive documents within Omeka item views.
 * **[Description page](https://omeka.org/classic/plugins/GDriveLinks)**
 * **Version:** 1.0.0
 * **Updated:** February 24, 2020
 
-Not yet evaluated
+Only works for files uploaded to Google Drive, and requires some manual editing of a url for different behavior, but it does work
 
 ## :white_check_mark: Geolocation
 
@@ -461,14 +461,14 @@ Works
 
 Works
 
-## :question: Honor Thy Librarians
+## :white_check_mark: Honor Thy Librarians
 
 * **Description:** Give credit to people who have added or edited items in your Omeka database
 * **[Description page](https://omeka.org/classic/plugins/HonorThyLibrarians)**
 * **Version:** 1.1
 * **Updated:** May 07, 2020
 
-Not yet evaluated
+Works as advertised
 
 ## :white_check_mark: IIIF Toolkit
 
@@ -506,14 +506,14 @@ Requires a separate "Intense Debate" account, where the discussions are managed.
 
 Install fails because db user doesn't have `REFERENCES` permission
 
-## :question: Item Duplicator
+## :white_check_mark: Item Duplicator
 
 * **Description:** Allows duplicating items
 * **[Description page](https://omeka.org/classic/plugins/ItemDuplicator)**
 * **Version:** 1.3
 * **Updated:** December 30, 2020
 
-Not yet evaluated
+Duplicates items, not exactly sure what's happening with IIIF annotations, as initial test suggests they might be associated with both the original and the duplicate?
 
 ## :x: Item Neatline Display
 
@@ -551,14 +551,14 @@ Works
 
 Email notifications won't work, but otherwise fine.
 
-## :question: Job Diagnostics
+## :x: Job Diagnostics
 
 * **Description:** View running jobs and diagnose problems with the job dispatcher.
 * **[Description page](https://omeka.org/classic/plugins/JobDiagnostics)**
 * **Version:** 1.0.0
 * **Updated:** April 05, 2018
 
-Not yet evaluated
+Not the kind of thing most people need, and the results are similar to this (which ran in less than 51 years) - Latest result (Jun 2, 2021): Response in 1622665923 seconds. Queue nearing capacity, or re-test required. 
 
 ## :white_check_mark: LC Suggest
 
@@ -569,14 +569,14 @@ Not yet evaluated
 
 Works
 
-## :question: Limit visibility to own
+## :x: Limit visibility to own
 
 * **Description:** Shows only items and collections contributed by the user
 * **[Description page](https://omeka.org/classic/plugins/LimitVisibilityToOwn)**
 * **Version:** 1.2
 * **Updated:** May 04, 2021
 
-Not yet evaluated
+Redundant with course tools plugin, which is more flexible, and this introduces an issue where the first item someone makes can only be created from the dashboard, as the items page lacks an add item button until it has an item to show for limited users with this plugin enabled.
 
 ## :x: Locale Switcher
 
@@ -695,23 +695,23 @@ Works
 
 Default plugin on our instance
 
-## :question: Omeka Footnotes JS
+## :white_check_mark: Omeka Footnotes JS
 
 * **Description:** A plugin to add bigfoot.js footnote functionality to the WYSIWYG on simple or exhibit pages.
 * **[Description page](https://omeka.org/classic/plugins/OmekaFootnotesJS)**
 * **Version:** 1.1
 * **Updated:** March 04, 2021
 
-Not yet evaluated
+Works as advertised
 
-## :question: PBCore 2
+## :white_check_mark: PBCore 2
 
 * **Description:** Adds elements for describing resources with the PBCore metadata standard
 * **[Description page](https://omeka.org/classic/plugins/PBCore2)**
 * **Version:** 1.0.0
 * **Updated:** October 14, 2019
 
-Not yet evaluated
+Does what it says, although it does make this metadata standard the default instead of DC
 
 ## :white_check_mark: PDF Embed
 
@@ -731,14 +731,14 @@ Works
 
 Requires a `pdftotext` command line utility installed on the server.
 
-## :question: Podcast Feed
+## :white_check_mark: Podcast Feed
 
 * **Description:** Adds a custom podcast feed and a new Podcast Episode item type.
 * **[Description page](https://omeka.org/classic/plugins/PodcastFeed)**
 * **Version:** 1.0
 * **Updated:** November 08, 2018
 
-Not yet evaluated
+It does actually work, although in my test I only created and used the RSS feed. I didn't try submitting it to Google or Apple for broader avaialbility. There also seems to be some issue with episode descriptions not appearing in Pocket Casts, where I tested it, but I don't know why.
 
 ## :white_check_mark: Posters
 
@@ -749,32 +749,32 @@ Not yet evaluated
 
 Requires "GuestUser" plugin, but seems to work fine.
 
-## :question: Project Guide
+## :white_check_mark: Project Guide
 
 * **Description:** Omeka Plugin which allows administrators to configure a link to a custom project guide.  The link displays at the admin item view level and on the admin dashboard.
 * **[Description page](https://omeka.org/classic/plugins/ProjectGuide)**
 * **Version:** 1.0
 * **Updated:** February 18, 2019
 
-Not yet evaluated
+Does what it says, although it only adds a link to some very specific pages.
 
-## :question: Public Edit Link
+## :white_check_mark: Public Edit Link
 
 * **Description:** Adds link to public UI to edit current Item/Collection/File when logged in.
 * **[Description page](https://omeka.org/classic/plugins/PublicEditLink)**
 * **Version:** 1.1.0
 * **Updated:** April 01, 2021
 
-Not yet evaluated
+Only works for items, collections, and files, but pretty handy nonetheless.
 
-## :question: Reassign Files
+## :white_check_mark: Reassign Files
 
 * **Description:** Reassignes files from one Item to another.
 * **[Description page](https://omeka.org/classic/plugins/ReassignFiles)**
 * **Version:** 1.1
 * **Updated:** April 20, 2021
 
-Not yet evaluated
+Works as advertised. Ability to remove empty items was not tested
 
 ## :x: Record Relations
 
@@ -830,14 +830,14 @@ Works, recommended along with Simple Vocab
 
 Works
 
-## :question: Shortcode Anyfile
+## :x: Shortcode Anyfile
 
 * **Description:** Adds a shortcode to insert a file
 * **[Description page](https://omeka.org/classic/plugins/ShortcodeAnyfile)**
 * **Version:** 1.0.1
 * **Updated:** August 04, 2018
 
-Not yet evaluated
+Files fail to load, breaking the page where they are used.
 
 ## :white_check_mark: Shortcode Carousel
 

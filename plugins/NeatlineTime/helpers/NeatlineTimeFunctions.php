@@ -55,24 +55,13 @@ function queue_timeline_assets()
     $headScript = get_view()->headScript();
     $headScript->appendFile(src('neatline-time-scripts.js', 'javascripts'));
 
-    // Check useInternalJavascripts in config.ini.
-    $config = Zend_Registry::get('bootstrap')->getResource('Config');
-    $useInternalJs = isset($config->theme->useInternalJavascripts)
-            ? (bool) $config->theme->useInternalJavascripts
-            : false;
+    $timelineVariables = 'Timeline_urlPrefix="'.dirname(src('timeline-api.js', 'javascripts/simile/timeline-api')).'/"; '
+                       . 'Timeline_parameters="bundle=true";';
 
-    if ($useInternalJs) {
-        $timelineVariables = 'Timeline_ajax_url="'.src('simile-ajax-api.js', 'javascripts/simile/ajax-api').'"; '
-                           . 'Timeline_urlPrefix="'.dirname(src('timeline-api.js', 'javascripts/simile/timeline-api')).'/"; '
-                           . 'Timeline_parameters="bundle=true";';
-
-        $headScript->appendScript($timelineVariables);
-        $headScript->appendFile(src('timeline-api.js', 'javascripts/simile/timeline-api'));
-    } else {
-        $headScript->appendFile('http://api.simile-widgets.org/timeline/2.3.1/timeline-api.js?bundle=true');
-    }
-
-    $headScript->appendScript('SimileAjax.History.enabled = false; window.jQuery = SimileAjax.jQuery');
+    $headScript->appendScript($timelineVariables);
+    $headScript->appendFile(src('simile-ajax-api.js', 'javascripts/simile/ajax-api'));
+    $headScript->appendFile(src('timeline-api.js', 'javascripts/simile/timeline-api'));
+    $headScript->appendScript('SimileAjax.History.enabled = false;');
 
     queue_css_file('neatlinetime-timeline');
 }
@@ -187,8 +176,8 @@ function neatlinetime_convert_date($date) {
 
 /**
  * Generates a form select populated by all elements and element sets.
- * 
- * @param string The NeatlineTime option name. 
+ *
+ * @param string The NeatlineTime option name.
  * @return string HTML.
  */
 function neatlinetime_option_select($name = null) {
@@ -213,7 +202,7 @@ function neatlinetime_option_select($name = null) {
 /**
  * Gets the value for an option set in the neatlinetime option array.
  *
- * @param string The NeatlineTime option name. 
+ * @param string The NeatlineTime option name.
  * @return string
  */
 function neatlinetime_get_option($name = null) {

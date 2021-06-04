@@ -5,7 +5,7 @@ var Commenting = {
     },
 
     finalizeMove: function() {
-        jQuery('#comment-form-body_parent').attr('style', '')  
+        jQuery('#comment-form-body_parent').attr('style', '')
     },
 
     moveForm: function(event) {
@@ -19,13 +19,13 @@ var Commenting = {
 
     flag: function(event) {
         var commentId = Commenting.getCommentId(event.target);
-        var json = {'id': commentId }; 
+        var json = {'id': commentId };
         jQuery.post(Commenting.pluginRoot + "flag", json, Commenting.flagResponseHandler);
     },
 
     unflag: function(event) {
         var commentId = Commenting.getCommentId(event.target);
-        var json = {'id': commentId }; 
+        var json = {'id': commentId };
         jQuery.post(Commenting.pluginRoot + "unflag", json, Commenting.flagResponseHandler);
     },
 
@@ -39,22 +39,16 @@ var Commenting = {
 
         if(response.action == 'unflagged') {
             comment.find('div.comment-body').removeClass('comment-flagged');
-            comment.find('p.comment-flag').show();            
+            comment.find('p.comment-flag').show();
             comment.find('p.comment-unflag').hide();
         }
     },
 
     getCommentId: function(el) {
         return jQuery(el).parents('div.comment').first().attr('id').substring(8);
-    }
-};
+    },
 
-if(typeof Omeka == 'undefined' ) {
-    Omeka = {};
-}
-
-if(typeof Omeka.wysiwyg == 'undefined') {
-    Omeka.wysiwyg = function (params) {
+    wysiwyg: function (params) {
         // Default parameters
         initParams = {
             convert_urls: false,
@@ -62,7 +56,7 @@ if(typeof Omeka.wysiwyg == 'undefined') {
             menubar: false,
             statusbar: false,
             toolbar_items_size: "small",
-            toolbar: "bold italic underline | alignleft aligncenter alignright | bullist numlist | link formatselect code",
+            toolbar: "bold italic | bullist numlist | link code",
             plugins: "lists,link,code,paste,media,autoresize",
             autoresize_max_height: 500,
             entities: "160,nbsp,173,shy,8194,ensp,8195,emsp,8201,thinsp,8204,zwnj,8205,zwj,8206,lrm,8207,rlm",
@@ -71,12 +65,12 @@ if(typeof Omeka.wysiwyg == 'undefined') {
         };
 
         tinyMCE.init(jQuery.extend(initParams, params));
-    };
-}
+    }
+};
 
 jQuery(document).ready(function() {
     jQuery('.comment-reply').click(Commenting.handleReply);
     jQuery('.comment-flag').click(Commenting.flag);
     jQuery('.comment-unflag').click(Commenting.unflag);
-    Omeka.wysiwyg();
+    Commenting.wysiwyg();
 });
