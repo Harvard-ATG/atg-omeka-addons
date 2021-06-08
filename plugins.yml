@@ -138,7 +138,7 @@ Honor Thy Librarians:
   url: https://github.com/DBinaghi/plugin-HonorThyLibrarians/releases/download/v1.1/HonorThyLibrarians.zip
 IIIF Toolkit:
   name: IiifItems
-  url: https://github.com/utlib/IiifItems/releases/download/v1.1.0/IiifItems.zip
+  url: https://github.com/Harvard-ATG/IiifItems/archive/refs/tags/v1.3.0.zip
 IiifItemEmbed:
   name: IiifItemEmbed
   url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.0/IiifItemEmbed-1.0.zip
