@@ -1,5 +1,5 @@
 <?php
-$collectionTitle = metadata('collection', 'display_title');
+$collectionTitle = metadata('collection', 'rich_title', array('no_escape' => true));
 $collectionItemsTotal = metadata('collection', 'total_items');
 $perPagePublic = get_option('per_page_public')
 ?>
@@ -26,7 +26,7 @@ $perPagePublic = get_option('per_page_public')
                 </div>
                 <?php endif; ?>
                 <div class="item-meta">
-                    <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
+                    <h3><?php echo link_to_item(null, array('class'=>'permalink')); ?></h3>
         
                     <?php if ($creator = metadata('item', array('Dublin Core', 'Creator'))): ?>
                     <span class="creator"><?php echo $creator; ?></span>

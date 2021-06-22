@@ -3,6 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php if ($author = option('author')): ?>
+    <meta name="author" content="<?php echo $author; ?>" />
+    <?php endif; ?>
+    <?php if ($copyright = option('copyright')): ?>
+    <meta name="copyright" content="<?php echo $copyright; ?>" />
+    <?php endif; ?>
     <?php if ( $description = option('description')): ?>
     <meta name="description" content="<?php echo $description; ?>" />
     <?php endif; ?>
@@ -85,6 +91,10 @@
 
             #primary-nav li li li {
                 background-color: <?php echo thanksroy_brighten($buttonColor, -20); ?>;
+            }
+
+            #primary-nav li a {
+                color: <?php echo $buttonTextColor; ?>;
             }
         }
     </style>

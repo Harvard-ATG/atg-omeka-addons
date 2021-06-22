@@ -37,13 +37,13 @@ function thedaily_display_featured_records()
     $randomRecordHtml = '';
     
     foreach ($recordTypes as $recordType) {
+        if ($recordType == 'Exhibit' && !plugin_is_active('ExhibitBuilder')) {
+            continue;
+        }
         $randomRecords = null;
         $randomRecords = thedaily_get_random_featured_records($recordType);
         
         if ((get_theme_option("Display Featured $recordType") !== '0') && ($randomRecords !== null)) {
-            if ($recordType == 'Exhibit' && !plugin_is_active('ExhibitBuilder')) {
-                return;
-            }
             $randomRecordCount += count($randomRecords);
             $randomRecordHtml .= thedaily_random_featured_records_html(strtolower($recordType), $randomRecords);
         }
@@ -54,6 +54,32 @@ function thedaily_display_featured_records()
     $html .= '</div>';
 
     return $html;
+}
+
+function thedaily_output_text_track_file($textFile) {
+    $kind = metadata($textFile, array('Dublin Core', 'Type'));
+    $language = metadata($textFile, array('Dublin Core', 'Language'));
+    $label = metadata($textFile, array('Dublin Core', 'Title'));
+
+    if (!$kind) {
+        $kind = 'subtitles';
+    }
+
+    if (!$language) {
+        $language = get_html_lang();
+    }
+
+    $trackSrc = html_escape($textFile->getWebPath('original'));
+
+    if ($label) {
+        $labelPart = ' label="' . $label . '"';
+    } else {
+        $labelPart = '';
+    }
+
+    $track = '<track kind="' . $kind . '" src="' . $trackSrc . '" srclang="' . $language . '"' . $labelPart . '>';
+
+    return $track;
 }
 
 ?>

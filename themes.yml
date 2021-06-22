@@ -19,12 +19,15 @@ Chinalocal:
 Emiglio:
   name: emiglio
   url: https://github.com/omeka/theme-emiglio/releases/download/v2.4/theme-emiglio-v2.4.zip
+Eileen Southern Theme:
+  name: eileen-southern-theme
+  url: https://github.com/artshumrc/eileen-southern-theme/archive/refs/tags/v0.1-beta.zip
 Foundation:
   name: Foundation
   url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.1.1/theme-foundation-classic-v1.1.1.zip
 Harvard DH Theme:
   name: hvd-dh-omeka-theme
-  url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/master.zip
+  url: https://github.com/jaguillette/hvd-dh-omeka-theme/releases/download/v1.0/hvd-dh-omeka-theme-v1.0.zip
 Harvard DH Theme Historical Maps:
   name: hvd-dh-omeka-theme-hist1952maps
   url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/hist1952maps.zip

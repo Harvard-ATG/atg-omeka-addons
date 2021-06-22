@@ -5,11 +5,12 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.2.1",
-    "gulp": "^4.0.0",
+    "autoprefixer": "^9.7.6",
+    "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
-    "susy": "^2.2.12"
+    "gulp-sass": "^4.1.0",
+    "susy": "^2.2.12",
+    "yargs-parser": ">=13.1.2"
   },
   "scripts": {
     "test": "test"

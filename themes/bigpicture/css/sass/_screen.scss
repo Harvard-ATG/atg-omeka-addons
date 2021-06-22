@@ -50,6 +50,10 @@ p, ol, ul, dl, blockquote {
     margin: $spacing-l 0;
 }
 
+img {
+    image-orientation:from-image;
+}
+
 nav ul {
     list-style: none;
     padding-left: 0;
@@ -627,6 +631,12 @@ ul#itemfiles {
     padding: $spacing-s;
     z-index: 10;
     height: (4 * $spacing-l);
+}
+
+.lSPager li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .count-1.lSSlideOuter .lSPager.lSGallery {

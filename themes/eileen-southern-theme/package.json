@@ -1,0 +1,37 @@
+{
+  "name": "eileensouthern",
+  "version": "2.5.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0",
+    "susy": "^2.2.12",
+    "yargs-parser": ">=13.1.2"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artshumrc/eileen-southern-theme.git"
+  },
+  "keywords": [
+    "\"white",
+    "black",
+    "serif\""
+  ],
+  "author": "Cole Crawford",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/artshumrc/eileen-southern-theme/issues"
+  },
+  "homepage": "https://github.com/artshumrc/eileen-southern-theme#readme",
+  "browserslist": [
+    "> 5%",
+    "> 1% in US"
+  ]
+}
