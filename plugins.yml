@@ -85,6 +85,9 @@ Dublin Core Extended:
 Editorial:
   name: Editorial
   url: https://github.com/omeka/plugin-Editorial/releases/download/v1.1.0/Editorial-1.1.0.zip
+Eileen Southern:
+  name: EileenSouthern
+  url: https://github.com/artshumrc/plugin-southern/archive/refs/tags/v0.1.zip
 Elasticsearch:
   name: Elasticsearch
   url: https://github.com/Harvard-ATG/omeka-plugin-Elasticsearch/releases/download/v1.0.3/Elasticsearch.zip
