@@ -22,7 +22,8 @@ class YouTubeImportPlugin extends Omeka_Plugin_AbstractPlugin
         'public_head',
         'after_save_item',
         'config',
-        'config_form'
+        'config_form',
+	'initialize'
     );
 
     /**
@@ -39,8 +40,12 @@ class YouTubeImportPlugin extends Omeka_Plugin_AbstractPlugin
     /**
      * @var array Options for the plugin.
      */
-    protected $_options = array('youtube_width'=>640,'youtube_height'=>360);
+    protected $_options = array('youtube_width'=>640,'youtube_height'=>360, 'youtube_apikey'=>'');
 
+	
+    public function hookInitialize(){
+        require_once(dirname(__FILE__)."/helpers/import.php");
+    }
 
 
     public function hookAfterSaveItem($args){
@@ -63,7 +68,11 @@ class YouTubeImportPlugin extends Omeka_Plugin_AbstractPlugin
         //if there is not a current item record for this page, do nothing
         if(! $item = get_current_record('item', false))
             return $elementSets;
-
+	    
+	//if there is no "player" element installed, do nothing
+        if(!element_exists(ElementSet::ITEM_TYPE_NAME,'Player'))
+	        return $elementSets;
+		
         // if there is no youtube player on this item, do nothing
         if(!metadata($item,array('Item Type Metadata','Player')))
             return $elementSets;
@@ -98,13 +107,17 @@ class YouTubeImportPlugin extends Omeka_Plugin_AbstractPlugin
      *@return void
      */
     public function hookInstall(){
+        include_once(dirname(__FILE__).'/helpers/import.php');
         YoutubeImport_ImportHelper::CreateThumbnailElement;
+        YoutubeImport_ImportHelper::CreatePlayerElement;
     }
 
     public function hookUpgrade($oldVersion,$newVersion){
-        if($oldVersion < 1.2) {
+        include_once(dirname(__FILE__).'/helpers/import.php');
+        if(!element_exists(ElementSet::ITEM_TYPE_NAME,'Imported Thumbnail'))
             YoutubeImport_ImportHelper::CreateThumbnailElement;
-        }          
+	    if(!element_exists(ElementSet::ITEM_TYPE_NAME,'Player'))
+            YoutubeImport_ImportHelper::CreatePlayerElement;              
     }
 
     /**
@@ -202,6 +215,8 @@ class YouTubeImportPlugin extends Omeka_Plugin_AbstractPlugin
             set_option('youtube_width',$_REQUEST['youtube_width']);
         if(isset($_REQUEST['youtube_height']))
             set_option('youtube_height',$_REQUEST['youtube_height']);
+        if(isset($_REQUEST['youtube_apikey']))
+            set_option('youtube_apikey', $_REQUEST['youtube_apikey']);
     }
 
     public function hookConfigForm(){
