@@ -6,19 +6,27 @@
 <?php // echo pagination_links(); ?>
 
 <main>
+    
+    <?php
+        // From the admin theme config
+        $gallery_text = get_theme_option('Gallery Text');
+        if($gallery_text){
+            echo($gallery_text);
+        }  
+    ?>
     <div class="container-wide">
         <div class="flex-column gallery-container">
-            <?php foreach (loop('items') as $item): ?>
-            <?php 
-                debug_to_console($item);
-                $file=null;
-                if($item->getFile(0)){
-                    $file = get_record_by_id('File', $item->getFile(0)->id);
-                }
+            <?php foreach (loop('items') as $item):
+                // Filter out events
+                if($item->item_type_id !== 8):  
+                    $first_file=null;
+                    if($item->getFile(0)){
+                        $first_file = get_record_by_id('File', $item->getFile(0)->id);
+                    }
             ?>
             <div class="tri-column gallery-column item">
                 <a href="<?php echo metadata('item', 'permalink');?>">
-                    <div class="gallery-img-container" style="background-image: url(<?php if($file){ echo metadata($file, 'square_thumbnail_uri');}?>)"></div>
+                    <div class="gallery-img-container" style="background-image: url(<?php if($first_file){ echo metadata($first_file, 'square_thumbnail_uri');}?>)"></div>
                 </a>
                 <h5 class="gallery-category">
                     <?php echo metadata('item', array('Dublin Core', 'Format')); ?>
@@ -30,7 +38,10 @@
                 <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
 
             </div><!-- end class="item" -->
-            <?php endforeach; ?>
+            <?php 
+                endif;
+                endforeach; // Ends items loop
+            ?>
         </div><!-- end gallery-container -->
     </div><!-- end container-wide -->
 </main>
