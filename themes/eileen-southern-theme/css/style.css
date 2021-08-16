@@ -1,7 +1,14 @@
 /* Eileen Southern css
 ---------------------------------------------------------------------------------------------- */
 
-
+/* Omeka Admin Bar Fixes */
+#admin-bar {
+	position:fixed;
+	z-index: 10000;
+}
+#navbar.nav-container.omeka_authenticated{
+	top: 40px;
+}
 
 
 /* UNIVERSAL STYLES -------------------------------------------------------------------------- */
@@ -488,6 +495,19 @@ main {
 	padding: 2em 2em 1em 1em;
 }
 
+/* small image lightbox */
+.all-item-images {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.all-item-images .item-file {
+	margin-left: auto;
+	margin-right: auto;
+}
+.all-item-images img.thumb {
+	max-width: 120px;
+}
+
 .gallery-description-single{
 	padding-right: 0em;
 }
@@ -554,6 +574,7 @@ main {
 	letter-spacing: 0em;
 	font-size: 25px;
 	padding: 0 0 0.2em 0;
+	color: black;
 }
 
 .vid-caption{

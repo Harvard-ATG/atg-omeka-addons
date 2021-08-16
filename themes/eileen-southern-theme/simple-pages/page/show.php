@@ -57,10 +57,9 @@
     <?php if($pageName == 'timeline'): ?>
     <div class="container-wide white-bg">
     <?php
-        $event_records = get_records('Item', array('type'=>'Event'));
-        $event_tags = get_records('Item', array('tags'=>'Event'));
+        $event_records = get_records('Item', array('type'=>'Event'), 200);
+        $event_tags = get_records('Item', array('tags'=>'Event'), 200);
         $events = array_merge($event_records, $event_tags);
-        debug_to_console($events);
 
         function make_date_obj($dateStr){
             if(substr_count($dateStr, "-") == 2){
@@ -91,30 +90,31 @@
             return $dateAObj > $dateBObj;
         }
         usort($events, "date_sort");
-        debug_to_console($events);
-        // print_r($arr);
-        // debug_to_console($events);
+
+        function print_year($item){
+            $omeka_date_str = metadata($item, array('Dublin Core', 'Date'));
+            $date = make_date_obj($omeka_date_str);
+            return $date->format('Y');
+        }
 
         foreach ($events as $item):
             $file=null;
             if($item->getFile(0)){
-                $file = get_record_by_id('File', $item->getFile(0)->id);
+                $first_file = get_record_by_id('File', $item->getFile(0)->id);
             }
     ?>
     <div class="timeline-item">
         <div class="timeline-image-container">
-            <img data-aos="fade-up" src="<?php if($file){ echo metadata($file, 'thumbnail_uri');}?>" class="aos-init aos-animate">
+            <?php if($first_file): ?>
+                <a class="item-link" href="<?php echo metadata($item, 'permalink');?>">
+                    <img data-aos="fade-up" src="<?php echo metadata($file, 'thumbnail_uri');?>" class="aos-init aos-animate">
+                </a>
+            <?php endif; ?>
         </div>
         <div class="timeline-data-container">
             <h2 class="timeline-event-date">
-                <?php echo metadata($item, array('Dublin Core', 'Date')); ?>
+                <?php echo print_year($item); ?>
             </h2>
-            <h4 class="timeline-event-title">
-                <?php echo metadata($item, 'display_title'); ?>
-            </h4>
-            <h5 class="timeline-category">
-                <?php echo metadata($item, array('Dublin Core', 'Format')); ?>
-            </h5>
             <div class="timeline-description">
                 <?php echo metadata($item, array('Dublin Core', 'Description')); ?>
             </div>

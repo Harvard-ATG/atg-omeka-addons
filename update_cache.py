@@ -38,7 +38,7 @@ def update_addon(addonName, addonInfo):
         roots = []
         for name in zip_ref.namelist():
             pathList = name.split('/')
-            if pathList[0] not in roots:
+            if pathList[0] not in roots and pathList[0] != "__MACOSX":
                 roots.append(pathList[0])
         if len(roots) == 1:
             root_dir = roots[0]
@@ -53,9 +53,8 @@ def update_addon(addonName, addonInfo):
     os.remove(filename)
 
     print(f'Update of {addonName} complete!')
-    
+
     return True
 
 for addonName, addonInfo in addons.items():
     update_addon(addonName, addonInfo)
-
