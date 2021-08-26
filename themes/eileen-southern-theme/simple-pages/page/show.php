@@ -98,7 +98,7 @@
         }
 
         foreach ($events as $item):
-            $file=null;
+            $first_file=null;
             if($item->getFile(0)){
                 $first_file = get_record_by_id('File', $item->getFile(0)->id);
             }
@@ -107,7 +107,7 @@
         <div class="timeline-image-container">
             <?php if($first_file): ?>
                 <a class="item-link" href="<?php echo metadata($item, 'permalink');?>">
-                    <img data-aos="fade-up" src="<?php echo metadata($file, 'thumbnail_uri');?>" class="aos-init aos-animate">
+                    <img data-aos="fade-up" src="<?php echo metadata($first_file, 'thumbnail_uri');?>" class="aos-init aos-animate">
                 </a>
             <?php endif; ?>
         </div>
@@ -116,7 +116,14 @@
                 <?php echo print_year($item); ?>
             </h2>
             <div class="timeline-description">
-                <?php echo metadata($item, array('Dublin Core', 'Description')); ?>
+                <?php 
+                    if($item->item_type_id){
+                        $item_type_metadata = item_type_elements($item);
+                        if($item_type_metadata){
+                            echo($item_type_metadata['Timeline Description']);
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>
