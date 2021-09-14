@@ -372,6 +372,16 @@ Editorial:
   note: Works
   updated: March 17, 2020
   version: 1.1.0
+Eileen Southern:
+  available: true
+  description: plugin for Eileen Southern site
+  description_url: https://github.com/artshumrc/plugin-southern
+  download_url: https://github.com/artshumrc/plugin-southern/archive/refs/tags/v0.1.zip
+  folder_name: EileenSouthern
+  name: Eileen Southern
+  note: maintained by Cole Crawford
+  updated: July 22, 2021
+  version: 0.1
 Elasticsearch:
   available: true
   description: Integrate Elasticsearch into Omeka for searching.
@@ -585,6 +595,15 @@ IIIF Toolkit:
   note: Default plugin on our instance, but we use a custom fork
   updated: March 15, 2018
   version: 1.1.0
+IiifItemEmbed:
+  available: true
+  description: Creates mirador viewers to be embedded elsewhere, as well as embed codes
+  download_url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.0/IiifItemEmbed-1.0.zip
+  folder_name: IiifItemEmbed
+  name: IiifItemEmbed
+  note: Maintained by Jeremy Guillette
+  updated: December 9, 2020
+  version: 1.0
 Import:
   available: false
   description: Extensible import plugin
