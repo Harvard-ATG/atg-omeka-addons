@@ -21,10 +21,10 @@
 
   <?php if (nl_exhibitsHaveBeenCreated()): ?>
 
-    <?php echo pagination_links(); ?>
+    <div class="pagination"><?php echo pagination_links(); ?></div>
 
       <?php foreach (loop('NeatlineExhibit') as $e): ?>
-        <h2 style="display:block; clear:both;">
+        <h2>
           <?php echo nl_getExhibitLink(
             $e, 'show', nl_getExhibitField('title'),
             array('class' => 'neatline'), true
@@ -32,7 +32,7 @@
         </h2>
       <?php endforeach; ?>
 
-    <?php echo pagination_links(); ?>
+    <div class="pagination"><?php echo pagination_links(); ?></div>
 
   <?php endif; ?>
 
