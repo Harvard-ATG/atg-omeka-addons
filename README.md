@@ -1,42 +1,42 @@
 # Omeka plugin and theme cache
 
-This repo contains a cache of up-to-date Omeka themes and plugins, as well as Python scripts to keep them up to date. There is a basic workflow for updating this cache with new addons and new versions of existing addons:
+This repo contains a cache of up-to-date Omeka themes and plugins, as well as Python scripts to keep them up to date. There are two main tasks that this repo is built to support: adding a new addon manually, and pulling new addon info from omeka.org. The workflows are described in detail below, but the general process for each is as follows:
 
-1. Update addon info
-2. Validate new info
-3. Update cache
+1. Adding an addon manually
+    1. Create a new branch on the repository.
+    1. Edit the appropriate `all_*_info.yml` file with the new addon information.
+    1. If adding a plugin, run the `set_up_plugins_md.py` script.
+    1. Run the `refresh_cache.py` script with either `plugins` or `themes` as appropriate.
+    1. Commit the changes and make a pull request on this repo
+1. Pulling in new addon info from omeka.org
+    1. Create a new branch on the repository.
+    1. Run the `update_info.py` script for `plugins` and `themes`.
+    1. Respond to prompts from the script to update or add information to the addon info. Pay close attention to any changes in the source repository for a given addon, especially if the old configuration points to our own fork.
+    1. Run `set_up_plugins_md.py` to update `plugins.md`.
+    1. Run `refresh_cache.py` script for both `plugins` and `themes`.
+    1. Commit the changes and make a pull request on this repo.
 
-## Update addon info
+For both of these tasks, the `all_plugins_info.yml` or `all_themes_info.yml` file will be updated. These files are the source of truth for what addons we know about, which ones are available for install, where to download files from, and what folders they need to go into.
+
+## Adding new addons
+
+Copy the structure of an existing entry and fill out the appropriate information. The main key for each addon is its name, and those are sorted alphabetically. Beyond that, there are these parameters:
+- `available`: boolean to indicate whether we should keep this in the cache or not. If any site needs to use this addon, set the flag true. If false, the addon will not be kept in the cache.
+- `description`: A short description of what the addon does. For addons taken from the Omeka listings, this is taken from the short description on the plugin or theme listing page.
+- `description_url`: A link to somewhere with more information about the addon, usually a page on omeka.org or the addon's GitHub repository.
+- `folder_name`: What the folder containing this addon should be called. Particularly important for plugins, as the wrong folder name can cause the plugin to not work.
+- `name`: The name of the addon
+- `updated`: The last date on which this addon was updated.
+- `version`: The version number associated with this addon.
+
+After adding that configuration, run `python refresh_cache.py plugins|themes`, specifying either plugins or themes to update. If updating plugins, also run `set_up_plugins_md.py` to update the `plugins.md` file, which is just a human-friendly view of the plugins we support. 
+
+After refreshing the cache, you can look over changes to this repo, make sure everything looks okay, and submit a PR to add the new addon.
+
+## Update addon info from omeka.org
 
 Updating addon info involves pulling information from Omeka Classic's plugins and themes repositories. The `update_info.py` script scrapes these pages and updates the `all_plugins_info.yml` and `all_themes_info.yml` files with new addons and new links for existing addons. It doesn't assume that the list on Omeka is comprehensive, so it won't remove anything that it doesn't find on the omeka.org pages. This also preserves added notes and availability flags.
 
-Entries for addons in the `info.yml` files contain the following info:
-- **available:** Boolean flag indicating whether or not this is an addon we should make available, added manually based on testing if a plugin works in our environment. Themes are assumed to work to display info, but the hvd-dh-omeka theme is the only one that has been tested for accessibility, and so is the only theme that should be used on public-facing Omeka sites.
-- **description:** Description provided on omeka.org page, if added automatically, or manually added if not.
-- **description_url:** Link to page describing addon linked from omeka.org page listing
-- **download_url:** Url for addon zip file provided on omeka.org. This may not reflect the url we actually use if we use our own fork of an existing addon.
-- **name:** The name of the addon
-- **updated:** Date that the addon was last updated according to omeka.org
-- **version:** Version number listed on omeka.org
+When running `update_info.py`, you will be prompted on updating values within the `info.yml` files. Pay close attention for changes to urls that would change the source of the addon, especially when the old value is a fork that we maintain. You will also be prompted to set an availability for any new addons that were not previously in the listing. If you are able to test the addon while running the script, do so and set the availability and notes appropriately. If you aren't able to test the plugin, just set it to not available and set the note to "pending review"
 
-## Validate changes
-
-The `info.yml` files are maintained so that we have more information on what addons are out there, regardless of whether or not they are included in our Omeka installation. This information in maintained so that if a plugin requested on omeka.org is requested, we have something to consult to tell us if there was a reason that we don't offer it.
-
-The cache is updated based on `plugins.yml` and `themes.yml`, so that contains the canonical information used to maintain the cache. To provide an easier way to update these based on the information collected in the last step, there is a notebook file: `validate_changed_addons.ipynb`. This goes through the `info.yml` file for plugins or themes, checks to see if the addon exists in the cache definition file, and prompts the user for a decision about whether to update a url and for a name to be used for the folder containing the addon.
-
-To use the notebook, just open it in either [Jupyter Notebook](https://jupyter.org/install.html#getting-started-with-the-classic-jupyter-notebook) or [Jupyter Lab](https://jupyter.org/install.html#getting-started-with-jupyterlab) and run the cells in order, providing input when prompted. At the end of the notebook, the config file for the cache will be updated. While not necessary, it'll keep the commits cleaner if you restart the kernel and clear outputs before committing after running the notebook.
-
-### Optional post-validation step
-
-If there were new plugins found in getting info, and you added an `available` flag to the config in the last step, you should also run `update_plugins_md.py`, which will update the `plugins.md` file that contains info on why we have the plugin availability that we do in a human-friendly format.
-
-## Update cache
-
-The last step is to update the actual cache of plugins and themes by running `update_cache.py`.
-
-To update the plugin cache, run `python update_cache.py plugins`
-
-To update the theme cache, run `python update_cache.py themes`
-
-Both scripts pull from their respective yml files, where you can point the plugin to an updated version or a self-maintained fork.
+After running the `update_info.py` script for `plugins` and `themes`, run `refresh_cache.py` for both as well. Also run `set_up_plugins_md.py` if any changes were made to plugin info. Once those downstream changes have been made in the repository, commit the changes and submit a pull request.

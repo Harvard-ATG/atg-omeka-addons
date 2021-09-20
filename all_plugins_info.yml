@@ -4,6 +4,7 @@ Admin Images:
     to items for use in carousels and simple pages
   description_url: https://omeka.org/classic/plugins/AdminImages
   download_url: https://github.com/UCSCLibrary/AdminImages/releases/download/1.3/AdminImages.zip
+  folder_name: AdminImages
   name: Admin Images
   note: Doesn't work with our S3 storage adapter, but rather built for local file
     storage. Also of questionable utility, since it allows for uploading unattached
@@ -16,6 +17,7 @@ Annotator:
     hypothes.is users to highlight and annotate text.
   description_url: https://omeka.org/classic/plugins/Annotator
   download_url: https://github.com/ebellempire/Annotator/releases/download/v.1.0.1/Annotator.zip
+  folder_name: Annotator
   name: Annotator
   note: Works, same functionality as "Text Annotation" plugin
   updated: November 01, 2017
@@ -27,6 +29,7 @@ Archive Repertory:
     and to avoid an overloading of the file server.
   description_url: https://omeka.org/classic/plugins/ArchiveRepertory
   download_url: https://github.com/Daniel-KM/ArchiveRepertory/releases/download/2.15.7/ArchiveRepertory-2.15.7.zip
+  folder_name: ArchiveRepertory
   name: Archive Repertory
   note: Makes changes to how files are stored in ways that I do not fully understand,
     breaks the item creation, duplicates items, and has an empty config page somehow
@@ -38,6 +41,7 @@ AvantCommon:
     AvantSearch, and AvantElements plugins. This plugin has no standalone features.
   description_url: https://omeka.org/classic/plugins/AvantCommon
   download_url: https://github.com/gsoules/AvantCommon/releases/download/v2.1.0/AvantCommon-v2.1.0.zip
+  folder_name: AvantCommon
   name: AvantCommon
   note: Part of "Avant" family of plugins that make complex changes to how Omeka works
   updated: September 25, 2018
@@ -47,6 +51,7 @@ AvantRelationships:
   description: Adds functionality for creating and visually displaying real-word relationships.
   description_url: https://omeka.org/classic/plugins/AvantRelationships
   download_url: https://github.com/gsoules/AvantRelationships/releases/download/v2.0.0/AvantRelationships-v2.0.0.zip
+  folder_name: AvantRelationships
   name: AvantRelationships
   note: Part of a larger "Avant" suite of plugins, all of which are fairly involved
     plugins that I'm hesitant to add
@@ -57,6 +62,7 @@ AvantSearch:
   description: Provides extended search results cababilites for the public interface.
   description_url: https://omeka.org/classic/plugins/AvantSearch
   download_url: https://github.com/gsoules/AvantSearch/releases/download/v2.1.0/AvantSearch-v2.1.0.zip
+  folder_name: AvantSearch
   name: AvantSearch
   note: Part of "Avant" family of plugins that make complex changes to how Omeka works
   updated: March 19, 2019
@@ -66,6 +72,7 @@ Batch Uploader:
   description: Plugin for quickly uploading many files to Omeka.
   description_url: https://omeka.org/classic/plugins/BatchUpload
   download_url: https://github.com/utlib/BatchUpload/releases/download/v1.0.0/BatchUpload.zip
+  folder_name: BatchUpload
   name: Batch Uploader
   note: Errors on install, db user lacks REFERENCES permission
   updated: April 02, 2018
@@ -74,6 +81,7 @@ Block Party:
   available: true
   description: A collection of useful block types for exhibits in Omeka.
   download_url: https://github.com/jaguillette/BlockParty/archive/refs/tags/v1.0.zip
+  folder_name: BlockParty
   name: Block Party
   note: '[Jeremy](https://github.com/jaguillette/) made this, so if it''s broken it''s
     his fault.'
@@ -84,6 +92,7 @@ Blog Shortcode:
   description: Allows users to display a list of simple pages in a blog-like format.
   description_url: https://omeka.org/classic/plugins/BlogShortcode
   download_url: https://github.com/ebellempire/BlogShortcode/releases/download/v1.0/BlogShortcode.zip
+  folder_name: BlogShortcode
   name: Blog Shortcode
   note: Works
   updated: October 19, 2017
@@ -93,6 +102,7 @@ Blogger:
   description: Consume and inject an RSS feed into an Omeka site.
   description_url: https://omeka.org/classic/plugins/Blogger
   download_url: https://github.com/lib-uoguelph-ca/omeka-blogger/releases/download/v1.1/Blogger.zip
+  folder_name: Blogger
   name: Blogger
   note: I was not able to get the plugin to do what it describes in the documentation,
     nor was I able to get any information from error logs
@@ -104,6 +114,7 @@ Bulk Metadata Editor:
     fields over many records quickly and easily.
   description_url: https://omeka.org/classic/plugins/BulkMetadataEditor
   download_url: https://github.com/UCSCLibrary/BulkMetadataEditor/releases/download/2.4/BulkMetadataEditor.zip
+  folder_name: BulkMetadataEditor
   name: Bulk Metadata Editor
   note: Works
   updated: April 05, 2017
@@ -113,6 +124,7 @@ COinS:
   description: Adds COinS metadata to item pages, making them Zotero readable.
   description_url: https://omeka.org/classic/plugins/Coins
   download_url: https://github.com/omeka/plugin-Coins/releases/download/v2.1/Coins-2.1.zip
+  folder_name: Coins
   name: COinS
   note: Default plugin on our instance
   updated: March 23, 2021
@@ -122,6 +134,7 @@ CSS Editor:
   description: Add public CSS styles through the admin interface.
   description_url: https://omeka.org/classic/plugins/CSSEditor
   download_url: https://github.com/omeka/plugin-CSSEditor/releases/download/v1.1/CSSEditor-1.1.zip
+  folder_name: CSSEditor
   name: CSS Editor
   note: Works
   updated: March 20, 2019
@@ -132,6 +145,7 @@ CSV Export Format:
     from IIIF Toolkit with Mirador.
   description_url: https://omeka.org/classic/plugins/CsvExport
   download_url: https://github.com/utlib/CsvExport/releases/download/v1.0.1/CsvExport.zip
+  folder_name: CsvExport
   name: CSV Export Format
   note: Default plugin on our instance
   updated: July 28, 2017
@@ -141,15 +155,26 @@ CSV Import:
   description: Imports items, tags, and files from CSV files.
   description_url: https://omeka.org/classic/plugins/CsvImport
   download_url: https://github.com/omeka/plugin-CsvImport/releases/download/v2.0.5/CsvImport-2.0.5.zip
+  folder_name: CsvImport
   name: CSV Import
   note: Works
   updated: August 14, 2020
   version: 2.0.5
+Carta:
+  available: false
+  description: Leaflet maps in Omeka
+  download_url: https://github.com/AcuGIS/Carta/archive/master.zip
+  folder_name: Carta
+  name: Carta
+  note: Removed from Omeka plugin collection, does not appear to be actively maintained
+  updated: January 23, 2020
+  version: N/A
 Clean URL:
   available: true
   description: Clean Url is a plugin for Omeka that creates clean, readable and search
     engine optimized URLs
   download_url: https://github.com/Daniel-KM/Omeka-plugin-CleanUrl/archive/refs/tags/2.16.1.zip
+  folder_name: CleanUrl
   name: Clean URL
   note: Works on Imperiia and Beautiful Spaces sites. Not currently on form, but could
     be.
@@ -161,6 +186,7 @@ Clickable Links Plus:
     \ hyperlinks."
   description_url: https://omeka.org/classic/plugins/ClickableLinksPlus
   download_url: https://github.com/DBinaghi/plugin-ClickableLinksPlus/releases/download/v1.3/ClickableLinksPlus.zip
+  folder_name: ClickableLinksPlus
   name: Clickable Links Plus
   note: Doesn't work, missing a required css file according to logged error message
   updated: April 07, 2021
@@ -171,6 +197,7 @@ Collection Tree:
     collections.
   description_url: https://omeka.org/classic/plugins/CollectionTree
   download_url: https://github.com/omeka/plugin-CollectionTree/releases/download/v2.1/CollectionTree-2.1.zip
+  folder_name: CollectionTree
   name: Collection Tree
   note: Works, but interacts weird with IIIF Toolkit. If Collections show sub-collection
     items, all item images are included in collection manifest in order. If not, only
@@ -182,6 +209,7 @@ Commenting:
   description: Allows commenting on Items, Collections, Exhibits, and more
   description_url: https://omeka.org/classic/plugins/Commenting
   download_url: https://github.com/omeka/plugin-Commenting/releases/download/v2.3/Commenting-2.3.zip
+  folder_name: Commenting
   name: Commenting
   note: "Doesn\u2019t like being deactivated, causes errors but uninstall works"
   updated: May 29, 2020
@@ -194,15 +222,17 @@ Connected Carousel:
     click through. Also contains code for embedding in Exhibits.
   description_url: https://omeka.org/classic/plugins/ConnectedCarousel
   download_url: https://github.com/wgcowan/ConnectedCarousel/releases/download/2.2/ConnectedCarousel.zip
+  folder_name: ConnectedCarousel
   name: Connected Carousel
   note: Works, albeit complicated
   updated: August 17, 2018
   version: '2.2'
 Contribution:
-  available: false
+  available: true
   description: Allows collecting items from visitors
   description_url: https://omeka.org/classic/plugins/Contribution
   download_url: https://github.com/omeka/plugin-Contribution/releases/download/v3.2/Contribution-3.2.zip
+  folder_name: Contribution
   name: Contribution
   note: "Could well work, but isn\u2019t something we should have available by default.\
     \ It can stay in the cache, but shouldn\u2019t be in the form. It allows for the\
@@ -215,6 +245,7 @@ Contributor Contact:
   description: Supplies administrators with tools to contact contributors in bulk
   description_url: https://omeka.org/classic/plugins/ContributorContact
   download_url: https://github.com/UCSCLibrary/ContributorContact/releases/download/1.1/ContributorContact.zip
+  folder_name: ContributorContact
   name: Contributor Contact
   note: "Requires \u201CContribution\u201D and \u201CGuest User\u201D, relies on email\
     \ which is broken and Contribution plugin which is a bad idea"
@@ -225,6 +256,7 @@ Corrections:
   description: Adds simple user-supplied corrections to metadata.
   description_url: https://omeka.org/classic/plugins/Corrections
   download_url: https://github.com/patrickmj/Corrections/releases/download/v1.0/Corrections.zip
+  folder_name: Corrections
   name: Corrections
   note: Fails to load correction page, wasn't able to locate the source of the error.
   updated: November 29, 2014
@@ -233,6 +265,7 @@ Course Tools:
   available: true
   description: Adds custmizable student role
   download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/refs/tags/v1.0.zip
+  folder_name: CourseTools
   name: Course Tools
   note: Default plugin on our instance
   updated: March 16, 2018
@@ -244,6 +277,7 @@ Default Dublin Core:
     when records are created or edited.
   description_url: https://omeka.org/classic/plugins/DefaultDC
   download_url: https://github.com/libmanuk/DefaultDC/releases/download/v1.0/DefaultDC.zip
+  folder_name: DefaultDC
   name: Default Dublin Core
   note: Does what it says on the tin
   updated: March 13, 2019
@@ -255,6 +289,7 @@ Default Metadata:
     fields are then auto-filled with default values when items are created or edited.
   description_url: https://omeka.org/classic/plugins/DefaultMetadata
   download_url: https://github.com/Bosterm/DefaultMetadata/releases/download/v3.0.1/DefaultMetadata.zip
+  folder_name: DefaultMetadata
   name: Default Metadata
   note: Does the same thing as DefaultDC but a bit more expansive
   updated: May 11, 2020
@@ -264,6 +299,7 @@ Default Sort:
   description: This plugin can be used to change Omeka's default sorting, which is
     set to date added.
   download_url: https://github.com/anuragji/DefaultSort/archive/refs/heads/master.zip
+  folder_name: DefaultSort
   name: Default Sort
   note: Enabled on Beautiful Spaces and Imperiia, so it works, although it isn't one
     of the plugins currently on the form
@@ -274,6 +310,7 @@ Derivative Images:
   description: Recreate (or create) derivative images.
   description_url: https://omeka.org/classic/plugins/DerivativeImages
   download_url: https://github.com/omeka/plugin-DerivativeImages/releases/download/v2.0/DerivativeImages-2.0.zip
+  folder_name: DerivativeImages
   name: Derivative Images
   note: Not compatible with S3 storage adapter
   updated: May 27, 2014
@@ -284,6 +321,7 @@ Disqus Engage:
     are moderated at disqus.com (account required).
   description_url: https://omeka.org/classic/plugins/DisqusEngage
   download_url: https://github.com/ebellempire/DisqusEngage/releases/download/v.1.0/DisqusEngage.zip
+  folder_name: DisqusEngage
   name: Disqus Engage
   note: Requires external account with Disqus, which manages all of the conversations,
     which could work if someone really wanted specifically disqus, but that isn't
@@ -296,6 +334,7 @@ Docs Viewer:
     PowerPoint presentations, TIFF files, and some Microsoft Word documents are supported.
   description_url: https://omeka.org/classic/plugins/DocsViewer
   download_url: https://github.com/omeka/plugin-DocsViewer/releases/download/v2.2/DocsViewer-2.2.zip
+  folder_name: DocsViewer
   name: Docs Viewer
   note: Works
   updated: November 27, 2017
@@ -306,6 +345,7 @@ Dropbox:
     at once.
   description_url: https://omeka.org/classic/plugins/Dropbox
   download_url: https://github.com/omeka/plugin-Dropbox/releases/download/v0.7.2/Dropbox-0.7.2.zip
+  folder_name: Dropbox
   name: Dropbox
   note: Default plugin on our instance
   updated: September 30, 2013
@@ -317,6 +357,7 @@ Dublin Core Extended:
     DCMI Metadata Terms: http://dublincore.org/documents/dcmi-terms/'
   description_url: https://omeka.org/classic/plugins/DublinCoreExtended
   download_url: https://github.com/omeka/plugin-DublinCoreExtended/releases/download/v2.2/DublinCoreExtended-2.2.zip
+  folder_name: DublinCoreExtended
   name: Dublin Core Extended
   note: Works
   updated: January 13, 2017
@@ -326,15 +367,27 @@ Editorial:
   description: Allows editorial feedback when building exhibits
   description_url: https://omeka.org/classic/plugins/Editorial
   download_url: https://github.com/omeka/plugin-Editorial/releases/download/v1.1.0/Editorial-1.1.0.zip
+  folder_name: Editorial
   name: Editorial
   note: Works
   updated: March 17, 2020
   version: 1.1.0
+Eileen Southern:
+  available: true
+  description: plugin for Eileen Southern site
+  description_url: https://github.com/artshumrc/plugin-southern
+  download_url: https://github.com/artshumrc/plugin-southern/archive/refs/tags/v0.1.zip
+  folder_name: EileenSouthern
+  name: Eileen Southern
+  note: maintained by Cole Crawford
+  updated: July 22, 2021
+  version: 0.1
 Elasticsearch:
   available: true
   description: Integrate Elasticsearch into Omeka for searching.
   description_url: https://omeka.org/classic/plugins/Elasticsearch
   download_url: https://github.com/Harvard-ATG/omeka-plugin-Elasticsearch/releases/download/v1.0.3/Elasticsearch.zip
+  folder_name: Elasticsearch
   name: Elasticsearch
   note: Works
   updated: December 19, 2017
@@ -346,6 +399,7 @@ Element Types:
     of this type. Other types can be implemented by plugins.
   description_url: https://omeka.org/classic/plugins/ElementTypes
   download_url: https://github.com/biblibre/ElementTypes/releases/download/v0.5.0/ElementTypes-0.5.0.zip
+  folder_name: ElementTypes
   name: Element Types
   note: Fails to install because database user does not have `REFERENCES` permission.
   updated: October 31, 2017
@@ -355,6 +409,7 @@ ElementManager:
   description: Delete or rename existing elements
   description_url: https://omeka.org/classic/plugins/ElementManager
   download_url: https://github.com/biblibre/omeka-plugin-ElementManager/releases/download/v0.1/ElementManager-0.1.zip
+  folder_name: ElementManager
   name: ElementManager
   note: No documentation to speak of, but seems to work if you can figure out how
     it works.
@@ -366,6 +421,7 @@ Email Notification:
     added.
   description_url: https://omeka.org/classic/plugins/EmailNotification
   download_url: https://github.com/DBinaghi/EmailNotification/releases/download/v.1.3/EmailNotification.zip
+  folder_name: EmailNotification
   name: Email Notification
   note: Errors on item creation because it fails to send mail
   updated: April 10, 2020
@@ -375,6 +431,7 @@ Embed Codes:
   description: Allows embedding item content as an iframe in other sites
   description_url: https://omeka.org/classic/plugins/EmbedCodes
   download_url: https://github.com/omeka/plugin-EmbedCodes/releases/download/v1.0/EmbedCodes-1.0.zip
+  folder_name: EmbedCodes
   name: Embed Codes
   note: Works
   updated: June 19, 2013
@@ -384,6 +441,7 @@ Exhibit Builder:
   description: Build rich exhibits using Omeka.
   description_url: https://omeka.org/classic/plugins/ExhibitBuilder
   download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.4.3/ExhibitBuilder-3.4.3.zip
+  folder_name: ExhibitBuilder
   name: Exhibit Builder
   note: Default plugin on our instance
   updated: March 23, 2021
@@ -393,6 +451,7 @@ Exhibit Image Annotation:
   description: Annotate images in your exhibits.
   description_url: https://omeka.org/classic/plugins/ExhibitImageAnnotation
   download_url: https://github.com/omeka/plugin-ExhibitImageAnnotation/releases/download/v1.0.1/ExhibitImageAnnotation-1.0.1.zip
+  folder_name: ExhibitImageAnnotation
   name: Exhibit Image Annotation
   note: Works
   updated: June 14, 2018
@@ -402,6 +461,7 @@ Export:
   description: Extensible export plugin
   description_url: https://omeka.org/classic/plugins/Export
   download_url: https://github.com/biblibre/omeka-plugin-Export/releases/download/v0.1.0/Export-0.1.0.zip
+  folder_name: Export
   name: Export
   note: Not really an independent plugin, but rather a starting point and framework
     for a custom export plugin, so we don't need to offer it.
@@ -422,6 +482,7 @@ Flickr Import:
     as items or collections, while preserving as much metadata as possible
   description_url: https://omeka.org/classic/plugins/FlickrImport
   download_url: https://github.com/UCSCLibrary/FlickrImport/releases/download/1.3/FlickrImport.zip
+  folder_name: FlickrImport
   name: Flickr Import
   note: Single import seems to work, but I wasn't able to get a gallery import to
     work. Does require an API key from Flickr to work fully.
@@ -433,6 +494,7 @@ GDriveLinks Plugin:
     documents and/or embeds Google Drive documents within Omeka item views.
   description_url: https://omeka.org/classic/plugins/GDriveLinks
   download_url: https://github.com/libmanuk/GdriveLinks/releases/download/v1.0/GDriveLinks.zip
+  folder_name: GDriveLinks
   name: GDriveLinks Plugin
   note: Only works for files uploaded to Google Drive, and requires some manual editing
     of a url for different behavior, but it does work
@@ -443,6 +505,7 @@ Geolocation:
   description: Adds location info and maps to Omeka
   description_url: https://omeka.org/classic/plugins/Geolocation
   download_url: https://github.com/omeka/plugin-Geolocation/releases/download/v3.2/Geolocation-3.2.zip
+  folder_name: Geolocation
   name: Geolocation
   note: works
   updated: June 22, 2020
@@ -453,6 +516,7 @@ Guest User:
     use an authenticated user
   description_url: https://omeka.org/classic/plugins/GuestUser
   download_url: https://github.com/omeka/plugin-GuestUser/releases/download/v1.1.3/GuestUser.zip
+  folder_name: GuestUser
   name: Guest User
   note: Works, required for several other plugins
   updated: February 15, 2018
@@ -462,6 +526,7 @@ HTML5 Media:
   description: Enables HTML5 for media files using MediaElement.js.
   description_url: https://omeka.org/classic/plugins/Html5Media
   download_url: https://github.com/zerocrates/Html5Media/releases/download/v2.8.1/Html5Media-2.8.1.zip
+  folder_name: Html5Media
   name: HTML5 Media
   note: Works
   updated: June 13, 2020
@@ -470,6 +535,7 @@ HarvardKey:
   available: true
   description: Integrates HarvardKey SSO in Omeka
   download_url: https://github.com/Harvard-ATG/omeka-plugin-HarvardKey/archive/refs/tags/v1.0.1.zip
+  folder_name: HarvardKey
   name: HarvardKey
   note: Default plugin on our instance
   updated: March 8, 2019
@@ -479,6 +545,7 @@ Heist:
   description: Facilitates interaction between tables and mobile devices for OmekaEverywhere
   description_url: https://omeka.org/classic/plugins/Heist
   download_url: https://github.com/omeka/plugin-Heist/releases/download/v1.1/Heist-1.1.zip
+  folder_name: Heist
   name: Heist
   note: "From plugin description: \u201CHeist is a plugin to help the interaction\
     \ between tabletop displays at a GLAM and mobile devices. It is only important\
@@ -490,6 +557,7 @@ Hide Elements:
   description: Hide admin-specified metadata elements.
   description_url: https://omeka.org/classic/plugins/HideElements
   download_url: https://github.com/zerocrates/HideElements/releases/download/v1.3/Hide-Elements-1.3.zip
+  folder_name: HideElements
   name: Hide Elements
   note: Works
   updated: June 21, 2014
@@ -500,6 +568,7 @@ History Log:
     and file, including ingress, updates, and pushes, and compute statistics on evolution.
   description_url: https://omeka.org/classic/plugins/HistoryLog
   download_url: https://github.com/UCSCLibrary/HistoryLog/releases/download/2.10/HistoryLog.zip
+  folder_name: HistoryLog
   name: History Log
   note: Works
   updated: November 28, 2017
@@ -510,6 +579,7 @@ Honor Thy Librarians:
     database
   description_url: https://omeka.org/classic/plugins/HonorThyLibrarians
   download_url: https://github.com/DBinaghi/plugin-HonorThyLibrarians/releases/download/v1.1/HonorThyLibrarians.zip
+  folder_name: HonorThyLibrarians
   name: Honor Thy Librarians
   note: Works as advertised
   updated: May 07, 2020
@@ -521,15 +591,26 @@ IIIF Toolkit:
     presentation experience.
   description_url: https://omeka.org/classic/plugins/IiifItems
   download_url: https://github.com/utlib/IiifItems/releases/download/v1.1.0/IiifItems.zip
+  folder_name: IiifItems
   name: IIIF Toolkit
   note: Default plugin on our instance, but we use a custom fork
   updated: March 15, 2018
   version: 1.1.0
+IiifItemEmbed:
+  available: true
+  description: Creates mirador viewers to be embedded elsewhere, as well as embed codes
+  download_url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.0/IiifItemEmbed-1.0.zip
+  folder_name: IiifItemEmbed
+  name: IiifItemEmbed
+  note: Maintained by Jeremy Guillette
+  updated: December 9, 2020
+  version: 1.0
 Import:
   available: false
   description: Extensible import plugin
   description_url: https://omeka.org/classic/plugins/Import
   download_url: https://github.com/biblibre/omeka-plugin-Import/releases/download/v0.2.0/Import-0.2.0.zip
+  folder_name: Import
   name: Import
   note: Not really an independent plugin, but rather a starting point and framework
     for a custom import plugin, so we don't need to offer it.
@@ -541,6 +622,7 @@ Intense Debate:
     Comments are moderated at intensedebate.com (account required).
   description_url: https://omeka.org/classic/plugins/IntenseDebate
   download_url: https://github.com/ebellempire/IntenseDebate/releases/download/v.1.0/IntenseDebate.zip
+  folder_name: IntenseDebate
   name: Intense Debate
   note: Requires a separate "Intense Debate" account, where the discussions are managed.
     Could work, but involving another platform seems imprudent unless a user specifically
@@ -552,6 +634,7 @@ Item Duplicate Check:
   description: Check for duplicates before saving item
   description_url: https://omeka.org/classic/plugins/ItemDuplicateCheck
   download_url: https://github.com/biblibre/omeka-plugin-ItemDuplicateCheck/releases/download/v0.2.0/ItemDuplicateCheck-0.2.0.zip
+  folder_name: ItemDuplicateCheck
   name: Item Duplicate Check
   note: Install fails because db user doesn't have `REFERENCES` permission
   updated: October 31, 2017
@@ -561,6 +644,7 @@ Item Duplicator:
   description: Allows duplicating items
   description_url: https://omeka.org/classic/plugins/ItemDuplicator
   download_url: https://github.com/DBinaghi/ItemDuplicator/releases/download/v1.3/ItemDuplicator.zip
+  folder_name: ItemDuplicator
   name: Item Duplicator
   note: Duplicates items, not exactly sure what's happening with IIIF annotations,
     as initial test suggests they might be associated with both the original and the
@@ -568,9 +652,10 @@ Item Duplicator:
   updated: December 30, 2020
   version: '1.3'
 Item Neatline Display:
-  available: false
+  available: true
   description: adds Neatline view of an exhibit to item
   download_url: https://github.com/jaguillette/omeka_itemNeatlineDisplay/archive/refs/tags/v0.1.zip
+  folder_name: ItemNeatlineDisplay
   name: Item Neatline Display
   note: Jeremy made it, so if it's broken, it's his fault. However, it was made specifically
     for something Kelly O'Neill wanted, so probably doesn't need to be generally avaialable.
@@ -581,6 +666,7 @@ Item Order:
   description: Gives administrators the ability to custom order items in collections.
   description_url: https://omeka.org/classic/plugins/ItemOrder
   download_url: https://github.com/omeka/plugin-ItemOrder/releases/download/v2.0.2/ItemOrder-2.0.2.zip
+  folder_name: ItemOrder
   name: Item Order
   note: Works
   updated: May 30, 2015
@@ -590,6 +676,7 @@ Item Relations:
   description: Allows administrators to define relations between items.
   description_url: https://omeka.org/classic/plugins/ItemRelations
   download_url: https://github.com/omeka/plugin-ItemRelations/releases/download/v2.2/ItemRelations-2.2.zip
+  folder_name: ItemRelations
   name: Item Relations
   note: Works
   updated: March 09, 2021
@@ -600,6 +687,7 @@ Item Review:
     administrative review before publication.
   description_url: https://omeka.org/classic/plugins/ItemReview
   download_url: https://github.com/UCSCLibrary/ItemReview/releases/download/1.1/ItemReview.zip
+  folder_name: ItemReview
   name: Item Review
   note: Email notifications won't work, but otherwise fine.
   updated: August 01, 2017
@@ -621,6 +709,7 @@ LC Suggest:
     of Congress Authorities and Vocabularies service: http://id.loc.gov'
   description_url: https://omeka.org/classic/plugins/LcSuggest
   download_url: https://github.com/omeka/plugin-LcSuggest/releases/download/v2.0.3/LcSuggest-2.0.3.zip
+  folder_name: LcSuggest
   name: LC Suggest
   note: Works
   updated: November 07, 2019
@@ -642,6 +731,7 @@ Locale Switcher:
   description: Provides a language switcher view helper to be used in themes
   description_url: https://omeka.org/classic/plugins/LocaleSwitcher
   download_url: https://github.com/biblibre/omeka-plugin-LocaleSwitcher/releases/download/v0.2.1/LocaleSwitcher-0.2.1.zip
+  folder_name: LocaleSwitcher
   name: Locale Switcher
   note: Requires some code to be added to theme, which a user can't do, and which
     none of the existing themes do.
@@ -653,6 +743,7 @@ METS Export:
     at the item or the collection level
   description_url: https://omeka.org/classic/plugins/MetsExport
   download_url: https://github.com/UCSCLibrary/MetsExport/releases/download/1.3/MetsExport.zip
+  folder_name: MetsExport
   name: METS Export
   note: Works
   updated: November 28, 2017
@@ -662,6 +753,7 @@ Maintenance:
   description: Put Omeka site in maintenance mode
   description_url: https://omeka.org/classic/plugins/Maintenance
   download_url: https://github.com/biblibre/omeka-plugin-Maintenance/releases/download/v0.1.0/Maintenance-0.1.0.zip
+  folder_name: Maintenance
   name: Maintenance
   note: Works, just activates a maintenance mode when installed. Deactivate to remove.
   updated: December 12, 2016
@@ -671,6 +763,7 @@ Neatline:
   description: Plot your course in space and time.
   description_url: https://omeka.org/classic/plugins/Neatline
   download_url: https://github.com/scholarslab/Neatline/releases/download/v2.6.3/Neatline.zip
+  folder_name: Neatline
   name: Neatline
   note: Default plugin on our instance
   updated: July 29, 2019
@@ -680,6 +773,7 @@ Neatline Time:
   description: Create timelines in Omeka.
   description_url: https://omeka.org/classic/plugins/NeatlineTime
   download_url: https://github.com/scholarslab/NeatlineTime/releases/download/2.1.2/NeatlineTime-2.1.2.zip
+  folder_name: NeatlineTime
   name: Neatline Time
   note: Default plugin on our instance
   updated: July 29, 2020
@@ -689,6 +783,7 @@ Neatline Widget ~ SIMILE Timeline:
   description: Add SIMILE Timeline to Neatline exhibits.
   description_url: https://omeka.org/classic/plugins/NeatlineSimile
   download_url: https://github.com/scholarslab/NeatlineSimile/releases/download/2.0.4/Neatline-Widget-SIMILE-Timeline-2.0.4.zip
+  folder_name: NeatlineSimile
   name: Neatline Widget ~ SIMILE Timeline
   note: Default plugin on our instance
   updated: July 13, 2015
@@ -698,6 +793,7 @@ Neatline Widget ~ Text:
   description: Connect text documents to Neatline exibits.
   description_url: https://omeka.org/classic/plugins/NeatlineText
   download_url: https://github.com/scholarslab/NeatlineText/releases/download/1.1.0/Neatline-Widget-Text-1.1.0.zip
+  folder_name: NeatlineText
   name: Neatline Widget ~ Text
   note: Default plugin on our instance
   updated: May 07, 2015
@@ -707,6 +803,7 @@ Neatline Widget ~ Waypoints:
   description: Adds a list of waypoints to Neatline exhibits.
   description_url: https://omeka.org/classic/plugins/NeatlineWaypoints
   download_url: https://github.com/scholarslab/NeatlineWaypoints/releases/download/2.0.2/NeatlineWaypoints-2.0.2.zip
+  folder_name: NeatlineWaypoints
   name: Neatline Widget ~ Waypoints
   note: Default plugin on our instance
   updated: January 15, 2014
@@ -717,6 +814,7 @@ NeatlineFeatures:
     an Omeka item.
   description_url: https://omeka.org/classic/plugins/NeatlineFeatures
   download_url: https://github.com/scholarslab/NeatlineFeatures/releases/download/2.0.5/NeatlineFeatures-2.0.5.zip
+  folder_name: NeatlineFeatures
   name: NeatlineFeatures
   note: Currently installed on lagacy site eurasia.omeka.fas.harvard.edu. Listed as
     a default plugin, but not actually available.
@@ -727,6 +825,7 @@ Ngram:
   description: Generate ngram graphs from your collections
   description_url: https://omeka.org/classic/plugins/Ngram
   download_url: https://github.com/omeka/plugin-Ngram/releases/download/v1.2/Ngram-1.2.zip
+  folder_name: Ngram
   name: Ngram
   note: Works
   updated: May 30, 2017
@@ -736,6 +835,7 @@ OAI-PMH Harvester:
   description: Harvests metadata from OAI-PMH data providers.
   description_url: https://omeka.org/classic/plugins/OaipmhHarvester
   download_url: https://github.com/omeka/plugin-OaipmhHarvester/releases/download/v2.0.2/OaipmhHarvester-2.0.2.zip
+  folder_name: OaipmhHarvester
   name: OAI-PMH Harvester
   note: Works
   updated: November 10, 2016
@@ -745,6 +845,7 @@ OAI-PMH Repository:
   description: Exposes Omeka items as an OAI-PMH repository.
   description_url: https://omeka.org/classic/plugins/OaiPmhRepository
   download_url: https://github.com/zerocrates/OaiPmhRepository/releases/download/v2.2/OaiPmhRepository-2.2.zip
+  folder_name: OaiPmhRepository
   name: OAI-PMH Repository
   note: Works
   updated: February 20, 2019
@@ -754,6 +855,7 @@ Omeka Api Import:
   description: Import data from other Omeka 2.1 or higher sites using the API
   description_url: https://omeka.org/classic/plugins/OmekaApiImport
   download_url: https://github.com/omeka/plugin-OmekaApiImport/releases/download/v1.1.2/OmekaApiImport.zip
+  folder_name: OmekaApiImport
   name: Omeka Api Import
   note: Default plugin on our instance
   updated: February 10, 2017
@@ -764,6 +866,7 @@ Omeka Footnotes JS:
     simple or exhibit pages.
   description_url: https://omeka.org/classic/plugins/OmekaFootnotesJS
   download_url: https://github.com/DigitalCarleton/OmekaFootnotesJS/releases/download/v1.1/OmekaFootnotesJS.zip
+  folder_name: OmekaFootnotesJS
   name: Omeka Footnotes JS
   note: Works as advertised
   updated: March 04, 2021
@@ -773,6 +876,7 @@ PBCore 2:
   description: Adds elements for describing resources with the PBCore metadata standard
   description_url: https://omeka.org/classic/plugins/PBCore2
   download_url: https://github.com/omeka/plugin-PBCore2/releases/download/v1.0.0/PBCore2-1.0.0.zip
+  folder_name: PBCore2
   name: PBCore 2
   note: Does what it says, although it does make this metadata standard the default
     instead of DC
@@ -783,6 +887,7 @@ PDF Embed:
   description: Embeds PDF documents into item and file pages.
   description_url: https://omeka.org/classic/plugins/PdfEmbed
   download_url: https://github.com/zerocrates/PdfEmbed/releases/download/v1.0.1/PdfEmbed-1.0.1.zip
+  folder_name: PdfEmbed
   name: PDF Embed
   note: Works
   updated: December 08, 2017
@@ -792,6 +897,7 @@ PDF Text:
   description: Extracts text from PDF files so they can be browsed and searched.
   description_url: https://omeka.org/classic/plugins/PdfText
   download_url: https://github.com/omeka/plugin-PdfText/releases/download/v1.3/PdfText-1.3.zip
+  folder_name: PdfText
   name: PDF Text
   note: Requires a `pdftotext` command line utility installed on the server.
   updated: January 13, 2017
@@ -801,6 +907,7 @@ Podcast Feed:
   description: Adds a custom podcast feed and a new Podcast Episode item type.
   description_url: https://omeka.org/classic/plugins/PodcastFeed
   download_url: https://github.com/ebellempire/PodcastFeed/releases/download/v1.0/PodcastFeed.zip
+  folder_name: PodcastFeed
   name: Podcast Feed
   note: It does actually work, although in my test I only created and used the RSS
     feed. I didn't try submitting it to Google or Apple for broader avaialbility.
@@ -813,6 +920,7 @@ Posters:
   description: Create interpretive posters using Omeka items.
   description_url: https://omeka.org/classic/plugins/Posters
   download_url: https://github.com/omeka/plugin-Posters/releases/download/v1.1/Posters-1.1.zip
+  folder_name: Posters
   name: Posters
   note: Requires "GuestUser" plugin, but seems to work fine.
   updated: February 14, 2018
@@ -824,6 +932,7 @@ Project Guide:
     dashboard.
   description_url: https://omeka.org/classic/plugins/ProjectGuide
   download_url: https://github.com/libmanuk/ProjectGuide/releases/download/v1.1/ProjectGuide.zip
+  folder_name: ProjectGuide
   name: Project Guide
   note: Does what it says, although it only adds a link to some very specific pages.
   updated: February 18, 2019
@@ -834,6 +943,7 @@ Public Edit Link:
     in.
   description_url: https://omeka.org/classic/plugins/PublicEditLink
   download_url: https://github.com/DBinaghi/plugin-PublicEditLink/releases/download/v1.1/PublicEditLink.zip
+  folder_name: PublicEditLink
   name: Public Edit Link
   note: Only works for items, collections, and files, but pretty handy nonetheless.
   updated: April 01, 2021
@@ -843,6 +953,7 @@ Reassign Files:
   description: Reassignes files from one Item to another.
   description_url: https://omeka.org/classic/plugins/ReassignFiles
   download_url: https://github.com/DBinaghi/plugin-ReassignFiles/releases/download/v1.1/ReassignFiles.zip
+  folder_name: ReassignFiles
   name: Reassign Files
   note: Works as advertised. Ability to remove empty items was not tested
   updated: April 20, 2021
@@ -852,6 +963,7 @@ Record Relations:
   description: Facilitates plugins creating relations across record types
   description_url: https://omeka.org/classic/plugins/RecordRelations
   download_url: https://github.com/omeka/plugin-RecordRelations/releases/download/v2.0.1/RecordRelations-2.0.1.zip
+  folder_name: RecordRelations
   name: Record Relations
   note: Installs fine, but when used as a dependency for other plugins, it errors
     out, saying that "Column `timestamp` cannot be null". Could be related to [this
@@ -863,6 +975,7 @@ Redact Elements:
   description: Redact admin-specified metadata elements.
   description_url: https://omeka.org/classic/plugins/RedactElements
   download_url: https://github.com/omeka/plugin-RedactElements/releases/download/v1.0/Redact-Elements-1.0.zip
+  folder_name: RedactElements
   name: Redact Elements
   note: Works
   updated: February 20, 2014
@@ -872,6 +985,7 @@ Reports:
   description: Generates item reports in HTML and QR Codes of items in PDFs.
   description_url: https://omeka.org/classic/plugins/Reports
   download_url: https://github.com/omeka/plugin-Reports/releases/download/v2.0.2/Reports-2.0.2.zip
+  folder_name: Reports
   name: Reports
   note: Requires a folder on the server to be writable within files, not compatible
     with our storage adapter currently
@@ -882,6 +996,7 @@ Scripto:
   description: Adds the ability to transcribe items using the Scripto library.
   description_url: https://omeka.org/classic/plugins/Scripto
   download_url: https://github.com/omeka/plugin-Scripto/releases/download/v2.4/Scripto-2.4.zip
+  folder_name: Scripto
   name: Scripto
   note: Requires a separate MediaWiki installation
   updated: April 08, 2020
@@ -892,6 +1007,7 @@ Search By Metadata:
     with same field value
   description_url: https://omeka.org/classic/plugins/SearchByMetadata
   download_url: https://github.com/omeka/plugin-SearchByMetadata/releases/download/v1.2.1/SearchByMetadata-1.2.1.zip
+  folder_name: SearchByMetadata
   name: Search By Metadata
   note: Works, recommended along with Simple Vocab
   updated: November 02, 2015
@@ -901,6 +1017,7 @@ Select2:
   description: Apply Select2 JS library to existing dropdown lists
   description_url: https://omeka.org/classic/plugins/Select2
   download_url: https://github.com/biblibre/omeka-plugin-Select2/releases/download/v0.3/Select2-0.3.zip
+  folder_name: Select2
   name: Select2
   note: Works
   updated: September 30, 2015
@@ -919,6 +1036,7 @@ Shortcode Carousel:
   description: Adds a shortcode to insert a carousel item viewer
   description_url: https://omeka.org/classic/plugins/ShortcodeCarousel
   download_url: https://github.com/omeka/plugin-ShortcodeCarousel/releases/download/v1.0.1/ShortcodeCarousel-1.0.1.zip
+  folder_name: ShortcodeCarousel
   name: Shortcode Carousel
   note: Works
   updated: June 07, 2016
@@ -928,6 +1046,7 @@ Simple Pages:
   description: Allows administrators to create simple web pages for their public site.
   description_url: https://omeka.org/classic/plugins/SimplePages
   download_url: https://github.com/omeka/plugin-SimplePages/releases/download/v3.1.3/SimplePages-3.1.3.zip
+  folder_name: SimplePages
   name: Simple Pages
   note: Default plugin on our instance
   updated: March 24, 2021
@@ -937,6 +1056,7 @@ Simple Vocab:
   description: A simple way to create controlled vocabularies.
   description_url: https://omeka.org/classic/plugins/SimpleVocab
   download_url: https://github.com/omeka/plugin-SimpleVocab/releases/download/v2.2.2/SimpleVocab-2.2.2.zip
+  folder_name: SimpleVocab
   name: Simple Vocab
   note: Works
   updated: June 03, 2019
@@ -947,6 +1067,7 @@ Simple Vocab Plus:
     for Omeka elements
   description_url: https://omeka.org/classic/plugins/SimpleVocabPlus
   download_url: https://github.com/UCSCLibrary/SimpleVocabPlus/releases/download/2.4/SimpleVocabPlus.zip
+  folder_name: SimpleVocabPlus
   name: Simple Vocab Plus
   note: Works
   updated: November 14, 2016
@@ -956,6 +1077,7 @@ SimpleContactForm:
   description: Adds a simple contact form for users to contact the administrator.
   description_url: https://omeka.org/classic/plugins/SimpleContactForm
   download_url: https://github.com/omeka/plugin-SimpleContactForm/releases/download/v0.6/SimpleContactForm-0.6.zip
+  folder_name: SimpleContactForm
   name: SimpleContactForm
   note: "Error in `sendEmailNotification` function, Zend framework can\u2019t send\
     \ mail"
@@ -967,6 +1089,7 @@ Sitemap 2:
     generated XML Sitemap, for SEO purposes.
   description_url: https://omeka.org/classic/plugins/Sitemap
   download_url: https://github.com/UCSCLibrary/Sitemap/releases/download/2.3/Sitemap.zip
+  folder_name: Sitemap
   name: Sitemap 2
   note: Works
   updated: July 17, 2017
@@ -977,6 +1100,7 @@ Social Bookmarking:
     on each item page.
   description_url: https://omeka.org/classic/plugins/SocialBookmarking
   download_url: https://github.com/omeka/plugin-SocialBookmarking/releases/download/v2.0.3/SocialBookmarking-2.0.3.zip
+  folder_name: SocialBookmarking
   name: Social Bookmarking
   note: Works, can be blocked by browser addons
   updated: August 27, 2019
@@ -986,6 +1110,7 @@ Taxonomy:
   description: Allow to define taxonomies and declare an element type 'taxonomy-term'
   description_url: https://omeka.org/classic/plugins/Taxonomy
   download_url: https://github.com/biblibre/omeka-plugin-Taxonomy/releases/download/v0.3.0/Taxonomy-0.3.0.zip
+  folder_name: Taxonomy
   name: Taxonomy
   note: Requires "Element Types", which fails to install
   updated: October 31, 2017
@@ -996,6 +1121,7 @@ Text Analysis:
     using the Ngram plugin.)
   description_url: https://omeka.org/classic/plugins/TextAnalysis
   download_url: https://github.com/omeka/plugin-TextAnalysis/releases/download/v2.5/TextAnalysis-2.5.zip
+  folder_name: TextAnalysis
   name: Text Analysis
   note: Errors on install
   updated: July 06, 2017
@@ -1006,6 +1132,7 @@ Text Annotation:
     webservice.
   description_url: https://omeka.org/classic/plugins/TextAnnotation
   download_url: https://github.com/omeka/plugin-TextAnnotation/releases/download/v1.0/TextAnnotation.zip
+  folder_name: TextAnnotation
   name: Text Annotation
   note: Works, same functionality as "Annotator" plugin
   updated: November 14, 2017
@@ -1016,6 +1143,7 @@ Timeline Shortcode:
     sorted by date.
   description_url: https://omeka.org/classic/plugins/TimelineShortcode
   download_url: https://github.com/ebellempire/TimelineShortcode/releases/download/v.1.0.2/TimelineShortcode.zip
+  folder_name: TimelineShortcode
   name: Timeline Shortcode
   note: Works, but I had a hard time figuring out how to make it work
   updated: October 19, 2017
@@ -1028,6 +1156,7 @@ UniversalViewer:
     \ player."
   description_url: https://omeka.org/classic/plugins/UniversalViewer
   download_url: https://github.com/Daniel-KM/UniversalViewer4Omeka/releases/download/2.6.0-beta.2/UniversalViewer-2.6.0-beta.2.zip
+  folder_name: UniversalViewer
   name: UniversalViewer
   note: Default plugin on our instance
   updated: June 01, 2020
@@ -1037,6 +1166,7 @@ User Profiles:
   description: Adds configurable user profiles to omeka
   description_url: https://omeka.org/classic/plugins/UserProfiles
   download_url: https://github.com/omeka/plugin-UserProfiles/releases/download/v1.2.1/UserProfiles.zip
+  folder_name: UserProfiles
   name: User Profiles
   note: Requires "Record Relations" plugin, but when using the dependency, it throws
     database errors.
@@ -1047,6 +1177,7 @@ VRA Core:
   description: Adds VRA Core Elements to Item, Collection, and File metadata.
   description_url: https://omeka.org/classic/plugins/VraCore
   download_url: https://github.com/omeka/plugin-VraCore/releases/download/v1.2/VraCore.zip
+  folder_name: VraCore
   name: VRA Core
   note: Works
   updated: August 15, 2016
@@ -1057,16 +1188,19 @@ Vimeo Import:
     as much metadata as possible
   description_url: https://omeka.org/classic/plugins/VimeoImport
   download_url: https://github.com/UCSCLibrary/VimeoImport/releases/download/1.3/VimeoImport.zip
+  folder_name: VimeoImport
   name: Vimeo Import
   note: requires an API token from Vimeo, but works.
   updated: July 17, 2017
   version: '1.3'
 YouTube Import:
-  available: false
+  available: true
   description: Adds the ability to import Youtube videos into Omeka as items while
     preserving as much metadata as possible
   description_url: https://omeka.org/classic/plugins/YouTubeImport
-  download_url: https://github.com/UCSCLibrary/YouTubeImport/releases/download/1.3/YouTubeImport.zip
+  download_url: https://github.com/Harvard-ATG/YouTubeImport/archive/refs/tags/1.4.1.zip
+  folder_name: YouTubeImport
+  fork: true
   name: YouTube Import
   note: Requires a youtube api key, uses a default key where requests are easily exceeded.
     See https://github.com/UCSCLibrary/YouTubeImport/issues/34
@@ -1077,6 +1211,7 @@ Zotero Import:
   description: Imports libraries and collections from Zotero user and group accounts.
   description_url: https://omeka.org/classic/plugins/ZoteroImport
   download_url: https://github.com/omeka/plugin-ZoteroImport/releases/download/v2.2/ZoteroImport-2.2.zip
+  folder_name: ZoteroImport
   name: Zotero Import
   note: works
   updated: October 07, 2019
