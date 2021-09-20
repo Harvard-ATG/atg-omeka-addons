@@ -1,4 +1,0 @@
-- change `refresh_cache.py` to use the all_*_info.yml files
-- update other scripts to point to subfolders
-- ditch the plugins.yml and themes.yml files
-- rewrite parts of README.md to include processes for updating from Omeka plugin list as well as adding a new manual plugin that won't get added there. the all_*info.yml files are the source of truth from which all things should flow, and everything else is bad.
