@@ -1,8 +1,19 @@
+Avant Garde:
+  available: true
+  description: This is a modern responsive theme for Omeka 2.2+.
+  description_url: https://github.com/CJPfontaine/Omeka-Avantgarde
+  download_url: https://github.com/CJPfontaine/Omeka-Avantgarde/archive/master.zip
+  folder_name: Avantgarde
+  name: Avant Garde
+  note: Works, but not updated for years
+  updated: September 15, 2016
+  version: '1.0'
 Berlin:
   available: true
   description: Abstraction of the Making the History of 1989 theme.
   description_url: https://omeka.org/classic/themes/berlin
   download_url: https://github.com/omeka/theme-berlin/releases/download/v2.7/theme-berlin-v2.7.zip
+  folder_name: berlin
   name: Berlin
   note: Works
   updated: March 22, 2021
@@ -12,6 +23,7 @@ Big Picture:
   description: An image-centric theme geared towards art historians and students.
   description_url: https://omeka.org/classic/themes/bigpicture
   download_url: https://github.com/omeka/theme-bigpicture/releases/download/v1.5.1/theme-bigpicture-v1.5.1.zip
+  folder_name: bigpicture
   name: Big Picture
   note: Works
   updated: May 13, 2021
@@ -21,6 +33,7 @@ BigStuff:
   description: Theme for use with conference papers, based on Berlin.
   description_url: https://omeka.org/classic/themes/bigstuff
   download_url: https://github.com/charvolant/bigstuff/releases/download/v1.1/bigstuff.zip
+  folder_name: BigStuff
   name: BigStuff
   note: Works
   updated: January 26, 2019
@@ -31,34 +44,78 @@ Center Row:
     top navigation.
   description_url: https://omeka.org/classic/themes/centerrow
   download_url: https://github.com/omeka/theme-centerrow/releases/download/v1.5.1/theme-centerrow-v1.5.1.zip
+  folder_name: centerrow
   name: Center Row
   note: Works
   updated: May 14, 2021
   version: 1.5.1
+Chinalocal:
+  available: true
+  description: Theme for China Local site
+  description_url: https://github.com/bilbe/chinalocal-omeka-theme
+  download_url: https://github.com/bilbe/chinalocal-omeka-theme/archive/master.zip
+  folder_name: chinalocal-omeka-theme
+  name: Chinalocal
+  note: Works, maintained by Bill Barthelmy
+  updated: March 22, 2021
+  version: '1.0'
 Emiglio:
   available: true
   description: Named after our favorite robot. A simple, minimal theme with reds and
     greens.
   description_url: https://omeka.org/classic/themes/emiglio
   download_url: https://github.com/omeka/theme-emiglio/releases/download/v2.4/theme-emiglio-v2.4.zip
+  folder_name: emiglio
   name: Emiglio
   note: Works
   updated: March 22, 2021
   version: '2.4'
+Eileen Southern Theme:
+  available: true
+  description: For use on eileensouthern.omeka.fas.harvard.edu
+  description_url: https://github.com/artshumrc/eileen-southern-theme
+  download_url: https://github.com/artshumrc/eileen-southern-theme/releases/download/v0.3.2-beta/eileen-southern-theme-0.3.2-beta.zip
+  folder_name: eileen-southern-theme
+  name: Eileen Southern Theme
+  note: maintained by Cole Crawford
+  updated: August 26, 2021
+  version: '0.3.2'
 Foundation:
   available: true
   description: A starter theme using the ZURB Foundation toolkit.
   description_url: https://omeka.org/classic/themes/foundation
   download_url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.1.1/theme-foundation-classic-v1.1.1.zip
+  folder_name: Foundation
   name: Foundation
   note: Works
   updated: April 07, 2021
   version: 1.1.1
+Harvard DH Theme:
+  available: true
+  description: based on Berlin theme with customizations for use at Harvard
+  description_url: https://github.com/jaguillette/hvd-dh-omeka-theme
+  download_url: https://github.com/jaguillette/hvd-dh-omeka-theme/releases/download/v1.0/hvd-dh-omeka-theme-v1.0.zip
+  folder_name: hvd-dh-omeka-theme
+  name: Harvard DH Theme
+  note: works, maintained by Jeremy
+  updated: Oct 26, 2020
+  version: '1.0'
+Harvard DH Theme Historical Maps:
+  available: true
+  description: branch of main DH theme, with added neatline base layers
+  description_url: https://github.com/jaguillette/hvd-dh-omeka-theme/tree/hist1952maps
+  download_url: https://github.com/jaguillette/hvd-dh-omeka-theme/archive/refs/tags/hist1952v1.0.zip
+  folder_name: hvd-dh-omeka-theme-hist1952maps
+  name: Harvard DH Theme Historical Maps
+  note: works
+  updated: March 22 2021
+  version: '1.0'
 Minimalist:
   available: true
   description: Clean lines, architectural.
   description_url: https://omeka.org/classic/themes/minimalist
   download_url: https://github.com/omeka/theme-minimalist/releases/download/v2.5/theme-minimalist-v2.5.zip
+  folder_name: minimalist
   name: Minimalist
   note: Works
   updated: March 22, 2021
@@ -68,6 +125,7 @@ Rhythm:
   description: An energetic two-column theme, with different style sheet options
   description_url: https://omeka.org/classic/themes/rhythm
   download_url: https://github.com/omeka/theme-rhythm/releases/download/v2.4/theme-rhythm-v2.4.zip
+  folder_name: rhythm
   name: Rhythm
   note: Works
   updated: March 22, 2021
@@ -77,6 +135,7 @@ Santa Fe:
   description: Theme based on the Bracero History Archive.
   description_url: https://omeka.org/classic/themes/santa-fe
   download_url: https://github.com/omeka/theme-santa-fe/releases/download/v2.5/theme-santa-fe-v2.5.zip
+  folder_name: santa-fe
   name: Santa Fe
   note: Works
   updated: March 22, 2021
@@ -87,6 +146,7 @@ Seasons:
     for a particular season, plus 'night'.
   description_url: https://omeka.org/classic/themes/seasons
   download_url: https://github.com/omeka/theme-seasons/releases/download/v2.6/theme-seasons-v2.6.zip
+  folder_name: seasons
   name: Seasons
   note: Works
   updated: March 22, 2021
@@ -97,6 +157,7 @@ Thanks, Roy:
     styles.
   description_url: https://omeka.org/classic/themes/default
   download_url: https://github.com/omeka/theme-thanksroy/releases/download/v2.6.2/theme-thanksroy-v2.6.2.zip
+  folder_name: default
   name: Thanks, Roy
   note: Works, default
   updated: April 29, 2021
@@ -106,6 +167,7 @@ The Daily:
   description: Image-oriented theme for Omeka.
   description_url: https://omeka.org/classic/themes/thedaily
   download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.1/theme-thedaily-v1.5.1.zip
+  folder_name: thedaily
   name: The Daily
   note: Works
   updated: May 14, 2021

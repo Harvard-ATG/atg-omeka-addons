@@ -28,6 +28,12 @@ def get_description_url(element):
         link = f'https://omeka.org/classic/{thingToUpdate}/{link}'
     return link
 
+def valid_input(text, valid_inputs=['y','n']):
+    user_input = 'invalid'
+    while user_input not in valid_inputs:
+        user_input = input(text)
+    return user_input
+
 entryInfo = {}
 for e in entries:
     eInfo = {
@@ -49,9 +55,22 @@ with open(f'all_{thingToUpdate}_info.yml', 'r') as file:
 
 for key, info in entryInfo.items():
     if key not in originalEntryInfo:
+        for k,v in info.items():
+            print(k,v)
+        available = valid_input('Make this addon available? (y/n) ')
+        info['available'] = True if available == 'y' else False
+        notes = input('Add notes on this addon: ')
+        info['notes'] = notes
         originalEntryInfo[key] = info
     else:
-        originalEntryInfo[key].update(info)
+        for k,v in info.items():
+            if originalEntryInfo[key][k] != v:
+                print(f"{key}: Old value for {k}: {originalEntryInfo[key][k]}")
+                print(f"{key}: New value for {k}: {v}")
+                decision = valid_input('Replace old value with new value? (y/n) ')
+                if decision == 'y':
+                    originalEntryInfo[key][k] = v
+        # originalEntryInfo[key].update(info)
 
 with open(f'all_{thingToUpdate}_info.yml', 'w') as file:
     documents = yaml.dump(originalEntryInfo, file)
