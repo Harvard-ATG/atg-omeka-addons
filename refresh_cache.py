@@ -18,18 +18,19 @@ if thingToUpdate not in ['plugins', 'themes']:
     print('Must specify "plugins" or "themes" exactly')
     exit()
 
-with open(f"{thingToUpdate}.yml", 'r') as fp:
+with open(f"all_{thingToUpdate}_info.yml", 'r') as fp:
     addons = yaml.load(fp, Loader=yaml.FullLoader)
 
 # nuke everything in the plugins dir
 for thing in os.listdir(thingToUpdate):
-    shutil.rmtree(os.path.join(thingToUpdate, thing))
+    if thing != ".DS_Store":
+        shutil.rmtree(os.path.join(thingToUpdate, thing))
 print(f'Old {thingToUpdate} removed')
 
 def update_addon(addonName, addonInfo):
     print(f'Downloading {addonName}...')
-    filename = addonInfo['name'] + '.zip'
-    R = requests.get(addonInfo['url'])
+    filename = addonInfo['folder_name'] + '.zip'
+    R = requests.get(addonInfo['download_url'])
     with open(filename, 'wb') as fp:
         fp.write(R.content)
 
@@ -47,7 +48,7 @@ def update_addon(addonName, addonInfo):
             print(f'The directories are:\n{chr(10).join(roots)}')
             return False
         zip_ref.extractall('.')
-        os.rename(root_dir, os.path.join(thingToUpdate, addonInfo['name']))
+        os.rename(root_dir, os.path.join(thingToUpdate, addonInfo['folder_name']))
 
     print(f'Removing zip file for {addonName}...')
     os.remove(filename)
@@ -57,4 +58,5 @@ def update_addon(addonName, addonInfo):
     return True
 
 for addonName, addonInfo in addons.items():
-    update_addon(addonName, addonInfo)
+    if addonInfo['available']:
+        update_addon(addonName, addonInfo)
