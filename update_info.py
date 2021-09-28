@@ -57,8 +57,7 @@ for key, info in entryInfo.items():
     if key not in originalEntryInfo:
         for k,v in info.items():
             print(k,v)
-        available = valid_input('Make this addon available? (y/n) ')
-        info['available'] = True if available == 'y' else False
+        info['available'] = True if valid_input('Make this addon available? (y/n) ') == 'y' else False
         notes = input('Add notes on this addon: ')
         info['notes'] = notes
         originalEntryInfo[key] = info
@@ -67,8 +66,7 @@ for key, info in entryInfo.items():
             if originalEntryInfo[key][k] != v:
                 print(f"{key}: Old value for {k}: {originalEntryInfo[key][k]}")
                 print(f"{key}: New value for {k}: {v}")
-                decision = valid_input('Replace old value with new value? (y/n) ')
-                if decision == 'y':
+                if valid_input('Replace old value with new value? (y/n) ') == 'y':
                     originalEntryInfo[key][k] = v
         # originalEntryInfo[key].update(info)
 
