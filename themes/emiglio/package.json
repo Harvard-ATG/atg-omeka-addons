@@ -1,14 +1,17 @@
 {
   "name": "emiglio",
-  "version": "2.3.0",
+  "version": "2.4.2",
   "description": "\"Named after our favorite robot. A simple, minimal theme with reds and greens.\"",
   "main": "gulpfile.js",
-  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.4.0",
+    "autoprefixer": "^10.2.6",
+    "glob": "^7.1.1",
     "gulp": "^4.0.2",
-    "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^4.1.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^5.0.0",
+    "postcss": "^8.3.0",
+    "sass": "~1.32.13",
     "susy": "^2.2.12"
   },
   "scripts": {
@@ -30,5 +33,9 @@
   "bugs": {
     "url": "https://github.com/omeka/theme-emiglio/issues"
   },
-  "homepage": "https://github.com/omeka/theme-emiglio#readme"
+  "homepage": "https://github.com/omeka/theme-emiglio#readme",
+  "browserslist": [
+    "> 5%",
+    "> 1% in US"
+  ]
 }

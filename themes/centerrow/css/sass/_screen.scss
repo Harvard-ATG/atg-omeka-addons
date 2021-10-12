@@ -346,7 +346,8 @@ header a {
 
     &:after {
         content: "\f002";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
     }
 }
 
@@ -356,7 +357,8 @@ header a {
 
     &:after {
         content: "\f00d";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
     }
 }
 
@@ -374,7 +376,8 @@ header a {
 
     &:after {
         content: "\f002";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
         position: absolute;
         top: (.25 * $base-line-height);
         right: 0;
@@ -645,8 +648,20 @@ footer {
     width: auto;
 }
 
+.lSPager li {
+    text-align: center; 
+}
+
+.lSPager li:only-of-type {
+    display: none;
+}
+
+.lSPager a {
+    margin: 0 (.25 * $base-line-height) (.5 * $base-line-height);
+    display: inline-block;
+}
+
 .lSPager img {
-    margin: 0 (.5 * $base-line-height) (.5 * $base-line-height) 0;
     vertical-align: bottom;
     width: 3 * $base-line-height;
 }
