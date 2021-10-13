@@ -63,12 +63,12 @@ Eileen Southern Theme:
   available: true
   description: For use on eileensouthern.omeka.fas.harvard.edu
   description_url: https://github.com/artshumrc/eileen-southern-theme
-  download_url: https://github.com/artshumrc/eileen-southern-theme/releases/download/v0.4-beta/eileen-southern-theme-0.4-beta.zip
+  download_url: https://github.com/artshumrc/eileen-southern-theme/releases/download/v0.4.1-beta/eileen-southern-theme-0.4.1-beta.zip
   folder_name: eileen-southern-theme
   name: Eileen Southern Theme
   note: maintained by Cole Crawford
-  updated: October 12, 2021
-  version: 0.4
+  updated: October 13, 2021
+  version: 0.4.1
 Emiglio:
   available: true
   description: Named after our favorite robot. A simple, minimal theme with reds and
