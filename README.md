@@ -2,9 +2,9 @@
 
 This repo contains a cache of up-to-date Omeka themes and plugins, as well as Python scripts to keep them up to date. There are two main tasks that this repo is built to support: adding a new addon manually, and pulling new addon info from omeka.org. The workflows are described in detail below, but the general process for each is as follows:
 
-1. Adding an addon manually
+1. Adding or updating an addon manually
     1. Create a new branch on the repository.
-    1. Edit the appropriate `all_*_info.yml` file with the new addon information.
+    1. Edit the appropriate `all_*_info.yml` file with the new or updated addon information.
     1. If adding a plugin, run the `set_up_plugins_md.py` script.
     1. Run the `refresh_cache.py` script with either `plugins` or `themes` as appropriate.
     1. Commit the changes and make a pull request on this repo
