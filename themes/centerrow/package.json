@@ -1,6 +1,6 @@
 {
   "name": "centerrow",
-  "version": "1.5.1",
+  "version": "1.5.3",
   "description": "\"Image-oriented theme for Omeka. This theme does not support nested top navigation.\"",
   "main": "gulpfile.js",
   "devDependencies": {
@@ -33,6 +33,7 @@
     "> 1% in US"
   ],
   "dependencies": {
-    "nstall": "^0.2.0"
+    "nstall": "^0.2.0",
+    "postcss": "^8.3.5"
   }
 }

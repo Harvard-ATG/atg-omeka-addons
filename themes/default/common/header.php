@@ -43,6 +43,7 @@
     ($buttonColor = get_theme_option('button_color')) || ($buttonColor = "#000000");
     ($buttonTextColor = get_theme_option('button_text_color')) || ($buttonTextColor = "#FFFFFF");
     ($titleColor = get_theme_option('header_title_color')) || ($titleColor = "#000000");
+    ($useOriginalThumbnailSize = get_theme_option('use_original_thumbnail_size')) || ($useOriginalThumbnailSize = "0");
     ?>
     <style>
         body {
@@ -78,6 +79,16 @@
 
         #search-form input[type="text"] {
             border-color: <?php echo $buttonColor; ?>
+        }
+
+        #collection-items .item img,
+        .browse .item-img,
+        .browse .image,
+        .browse #content .item img,
+        .browse .item #content img,
+        .browse .image img,
+        #home .image img {
+            height: <?php echo ($useOriginalThumbnailSize == "1") ? 'auto' : '100px' ?>;
         }
 
         @media (max-width:768px) {
