@@ -264,7 +264,7 @@ Corrections:
 Course Tools:
   available: true
   description: Adds custmizable student role
-  download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/refs/tags/v1.0.zip
+  download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/archive/refs/tags/v1.1.zip
   folder_name: CourseTools
   name: Course Tools
   note: Default plugin on our instance
