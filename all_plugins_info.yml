@@ -599,7 +599,7 @@ IIIF Toolkit:
 IiifItemEmbed:
   available: true
   description: Creates mirador viewers to be embedded elsewhere, as well as embed codes
-  download_url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.0/IiifItemEmbed-1.0.zip
+  download_url: https://github.com/jaguillette/IiifItemEmbed/releases/download/v1.1/IiifItemEmbed.zip
   folder_name: IiifItemEmbed
   name: IiifItemEmbed
   note: Maintained by Jeremy Guillette
