@@ -590,7 +590,7 @@ IIIF Toolkit:
     importer, Simple Pages shortcodes and Exhibit Builder blocks for a rich IIIF-compliant
     presentation experience.
   description_url: https://omeka.org/classic/plugins/IiifItems
-  download_url: https://github.com/utlib/IiifItems/releases/download/v1.1.0/IiifItems.zip
+  download_url: https://github.com/Harvard-ATG/IiifItems/archive/refs/tags/v1.3.0.zip
   folder_name: IiifItems
   name: IIIF Toolkit
   note: Default plugin on our instance, but we use a custom fork
