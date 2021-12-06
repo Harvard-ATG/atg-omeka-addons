@@ -1,6 +1,13 @@
-<?php $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single'; ?>
-<?php $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top'; ?>
-<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); ?>
+<?php 
+$layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single';
+$mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top';
+if (get_theme_option('item_show_media_display') == 'lightgallery') {
+    queue_css_file('lightgallery-bundle.min');
+    queue_js_file(array('show', 'lightgallery.min', 'lg-thumbnail.min', 'lg-video.min', 'lg-pager.min', 'lg-zoom.min'));
+}
+$showLayout = get_theme_option('item_show_inline_metadata');
+echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); 
+?>
 <div class="resource-title">
     <h2><?php echo metadata('item','rich_title', array('no_escape' => true)); ?></h2>
     <h3 class="label"><?php echo __('Item'); ?></h3>
@@ -11,7 +18,6 @@
     <?php endif; ?>
 
     <!-- Items metadata -->
-    <?php $showLayout = get_theme_option('item_show_inline_metadata'); ?>
     <div id="resource-values" class="<?php echo ($showLayout == 1) ? 'inline' : 'stack'; ?>">
         <?php echo all_element_texts('item'); ?>
 

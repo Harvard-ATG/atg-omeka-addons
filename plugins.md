@@ -60,17 +60,17 @@ Part of "Avant" family of plugins that make complex changes to how Omeka works
 
 * **Description:** Plugin for quickly uploading many files to Omeka.
 * **[Description page](https://omeka.org/classic/plugins/BatchUpload)**
-* **Version:** 1.0.0
-* **Updated:** April 02, 2018
+* **Version:** 1.1.0
+* **Updated:** July 12, 2021
 
 Errors on install, db user lacks REFERENCES permission
 
 ## :white_check_mark: Block Party
 
-* **Description:** A collection of useful block types for exhibits in Omeka.
-* **[Description page](#)**
-* **Version:** 1.0
-* **Updated:** April 26, 2021
+* **Description:** Adds new, useful Exhibit blocks, like groups of Items, Collections, or other Exhibits.
+* **[Description page](https://omeka.org/classic/plugins/BlockParty)**
+* **Version:** 0.1
+* **Updated:** May 31, 2019
 
 [Jeremy](https://github.com/jaguillette/) made this, so if it's broken it's his fault.
 
@@ -121,10 +121,10 @@ Works
 
 ## :white_check_mark: CSV Export Format
 
-* **Description:** Adds CSV as an item export format. Can optionally work with annotations from IIIF Toolkit with Mirador.
+* **Description:** Adds CSV as an item export format. Can optionally work with annotations and nested collections from IIIF Toolkit with Mirador.
 * **[Description page](https://omeka.org/classic/plugins/CsvExport)**
-* **Version:** 1.0.1
-* **Updated:** July 28, 2017
+* **Version:** 1.1.2
+* **Updated:** July 05, 2021
 
 Default plugin on our instance
 
@@ -132,15 +132,24 @@ Default plugin on our instance
 
 * **Description:** Imports items, tags, and files from CSV files.
 * **[Description page](https://omeka.org/classic/plugins/CsvImport)**
-* **Version:** 2.0.5
-* **Updated:** August 14, 2020
+* **Version:** 2.0.6
+* **Updated:** September 21, 2021
 
 Works
+
+## :x: Carta
+
+* **Description:** Leaflet maps in Omeka
+* **[Description page](https://github.com/AcuGIS/Carta)**
+* **Version:** N/A
+* **Updated:** January 23, 2020
+
+Removed from Omeka plugin collection, does not appear to be actively maintained
 
 ## :white_check_mark: Clean URL
 
 * **Description:** Clean Url is a plugin for Omeka that creates clean, readable and search engine optimized URLs
-* **[Description page](#)**
+* **[Description page](https://github.com/Daniel-KM/Omeka-plugin-CleanUrl)**
 * **Version:** 2.16.1
 * **Updated:** March 18, 2018
 
@@ -150,8 +159,8 @@ Works on Imperiia and Beautiful Spaces sites. Not currently on form, but could b
 
 * **Description:** Turns URLs in non-HTML text fields into »target='_blank'« clickable hyperlinks.
 * **[Description page](https://omeka.org/classic/plugins/ClickableLinksPlus)**
-* **Version:** 1.3
-* **Updated:** April 07, 2021
+* **Version:** 1.3.2
+* **Updated:** August 05, 2021
 
 Doesn't work, missing a required css file according to logged error message
 
@@ -168,8 +177,8 @@ Works, but interacts weird with IIIF Toolkit. If Collections show sub-collection
 
 * **Description:** Allows commenting on Items, Collections, Exhibits, and more
 * **[Description page](https://omeka.org/classic/plugins/Commenting)**
-* **Version:** 2.3
-* **Updated:** May 29, 2020
+* **Version:** 2.4
+* **Updated:** September 21, 2021
 
 Doesn’t like being deactivated, causes errors but uninstall works
 
@@ -182,12 +191,12 @@ Doesn’t like being deactivated, causes errors but uninstall works
 
 Works, albeit complicated
 
-## :x: Contribution
+## :white_check_mark: Contribution
 
 * **Description:** Allows collecting items from visitors
 * **[Description page](https://omeka.org/classic/plugins/Contribution)**
-* **Version:** 3.2
-* **Updated:** February 14, 2018
+* **Version:** 3.3
+* **Updated:** September 21, 2021
 
 Could well work, but isn’t something we should have available by default. It can stay in the cache, but shouldn’t be in the form. It allows for the site to accept contributions from the public, which there may be a good case for, but if someone wants that we should probably be in conversation with them
 
@@ -211,10 +220,10 @@ Fails to load correction page, wasn't able to locate the source of the error.
 
 ## :white_check_mark: Course Tools
 
-* **Description:** Adds custmizable student role
-* **[Description page](#)**
-* **Version:** 1.0
-* **Updated:** March 16, 2018
+* **Description:** Adds user roles useful for courses, including a student role with customizable permissions.
+* **[Description page](https://omeka.org/classic/plugins/CourseTools)**
+* **Version:** 0.1
+* **Updated:** November 12, 2021
 
 Default plugin on our instance
 
@@ -239,7 +248,7 @@ Does the same thing as DefaultDC but a bit more expansive
 ## :white_check_mark: Default Sort
 
 * **Description:** This plugin can be used to change Omeka's default sorting, which is set to date added.
-* **[Description page](#)**
+* **[Description page](https://github.com/anuragji/DefaultSort)**
 * **Version:** N/A
 * **Updated:** April 20, 2021
 
@@ -258,8 +267,8 @@ Not compatible with S3 storage adapter
 
 * **Description:** Embed Disqus comments on item and/or collection templates. Comments are moderated at disqus.com (account required).
 * **[Description page](https://omeka.org/classic/plugins/DisqusEngage)**
-* **Version:** 1.0
-* **Updated:** October 19, 2017
+* **Version:** 1.0.1
+* **Updated:** September 03, 2021
 
 Requires external account with Disqus, which manages all of the conversations, which could work if someone really wanted specifically disqus, but that isn't a platform we know or support.
 
@@ -290,14 +299,41 @@ Default plugin on our instance
 
 Works
 
+## :x: E-mail Notification
+
+* **Description:** Send e-mail notification when new Item or Collection or Exhibit is added.
+* **[Description page](https://omeka.org/classic/plugins/EmailNotification)**
+* **Version:** 1.4
+* **Updated:** November 13, 2021
+
+Not yet evaluated
+
+## :x: E-mail Users
+
+* **Description:** Allows to contact users via e-mail
+* **[Description page](https://omeka.org/classic/plugins/EmailUsers)**
+* **Version:** 1.2
+* **Updated:** September 15, 2021
+
+Not yet evaluated
+
 ## :white_check_mark: Editorial
 
 * **Description:** Allows editorial feedback when building exhibits
 * **[Description page](https://omeka.org/classic/plugins/Editorial)**
-* **Version:** 1.1.0
-* **Updated:** March 17, 2020
+* **Version:** 1.2
+* **Updated:** September 21, 2021
 
 Works
+
+## :white_check_mark: Eileen Southern
+
+* **Description:** plugin for Eileen Southern site
+* **[Description page](https://github.com/artshumrc/plugin-southern)**
+* **Version:** 0.1
+* **Updated:** July 22, 2021
+
+maintained by Cole Crawford
 
 ## :white_check_mark: Elasticsearch
 
@@ -348,8 +384,8 @@ Works
 
 * **Description:** Build rich exhibits using Omeka.
 * **[Description page](https://omeka.org/classic/plugins/ExhibitBuilder)**
-* **Version:** 3.4.3
-* **Updated:** March 23, 2021
+* **Version:** 3.5
+* **Updated:** September 21, 2021
 
 Default plugin on our instance
 
@@ -357,8 +393,8 @@ Default plugin on our instance
 
 * **Description:** Annotate images in your exhibits.
 * **[Description page](https://omeka.org/classic/plugins/ExhibitImageAnnotation)**
-* **Version:** 1.0.1
-* **Updated:** June 14, 2018
+* **Version:** 1.2
+* **Updated:** September 21, 2021
 
 Works
 
@@ -370,6 +406,15 @@ Works
 * **Updated:** October 31, 2017
 
 Not really an independent plugin, but rather a starting point and framework for a custom export plugin, so we don't need to offer it.
+
+## :x: Facets
+
+* **Description:** Adds a faceted navigation block to narrow down Items and Collections search results by applying multiple filters
+* **[Description page](https://omeka.org/classic/plugins/Facets)**
+* **Version:** 2.7.1
+* **Updated:** October 03, 2021
+
+Not yet evaluated
 
 ## :x: File Paginator
 
@@ -402,8 +447,8 @@ Only works for files uploaded to Google Drive, and requires some manual editing 
 
 * **Description:** Adds location info and maps to Omeka
 * **[Description page](https://omeka.org/classic/plugins/Geolocation)**
-* **Version:** 3.2
-* **Updated:** June 22, 2020
+* **Version:** 3.2.2
+* **Updated:** September 21, 2021
 
 works
 
@@ -411,8 +456,8 @@ works
 
 * **Description:** Adds a guest user role. Can't access backend, but allows plugins to use an authenticated user
 * **[Description page](https://omeka.org/classic/plugins/GuestUser)**
-* **Version:** 1.1.3
-* **Updated:** February 15, 2018
+* **Version:** 1.2
+* **Updated:** September 21, 2021
 
 Works, required for several other plugins
 
@@ -428,7 +473,7 @@ Works
 ## :white_check_mark: HarvardKey
 
 * **Description:** Integrates HarvardKey SSO in Omeka
-* **[Description page](#)**
+* **[Description page](https://github.com/Harvard-ATG/omeka-plugin-HarvardKey)**
 * **Version:** 1.0.1
 * **Updated:** March 8, 2019
 
@@ -463,10 +508,10 @@ Works
 
 ## :white_check_mark: Honor Thy Librarians
 
-* **Description:** Give credit to people who have added or edited items in your Omeka database
+* **Description:** Gives credit to people who have added or edited Items
 * **[Description page](https://omeka.org/classic/plugins/HonorThyLibrarians)**
-* **Version:** 1.1
-* **Updated:** May 07, 2020
+* **Version:** 1.3
+* **Updated:** October 22, 2021
 
 Works as advertised
 
@@ -478,6 +523,15 @@ Works as advertised
 * **Updated:** March 15, 2018
 
 Default plugin on our instance, but we use a custom fork
+
+## :white_check_mark: IIIF Toolkit Embed
+
+* **Description:** Adds a customizable, embeddable Mirador viewer page to show content from IIIF Toolkit on other sites
+* **[Description page](https://omeka.org/classic/plugins/IiifItemEmbed)**
+* **Version:** 0.1
+* **Updated:** November 16, 2021
+
+Not yet evaluated
 
 ## :x: Import
 
@@ -492,8 +546,8 @@ Not really an independent plugin, but rather a starting point and framework for 
 
 * **Description:** Embed Intense Debate comments on item and/or collection templates. Comments are moderated at intensedebate.com (account required).
 * **[Description page](https://omeka.org/classic/plugins/IntenseDebate)**
-* **Version:** 1.0
-* **Updated:** October 19, 2017
+* **Version:** 1.0.2
+* **Updated:** September 03, 2021
 
 Requires a separate "Intense Debate" account, where the discussions are managed. Could work, but involving another platform seems imprudent unless a user specifically requests it.
 
@@ -515,10 +569,10 @@ Install fails because db user doesn't have `REFERENCES` permission
 
 Duplicates items, not exactly sure what's happening with IIIF annotations, as initial test suggests they might be associated with both the original and the duplicate?
 
-## :x: Item Neatline Display
+## :white_check_mark: Item Neatline Display
 
 * **Description:** adds Neatline view of an exhibit to item
-* **[Description page](#)**
+* **[Description page](https://github.com/jaguillette/omeka_itemNeatlineDisplay)**
 * **Version:** 0.1
 * **Updated:** June 7, 2016
 
@@ -537,8 +591,8 @@ Works
 
 * **Description:** Allows administrators to define relations between items.
 * **[Description page](https://omeka.org/classic/plugins/ItemRelations)**
-* **Version:** 2.2
-* **Updated:** March 09, 2021
+* **Version:** 2.2.1
+* **Updated:** September 21, 2021
 
 Works
 
@@ -564,8 +618,8 @@ Not the kind of thing most people need, and the results are similar to this (whi
 
 * **Description:** Enable an autosuggest feature for Omeka elements using the Library of Congress Authorities and Vocabularies service: http://id.loc.gov
 * **[Description page](https://omeka.org/classic/plugins/LcSuggest)**
-* **Version:** 2.0.3
-* **Updated:** November 07, 2019
+* **Version:** 2.0.4
+* **Updated:** September 21, 2021
 
 Works
 
@@ -609,8 +663,8 @@ Works, just activates a maintenance mode when installed. Deactivate to remove.
 
 * **Description:** Plot your course in space and time.
 * **[Description page](https://omeka.org/classic/plugins/Neatline)**
-* **Version:** 2.6.3
-* **Updated:** July 29, 2019
+* **Version:** 2.6.4
+* **Updated:** May 19, 2021
 
 Default plugin on our instance
 
@@ -672,8 +726,8 @@ Works
 
 * **Description:** Harvests metadata from OAI-PMH data providers.
 * **[Description page](https://omeka.org/classic/plugins/OaipmhHarvester)**
-* **Version:** 2.0.2
-* **Updated:** November 10, 2016
+* **Version:** 2.0.3
+* **Updated:** September 21, 2021
 
 Works
 
@@ -794,12 +848,21 @@ Installs fine, but when used as a dependency for other plugins, it errors out, s
 
 Works
 
+## :x: Related Content
+
+* **Description:** Suggests Items related to the one currently shown
+* **[Description page](https://omeka.org/classic/plugins/RelatedContent)**
+* **Version:** 2.0
+* **Updated:** July 27, 2021
+
+Not yet evaluated
+
 ## :x: Reports
 
 * **Description:** Generates item reports in HTML and QR Codes of items in PDFs.
 * **[Description page](https://omeka.org/classic/plugins/Reports)**
-* **Version:** 2.0.2
-* **Updated:** November 22, 2016
+* **Version:** 2.0.3
+* **Updated:** September 21, 2021
 
 Requires a folder on the server to be writable within files, not compatible with our storage adapter currently
 
@@ -807,8 +870,8 @@ Requires a folder on the server to be writable within files, not compatible with
 
 * **Description:** Adds the ability to transcribe items using the Scripto library.
 * **[Description page](https://omeka.org/classic/plugins/Scripto)**
-* **Version:** 2.4
-* **Updated:** April 08, 2020
+* **Version:** 2.5
+* **Updated:** November 23, 2021
 
 Requires a separate MediaWiki installation
 
@@ -848,12 +911,21 @@ Files fail to load, breaking the page where they are used.
 
 Works
 
+## :x: Simple Contact Form
+
+* **Description:** Adds a simple contact form for users to contact the administrator.
+* **[Description page](https://omeka.org/classic/plugins/SimpleContactForm)**
+* **Version:** 1.1.1
+* **Updated:** September 21, 2021
+
+Not yet evaluated
+
 ## :white_check_mark: Simple Pages
 
 * **Description:** Allows administrators to create simple web pages for their public site.
 * **[Description page](https://omeka.org/classic/plugins/SimplePages)**
-* **Version:** 3.1.3
-* **Updated:** March 24, 2021
+* **Version:** 3.2
+* **Updated:** September 21, 2021
 
 Default plugin on our instance
 
@@ -861,8 +933,8 @@ Default plugin on our instance
 
 * **Description:** A simple way to create controlled vocabularies.
 * **[Description page](https://omeka.org/classic/plugins/SimpleVocab)**
-* **Version:** 2.2.2
-* **Updated:** June 03, 2019
+* **Version:** 2.2.3
+* **Updated:** September 22, 2021
 
 Works
 
@@ -883,6 +955,15 @@ Works
 * **Updated:** February 14, 2018
 
 Error in `sendEmailNotification` function, Zend framework can’t send mail
+
+## :x: Site Message
+
+* **Description:** Omeka Plugin which allows administrators to configure content and public display for a custom message for users.  This could be used for a number of reasons including; Harmful Language Statement, Message Concerning Scheduled Downtime for Maintenance, etc.
+* **[Description page](https://omeka.org/classic/plugins/SiteMessage)**
+* **Version:** 1.0
+* **Updated:** October 15, 2021
+
+Not yet evaluated
 
 ## :white_check_mark: Sitemap 2
 
@@ -949,10 +1030,10 @@ Default plugin on our instance
 
 ## :x: User Profiles
 
-* **Description:** Adds configurable user profiles to omeka
+* **Description:** Adds configurable user profiles
 * **[Description page](https://omeka.org/classic/plugins/UserProfiles)**
-* **Version:** 1.2.1
-* **Updated:** March 26, 2018
+* **Version:** 1.3
+* **Updated:** September 21, 2021
 
 Requires "Record Relations" plugin, but when using the dependency, it throws database errors.
 
@@ -974,7 +1055,7 @@ Works
 
 requires an API token from Vimeo, but works.
 
-## :x: YouTube Import
+## :white_check_mark: YouTube Import
 
 * **Description:** Adds the ability to import Youtube videos into Omeka as items while preserving as much metadata as possible
 * **[Description page](https://omeka.org/classic/plugins/YouTubeImport)**

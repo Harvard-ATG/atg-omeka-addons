@@ -30,20 +30,21 @@ function getOrderedElements() {
  */
 function getCsvRow($item, $elements) {
     $row = array();
+    // Id
+    $row[] = $item->id;
+    // Default URI
+    $row[] = WEB_ROOT.'/items/show/'.$item->id;
     // Element texts
     $elementTexts = get_db()->getTable('ElementText')->findByRecord($item);
+    $internalSeparatorCharacter = get_option('csv_export_separator_character_internal');
     foreach ($elements as $element) {
-        $hasEmptyElementText = true;
+        $accumulatedTexts = array();
         foreach ($elementTexts as $elementText) {
             if ($elementText->element_id === $element->id) {
-                $row[] = $elementText->text;
-                $hasEmptyElementText = false;
-                break;
+                $accumulatedTexts[] = $elementText->text;
             }
         }
-        if ($hasEmptyElementText) {
-            $row[] = '';
-        }
+        $row[] = join($internalSeparatorCharacter, $accumulatedTexts);
     }
     // Tail with tags, file, itemType, collection, public, featured
     // Tags
@@ -52,7 +53,7 @@ function getCsvRow($item, $elements) {
     foreach ($tags as $tag) {
         $tagNames[] = $tag->name;
     }
-    $row[] = join($tagNames, ',');
+    $row[] = join(',', $tagNames);
     // Files
     $files = $item->getFiles();
     $fileUrls = array();
@@ -67,7 +68,7 @@ function getCsvRow($item, $elements) {
             $fileUrls[] = $file->getWebPath();
         }
     }
-    $row[] = join($fileUrls, ',');
+    $row[] = join(',', $fileUrls);
     // Item type
     $row[] = ($item->item_type_id === null) ? '' : ($item->getItemType()->name);
     // Collection
@@ -87,26 +88,44 @@ function getCsvRow($item, $elements) {
 function printCsvExport($items) {
     // Get all elements as columns
     $elements = getOrderedElements();
-    
+
     // Start writing
     $f = fopen('php://output', 'w');
-    
+
     // Fix for UTF-8: Byte-order mark
     fwrite($f, "\xEF\xBB\xBF");
 
     // Header: Metadata
     // Metadata that belong to an element set are labelled "<Element Set Name>:<Element Name>"
     $baseHeaderEntries = array();
+    $baseHeaderEntries = array('Item Id','Item URI');
     foreach($elements as $element) {
         $baseHeaderEntries[] = ($element->element_set_id === null) ? $element->name : "{$element->getElementSet()->name}:{$element->name}";
     }
     // Header: Property tail
     $headerEntries = array_merge($baseHeaderEntries, array('tags', 'file', 'itemType', 'collection', 'public', 'featured'));
     // Header: Write it in
-    fputcsv($f, $headerEntries, ',', '"', "\0");
+    _fputcsv($f, $headerEntries);
 
     // Body
     foreach ($items as $item) {
-        fputcsv($f, getCsvRow($item, $elements), ',', '"', "\0");
+        _fputcsv($f, getCsvRow($item, $elements));
+    }
+
+    // Done writing
+    fclose($f);
+}
+
+/**
+ * Cross-compatible version of fputcsv() for working around RHEL 7.
+ * @param resource $f
+ * @param array $row
+ */
+function _fputcsv($f, $row) {
+    $separatorCharacter = get_option('csv_export_separator_character');
+    if (version_compare(PHP_VERSION, '5.5.4', '<')) {
+        fputcsv($f, $row, $separatorCharacter, '"');
+    } else {
+        fputcsv($f, $row, $separatorCharacter, '"', "\0");
     }
 }

@@ -63,11 +63,17 @@ for key, info in entryInfo.items():
         originalEntryInfo[key] = info
     else:
         for k,v in info.items():
-            if originalEntryInfo[key][k] != v:
-                print(f"{key}: Old value for {k}: {originalEntryInfo[key][k]}")
-                print(f"{key}: New value for {k}: {v}")
-                if valid_input('Replace old value with new value? (y/n) ') == 'y':
-                    originalEntryInfo[key][k] = v
+            try:
+                if originalEntryInfo[key][k] != v:
+                    print(f"{key}: Old value for {k}: {originalEntryInfo[key][k]}")
+                    print(f"{key}: New value for {k}: {v}")
+                    if valid_input('Replace old value with new value? (y/n) ') == 'y':
+                        originalEntryInfo[key][k] = v
+            except KeyError:
+                print()
+                print(f"Missing key: \"{key}\" is missing \"{k}\"")
+                print()
+                continue
         # originalEntryInfo[key].update(info)
 
 with open(f'all_{thingToUpdate}_info.yml', 'w') as file:

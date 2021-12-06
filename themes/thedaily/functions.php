@@ -82,4 +82,23 @@ function thedaily_output_text_track_file($textFile) {
     return $track;
 }
 
+function thedaily_check_for_tracks($files) {
+    foreach ($files as $file) {
+        if ($file->getExtension() == "vtt") {
+            return true;
+        }
+    }
+    return false;
+}
+
+function thedaily_get_square_thumbnail_url($file, $view) {
+    if ($file->hasThumbnail()) {
+        $squareThumbnail = file_display_url($file, 'square_thumbnail');
+    } else {
+        $mimeType = $file->mime_type;
+        $fileType = (strpos($mimeType, 'image')) ? 'image' : 'video';
+        $squareThumbnail = $view->baseUrl() . '/application/views/scripts/images/fallback-' . $fileType . '.png';
+    }
+    return $squareThumbnail;
+}
 ?>

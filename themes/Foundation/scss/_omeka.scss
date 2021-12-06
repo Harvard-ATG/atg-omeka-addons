@@ -235,7 +235,7 @@ header .top-bar {
   }
 }
 
-header flex-fix {
+header .flex-fix {
   display: flex;
   flex-wrap: wrap;
 }
@@ -439,6 +439,22 @@ body.vertical-menu header .desktop {
 
 #submit_search {
   @extend .button;
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &.contained {
+      @include xy-grid-container;
+      margin-top: 2 * $global-margin;
+    }
+}
+
+.banner img {
+    width: 100%;
 }
 
 #content {
@@ -766,6 +782,22 @@ body.vertical-menu footer {
   @extend .thumbnail;
 }
 
+.item-file > a {
+  display: inline-block;
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+.wrap > #item-images {
+  text-align: center;
+}
+
+.wrap > .media-grid {
+  justify-content: center;
+}
+
 .layout-toggle button {
   margin-bottom: 0;
 }
@@ -972,6 +1004,7 @@ body.vertical-menu footer {
 .resource.show .media-grid {
   display: flex;
   flex-wrap: wrap;
+  align-self: flex-start;
   margin: 0 (-.5 * $global-margin);
   
   .item-file {
@@ -1065,6 +1098,32 @@ body.vertical-menu footer {
 .double #item-images {
   @include xy-cell(4);
   order: 2;
+}
+
+#itemfiles {
+  height: 60vh;
+  width: 100%;
+  margin-bottom: $global-margin;
+}
+
+#itemfiles .media.resource {
+  height: 0;
+  overflow: hidden;
+}
+
+#itemfiles .lg-img-wrap,
+#itemfiles .lg-video-object,
+#itemfiles .lg-video-poster {
+  padding-bottom: 3 * $global-padding;
+}
+
+#itemfiles .lg-outer .lg-video-cont .lg-object {
+  width: auto !important;
+}
+
+.lg-outer[data-lg-slide-type="video"] .lg-download {
+  opacity: 1 !important;
+  pointer-events: all !important;
 }
 
 .item-pagination {

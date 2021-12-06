@@ -7,7 +7,7 @@
  */
 class CsvExport_Migration_1_0_0_1 extends CsvExport_BaseMigration {
     public static $version = '1.0.0.1';
-    
+
     /**
      * Migrate up
      */

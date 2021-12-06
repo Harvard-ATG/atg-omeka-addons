@@ -9,8 +9,7 @@
 queue_css_file('contribution-browse');
 queue_js_file('contribution-contributed-item');
 queue_js_file('contribution-browse');
-
-contribution_admin_header(array(__('Contributed Items (%d)', $total_results)));
+contribution_admin_header(array(__('Contributed Items (%d)', $total_results)), 'contribution items browse');
 
 // To avoid to determine rights for each record.
 $allowToManage = (is_allowed('Items', 'edit') || is_allowed('Items', 'update') || is_allowed('Items', 'delete'));
@@ -24,27 +23,27 @@ echo $this->partial('contribution-navigation.php');
 echo flash();
 
 if (!Omeka_Captcha::isConfigured()): ?>
-    <p class="alert"><?php echo __("You have not entered your %s API keys under %s. We recommend adding these keys, or the contribution form will be vulnerable to spam.", '<a href="http://recaptcha.net/">reCAPTCHA</a>', "<a href='" . url('settings/edit-security#fieldset-captcha') . "'>" . __('security settings') . "</a>");?></p>
+    <p class="alert flash"><?php echo __("You have not entered your %s API keys under %s. We recommend adding these keys, or the contribution form will be vulnerable to spam.", '<a href="http://recaptcha.net/">reCAPTCHA</a>', "<a href='" . url('settings/edit-security#fieldset-captcha') . "'>" . __('security settings') . "</a>");?></p>
 <?php endif;
 ?>
 <?php if ($total_results): ?>
     <div class="pagination"><?php echo pagination_links(); ?></div>
 
     <form action="<?php echo html_escape(url('contribution/index/batch-edit')); ?>" method="post" accept-charset="utf-8">
-        <div class="table-actions batch-edit-option">
-            <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'update')): ?>
-            <input type="submit" class="small green batch-action button" name="submit-batch-approve" value="<?php echo __('Set public'); ?>">
-            <?php endif; ?>
-            <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'update')): ?>
-            <input type="submit" class="small green batch-action button" name="submit-batch-proposed" value="<?php echo __('Set Needs review'); ?>">
-            <?php endif; ?>
-            <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'delete')): ?>
-            <input type="submit" class="small red batch-action button" name="submit-batch-delete" value="<?php echo __('Delete'); ?>">
-            <?php endif; ?>
-        </div>
-
         <?php echo common('contribution-quick-filters'); ?>
 
+        <div class="table-actions batch-edit-option">
+            <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'update')): ?>
+            <input type="submit" class="green small batch-action button" name="submit-batch-approve" value="<?php echo __('Set public'); ?>">
+            <?php endif; ?>
+            <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'update')): ?>
+            <input type="submit" class="green small batch-action button" name="submit-batch-proposed" value="<?php echo __('Set Needs review'); ?>">
+            <?php endif; ?>
+            <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'delete')): ?>
+            <input type="submit" class="red small batch-action button" name="submit-batch-delete" value="<?php echo __('Delete'); ?>">
+            <?php endif; ?>
+        </div>
+        <div class="table-responsive">
         <table id="contributions" cellspacing="0" cellpadding="0">
         <thead id="types-table-head">
             <tr>
@@ -53,11 +52,7 @@ if (!Omeka_Captcha::isConfigured()): ?>
                 <?php endif;
                 $browseHeadings[__('Item')] = null;
                 $browseHeadings[__('Contributor')] = 'contributor';
-                if($allowToManage) {
-                    $browseHeadings[__('Publication Status')] = null;
-                } else {
-                    $browseHeadings[__('Publication Status')] = null;
-                }
+                $browseHeadings[__('Publication Status')] = null;
                 $browseHeadings[__('Date Added')] = 'added';
                 echo browse_sort_links($browseHeadings, array('link_tag' => 'th scope="col"', 'list_tag' => ''));
                 ?>
@@ -98,17 +93,20 @@ if (!Omeka_Captcha::isConfigured()): ?>
                 <td class="batch-edit-check" scope="row">
                     <?php if ($status == 'private'): ?>
                     <span><?php echo $statusText; ?></span>
+                    <input type="checkbox" name="contributions[]" value="<?php echo $contributedItem->id; ?>" disabled />
                     <?php else: ?>
                     <input type="checkbox" name="contributions[]" value="<?php echo $contributedItem->id; ?>" />
                     <?php endif; ?>
                 </td>
                 <?php endif; ?>
-                <td class="record-info"><?php
-                    echo link_to($item, 'show', metadata($item, array('Dublin Core', 'Title')));
+                <td class="item-info">
+                <?php
                     if (metadata($item, 'has thumbnail')):
                         echo link_to_item(item_image('square_thumbnail', array(), 0, $item), array('class' => 'item-thumbnail'), 'show', $item);
                     endif;
-                ?></td>
+                ?>
+                <span class="title"><?php echo link_to($item, 'show', metadata($item, array('Dublin Core', 'Title'))); ?></span>
+                </td>
                 <td class="contributor"><?php echo metadata($contributor, 'name');?>
                     <?php if (!is_null($contributor->id)):
                         if ($contributedItem->anonymous && (is_allowed('Contribution_Items', 'view-anonymous') || $contributor->id == current_user()->id)): ?>
@@ -131,20 +129,19 @@ if (!Omeka_Captcha::isConfigured()): ?>
             <?php endforeach; ?>
         </tbody>
         </table>
+        </div>
 
         <div class="table-actions batch-edit-option">
             <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'update')): ?>
-            <input type="submit" class="small green batch-action button" name="submit-batch-approve" value="<?php echo __('Set public'); ?>">
+            <input type="submit" class="green small batch-action button" name="submit-batch-approve" value="<?php echo __('Set public'); ?>">
             <?php endif; ?>
             <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'update')): ?>
-            <input type="submit" class="small green batch-action button" name="submit-batch-proposed" value="<?php echo __('Set Needs review'); ?>">
+            <input type="submit" class="green small batch-action button" name="submit-batch-proposed" value="<?php echo __('Set Needs review'); ?>">
             <?php endif; ?>
             <?php if (is_allowed('Items', 'edit') || is_allowed('Items', 'delete')): ?>
-            <input type="submit" class="small red batch-action button" name="submit-batch-delete" value="<?php echo __('Delete'); ?>">
+            <input type="submit" class="red small batch-action button" name="submit-batch-delete" value="<?php echo __('Delete'); ?>">
             <?php endif; ?>
         </div>
-
-        <?php echo common('contribution-quick-filters'); ?>
     </form>
 
     <div class="pagination"><?php echo pagination_links(); ?></div>
@@ -159,6 +156,7 @@ if (!Omeka_Captcha::isConfigured()): ?>
                 'confirmation':<?php echo json_encode(__('Are you sure you want to remove these contributions?')); ?>
             }}
         );
+        Omeka.quickFilter();
         Omeka.addReadyCallback(Omeka.ContributionBrowse.setupBatchEdit);
     </script>
 
