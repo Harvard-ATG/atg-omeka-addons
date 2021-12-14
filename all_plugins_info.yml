@@ -82,13 +82,13 @@ Block Party:
   description: Adds new, useful Exhibit blocks, like groups of Items, Collections,
     or other Exhibits.
   description_url: https://omeka.org/classic/plugins/BlockParty
-  download_url: https://github.com/jaguillette/BlockParty/releases/download/v1.0/BlockParty.zip
+  download_url: https://github.com/jaguillette/BlockParty/releases/download/v1.0.1/BlockParty.zip
   folder_name: BlockParty
   name: Block Party
   note: '[Jeremy](https://github.com/jaguillette/) made this, so if it''s broken it''s
     his fault.'
-  updated: May 31, 2019
-  version: '0.1'
+  updated: December 07, 2021
+  version: 1.0.1
 Blog Shortcode:
   available: true
   description: Allows users to display a list of simple pages in a blog-like format.
@@ -270,12 +270,12 @@ Course Tools:
   description: Adds user roles useful for courses, including a student role with customizable
     permissions.
   description_url: https://omeka.org/classic/plugins/CourseTools
-  download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/releases/download/v1.1/CourseTools.zip
+  download_url: https://github.com/jaguillette/omeka-plugin-CourseTools/releases/download/v1.2/CourseTools.zip
   folder_name: CourseTools
   name: Course Tools
   note: Default plugin on our instance
-  updated: November 12, 2021
-  version: '0.1'
+  updated: December 14, 2021
+  version: '1.2'
 Default Dublin Core:
   available: true
   description: Omeka Plugin that allows administrators to specify default values for
@@ -498,11 +498,11 @@ Facets:
   description: Adds a faceted navigation block to narrow down Items and Collections
     search results by applying multiple filters
   description_url: https://omeka.org/classic/plugins/Facets
-  download_url: https://github.com/DBinaghi/plugin-Facets/releases/download/v2.7.1/Facets.zip
+  download_url: https://github.com/DBinaghi/plugin-Facets/releases/download/v2.8.1/Facets.zip
   name: Facets
   notes: Needs review
-  updated: October 03, 2021
-  version: 2.7.1
+  updated: December 11, 2021
+  version: 2.8.1
 File Paginator:
   available: false
   description: Allow users to page through files on an item page.
