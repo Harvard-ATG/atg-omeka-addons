@@ -84,12 +84,12 @@ Foundation:
   available: true
   description: A starter theme using the ZURB Foundation toolkit.
   description_url: https://omeka.org/classic/themes/foundation
-  download_url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.1.1/theme-foundation-classic-v1.1.1.zip
+  download_url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.2.1/theme-foundation-classic-v1.2.1.zip
   folder_name: Foundation
   name: Foundation
   note: Works
-  updated: April 07, 2021
-  version: 1.1.1
+  updated: November 22, 2021
+  version: 1.2.1
 Harvard DH Theme:
   available: true
   description: based on Berlin theme with customizations for use at Harvard
@@ -166,9 +166,9 @@ The Daily:
   available: true
   description: Image-oriented theme for Omeka.
   description_url: https://omeka.org/classic/themes/thedaily
-  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.1/theme-thedaily-v1.5.1.zip
+  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.3/theme-seasons-v1.5.3.zip
   folder_name: thedaily
   name: The Daily
   note: Works
-  updated: May 14, 2021
-  version: 1.5.1
+  updated: September 23, 2021
+  version: 1.5.3
