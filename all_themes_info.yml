@@ -94,7 +94,7 @@ Harvard DH Theme:
   available: true
   description: based on Berlin theme with customizations for use at Harvard
   description_url: https://github.com/jaguillette/hvd-dh-omeka-theme
-  download_url: https://github.com/jaguillette/hvd-dh-omeka-theme/releases/download/v1.0/hvd-dh-omeka-theme-v1.0.zip
+  download_url: https://github.com/jaguillette/hvd-dh-omeka-theme/releases/download/v1.0.1/hvd-dh-omeka-theme.zip
   folder_name: hvd-dh-omeka-theme
   name: Harvard DH Theme
   note: works, maintained by Jeremy
@@ -166,7 +166,7 @@ The Daily:
   available: true
   description: Image-oriented theme for Omeka.
   description_url: https://omeka.org/classic/themes/thedaily
-  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.3/theme-seasons-v1.5.3.zip
+  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.3/theme-thedaily-v1.5.3.zip
   folder_name: thedaily
   name: The Daily
   note: Works
