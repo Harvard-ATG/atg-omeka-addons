@@ -30,13 +30,13 @@
     queue_css_file(array('style', 'iconfonts'));
     queue_css_url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic');
     echo head_css();
-    echo $this->partial('common/custom_colors.php');
+    echo $this->partial('common/theme_option_styles.php');
     ?>
 
     <!-- JavaScripts -->
     <?php
     queue_js_file(array('globals'));
-    queue_js_file(array('centerrow'), 'js');
+    queue_js_file(array('centerrow', 'jquery-accessibleMegaMenu'), 'js');
     echo head_js();
     ?>
 </head>
@@ -63,7 +63,7 @@
 
 
             <nav id="top-nav" role="navigation">
-                <?php echo public_nav_main(); ?>
+                <?php echo centerrow_public_nav_main(); ?>
             </nav>
 
             <?php echo theme_header_image(); ?>

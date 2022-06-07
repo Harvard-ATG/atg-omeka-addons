@@ -3,7 +3,9 @@
 class Elasticsearch_Integration_Items extends Elasticsearch_Integration_BaseIntegration {
     protected $_hooks = array(
         'after_save_item',
-        'after_delete_item'
+        'after_save_file',
+        'after_delete_item',
+        'after_delete_file',
     );
 
     /**
@@ -26,6 +28,34 @@ class Elasticsearch_Integration_Items extends Elasticsearch_Integration_BaseInte
     public function hookAfterDeleteItem($args) {
         $this->_log("deleting item from index: {$args['record']->id}");
         $this->deleteItem($args['record']);
+    }
+
+    /**
+     * Hook for when a file is being saved.
+     * Update the indexed item document.
+     *
+     * @param array $args
+     */
+    public function hookAfterSaveFile($args) {
+        $this->_log("hookAfterSaveFile: {$args['record']->id}");
+        $file = $args['record'];
+        if($item = $file->getItem()) {
+            $this->indexItem($item);
+        }
+    }
+
+    /**
+     * Hook for when a file is being deleted.
+     * Update the indexed item document.
+     *
+     * @param array $args
+     */
+    public function hookAfterDeleteFile($args) {
+        $this->_log("hookAfterDeleteFile: {$args['record']->id}");
+        $file = $args['record'];
+        if($item = $file->getItem()) {
+            $this->indexItem($item);
+        }
     }
 
     /**
@@ -79,21 +109,9 @@ class Elasticsearch_Integration_Items extends Elasticsearch_Integration_BaseInte
         }
 
         // elements:
-        try {
-            $elementData = [];
-            $elementNames = [];
-            foreach ($item->getAllElementTexts() as $elementText) {
-                $element = $item->getElementById($elementText->element_id);
-                $normalizedName = strtolower(preg_replace('/[^a-zA-Z0-9-_]/', '', $element->name));
-                $elementData[$normalizedName] = $elementText->text;
-                $elementNames[] = ['displayName' => $element->name, 'name' => $normalizedName];
-            }
-            $doc->setField('element', $elementData);
-            $doc->setField('elements', $elementNames);
-        } catch(Omeka_Record_Exception $e) {
-            $this->_log("Error loading elements for item {$item->id}. Error: ".$e->getMessage(), Zend_Log::WARN);
-        }
-
+        $itemElementTexts = $this->_getElementTexts($item);
+        $doc->setField('elements', $itemElementTexts['elements']);
+        $doc->setField('element', $itemElementTexts['element']);
 
         // tags:
         $tags = [];
@@ -101,6 +119,20 @@ class Elasticsearch_Integration_Items extends Elasticsearch_Integration_BaseInte
             $tags[] = $tag->name;
         }
         $doc->setField('tags', $tags);
+
+        // files:
+        $files = [];
+        if($itemFiles = $item->getFiles()) {
+            foreach($itemFiles as $itemFile) {
+                $fileElementTexts = $this->_getElementTexts($itemFile);
+                $files[] = [
+                    'id'      => $itemFile->id,
+                    'title'   => $itemFile->getProperty('display_title'),
+                    'element' => $fileElementTexts['data']
+                ];
+            }
+        }
+        $doc->setField('files', $files);
 
         return $doc;
     }
@@ -129,5 +161,60 @@ class Elasticsearch_Integration_Items extends Elasticsearch_Integration_BaseInte
             $this->_log('indexAll items: '.count($docs));
             Elasticsearch_Document::bulkIndex($docs);
         }
+    }
+
+    /**
+     * Deletes all items from the index.
+     */
+    public function deleteAll() {
+        $this->_deleteByQueryModel('Item');
+    }
+
+    /**
+     * Helper function to extract element texts from a record.
+     *
+     * @param $record
+     * @return array
+     */
+    protected function _getElementTexts($record, $options=array()) {
+        $opt_normalize = isset($options['normalize']) ? (bool) $options['normalize'] : true;
+
+        // Retrieve all of the element texts (each element could have several texts - multi-valued)
+        $elementById = [];
+        $elementOrderById = [];
+        try {
+            foreach ($record->getAllElementTexts() as $elementText) {
+                $element = $record->getElementById($elementText->element_id);
+                if(!isset($elementById[$element->id])) {
+                    if($opt_normalize) {
+                        $nameNormalized = strtolower(preg_replace('/[^a-zA-Z0-9-_]/', '', $element->name));
+                    } else {
+                        $nameNormalized = $element->name;
+                    }
+                    $elementById[$element->id] = [
+                        'id'          => $element->id,
+                        'displayName' => $element->name,
+                        'name'        => $nameNormalized,
+                        'text'        => []
+                    ];
+                    $elementOrderById[] = $element->id;
+                }
+
+                $elementById[$element->id]['text'][] = $elementText->text;
+            }
+        } catch(Omeka_Record_Exception $e) {
+            $this->_log("Error loading elements for record {$record->id}. Error: ".$e->getMessage(), Zend_Log::WARN);
+        }
+
+        // Divide the element data into an ordered array and a mapping object
+        $elements = [];
+        $element = [];
+        foreach($elementOrderById as $id) {
+            $data = $elementById[$id];
+            $elements[] = $data;
+            $element[$data['name']] = $data['text'];
+        }
+
+        return array('elements' => $elements, 'element' => $element);
     }
 }
