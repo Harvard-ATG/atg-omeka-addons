@@ -412,12 +412,12 @@ Elasticsearch:
   available: true
   description: Integrate Elasticsearch into Omeka for searching.
   description_url: https://omeka.org/classic/plugins/Elasticsearch
-  download_url: https://github.com/Harvard-ATG/omeka-plugin-Elasticsearch/releases/download/v1.0.3/Elasticsearch.zip
+  download_url: https://github.com/Harvard-ATG/omeka-plugin-Elasticsearch/releases/download/v1.2.0/Elasticsearch.zip
   folder_name: Elasticsearch
   name: Elasticsearch
   note: Works
-  updated: December 19, 2017
-  version: 1.0.3
+  updated: May 19, 2022
+  version: 1.2.0
 Element Types:
   available: false
   description: Allow elements to have a type, thus allowing easier input. For instance,
@@ -466,12 +466,12 @@ Exhibit Builder:
   available: true
   description: Build rich exhibits using Omeka.
   description_url: https://omeka.org/classic/plugins/ExhibitBuilder
-  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.5/ExhibitBuilder-3.5.zip
+  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.5.3/ExhibitBuilder-3.5.3.zip
   folder_name: ExhibitBuilder
   name: Exhibit Builder
   note: Default plugin on our instance
-  updated: September 21, 2021
-  version: '3.5'
+  updated: May 05, 2022
+  version: 3.5.3
 Exhibit Image Annotation:
   available: true
   description: Annotate images in your exhibits.
@@ -681,14 +681,14 @@ Item Duplicator:
   available: true
   description: Allows duplicating items
   description_url: https://omeka.org/classic/plugins/ItemDuplicator
-  download_url: https://github.com/DBinaghi/ItemDuplicator/releases/download/v1.3/ItemDuplicator.zip
+  download_url: https://github.com/DBinaghi/ItemDuplicator/releases/download/v1.4/ItemDuplicator.zip
   folder_name: ItemDuplicator
   name: Item Duplicator
   note: Duplicates items, not exactly sure what's happening with IIIF annotations,
     as initial test suggests they might be associated with both the original and the
     duplicate?
-  updated: December 30, 2020
-  version: '1.3'
+  updated: May 15, 2022
+  version: '1.4'
 Item Neatline Display:
   available: true
   description: adds Neatline view of an exhibit to item
@@ -797,6 +797,15 @@ Maintenance:
   note: Works, just activates a maintenance mode when installed. Deactivate to remove.
   updated: December 12, 2016
   version: 0.1.0
+MapsAlive:
+  available: false
+  description: Provides MapsAlive Live Data access to Omeka items
+  description_url: https://omeka.org/classic/plugins/MapsAlive
+  download_url: https://github.com/gsoules/MapsAlive-Plugin/releases/download/v1.1/MapsAlive-v1.1.zip
+  name: MapsAlive
+  notes: needs evaluation
+  updated: April 27, 2022
+  version: 1.0.0
 Neatline:
   available: true
   description: Plot your course in space and time.
@@ -899,6 +908,15 @@ Omeka Api Import:
   note: Default plugin on our instance
   updated: February 10, 2017
   version: 1.1.2
+Omeka Devel:
+  available: false
+  description: This plugin adds Kint debugging functionality to your site.
+  description_url: https://omeka.org/classic/plugins/OmekaDevel
+  download_url: https://github.com/DigitalCarleton/OmekaDevel/releases/download/v1.1/OmekaDevel.zip
+  name: Omeka Devel
+  notes: needs evaluation
+  updated: May 06, 2022
+  version: '1.1'
 Omeka Footnotes JS:
   available: true
   description: A plugin to add bigfoot.js footnote functionality to the WYSIWYG on
@@ -935,12 +953,12 @@ PDF Text:
   available: false
   description: Extracts text from PDF files so they can be browsed and searched.
   description_url: https://omeka.org/classic/plugins/PdfText
-  download_url: https://github.com/omeka/plugin-PdfText/releases/download/v1.3/PdfText-1.3.zip
+  download_url: https://github.com/omeka/plugin-PdfText/releases/download/v1.3.1/PdfText-1.3.1.zip
   folder_name: PdfText
   name: PDF Text
   note: Requires a `pdftotext` command line utility installed on the server.
-  updated: January 13, 2017
-  version: '1.3'
+  updated: April 18, 2022
+  version: 1.3.1
 Podcast Feed:
   available: true
   description: Adds a custom podcast feed and a new Podcast Episode item type.
@@ -1102,12 +1120,12 @@ Simple Pages:
   available: true
   description: Allows administrators to create simple web pages for their public site.
   description_url: https://omeka.org/classic/plugins/SimplePages
-  download_url: https://github.com/omeka/plugin-SimplePages/releases/download/v3.2/SimplePages-3.2.zip
+  download_url: https://github.com/omeka/plugin-SimplePages/releases/download/v3.2.1/SimplePages-3.2.1.zip
   folder_name: SimplePages
   name: Simple Pages
   note: Default plugin on our instance
-  updated: September 21, 2021
-  version: '3.2'
+  updated: March 01, 2022
+  version: 3.2.1
 Simple Vocab:
   available: true
   description: A simple way to create controlled vocabularies.

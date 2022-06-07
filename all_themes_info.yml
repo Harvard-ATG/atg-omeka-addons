@@ -22,12 +22,12 @@ Big Picture:
   available: true
   description: An image-centric theme geared towards art historians and students.
   description_url: https://omeka.org/classic/themes/bigpicture
-  download_url: https://github.com/omeka/theme-bigpicture/releases/download/v1.5.2/theme-bigpicture-v1.5.2.zip
+  download_url: https://github.com/omeka/theme-bigpicture/releases/download/v1.5.3/theme-bigpicture-v1.5.3.zip
   folder_name: bigpicture
   name: Big Picture
   note: Works
-  updated: July 02, 2021
-  version: 1.5.2
+  updated: February 04, 2022
+  version: 1.5.3
 BigStuff:
   available: true
   description: Theme for use with conference papers, based on Berlin.
@@ -43,12 +43,12 @@ Center Row:
   description: Image-oriented theme for Omeka. This theme does not support nested
     top navigation.
   description_url: https://omeka.org/classic/themes/centerrow
-  download_url: https://github.com/omeka/theme-centerrow/releases/download/v1.5.3/theme-centerrow-v1.5.3.zip
+  download_url: https://github.com/omeka/theme-centerrow/releases/download/v1.6/theme-centerrow-v1.6.zip
   folder_name: centerrow
   name: Center Row
   note: Works
-  updated: September 23, 2021
-  version: 1.5.3
+  updated: April 20, 2022
+  version: '1.6'
 Chinalocal:
   available: true
   description: Theme for China Local site
