@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "atg-omeka-addons"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+version = "1.0.0"
+description = "Cache of available plugins for Omeka as a Service at Harvard"
+authors = ["Jeremy Guillette <jeremy_guillette@harvard.edu>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
