@@ -12,22 +12,22 @@ Berlin:
   available: true
   description: Abstraction of the Making the History of 1989 theme.
   description_url: https://omeka.org/classic/themes/berlin
-  download_url: https://github.com/omeka/theme-berlin/releases/download/v2.7.2/theme-berlin-v2.7.2.zip
+  download_url: https://github.com/omeka/theme-berlin/releases/download/v2.7.3/berlin-2.7.3.zip
   folder_name: berlin
   name: Berlin
   note: Works
-  updated: September 23, 2021
-  version: 2.7.2
+  updated: December 21, 2022
+  version: 2.7.3
 Big Picture:
   available: true
   description: An image-centric theme geared towards art historians and students.
   description_url: https://omeka.org/classic/themes/bigpicture
-  download_url: https://github.com/omeka/theme-bigpicture/releases/download/v1.5.3/theme-bigpicture-v1.5.3.zip
+  download_url: https://github.com/omeka/theme-bigpicture/releases/download/v1.6.4/bigpicture-1.6.4.zip
   folder_name: bigpicture
   name: Big Picture
   note: Works
-  updated: February 04, 2022
-  version: 1.5.3
+  updated: January 03, 2023
+  version: 1.6.4
 BigStuff:
   available: true
   description: Theme for use with conference papers, based on Berlin.
@@ -43,12 +43,12 @@ Center Row:
   description: Image-oriented theme for Omeka. This theme does not support nested
     top navigation.
   description_url: https://omeka.org/classic/themes/centerrow
-  download_url: https://github.com/omeka/theme-centerrow/releases/download/v1.6/theme-centerrow-v1.6.zip
+  download_url: https://github.com/omeka/theme-centerrow/releases/download/v1.7.1/centerrow-1.7.1.zip
   folder_name: centerrow
   name: Center Row
   note: Works
-  updated: April 20, 2022
-  version: '1.6'
+  updated: December 22, 2022
+  version: 1.7.1
 Chinalocal:
   available: true
   description: Theme for China Local site
@@ -84,12 +84,12 @@ Foundation:
   available: true
   description: A starter theme using the ZURB Foundation toolkit.
   description_url: https://omeka.org/classic/themes/foundation
-  download_url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.2.1/theme-foundation-classic-v1.2.1.zip
+  download_url: https://github.com/omeka/theme-foundation-classic/releases/download/v1.2.2/theme-foundation-classic-v1.2.2.zip
   folder_name: Foundation
   name: Foundation
   note: Works
-  updated: November 22, 2021
-  version: 1.2.1
+  updated: September 30, 2022
+  version: 1.2.2
 Harvard DH Theme:
   available: true
   description: based on Berlin theme with customizations for use at Harvard
@@ -134,12 +134,12 @@ Santa Fe:
   available: true
   description: Theme based on the Bracero History Archive.
   description_url: https://omeka.org/classic/themes/santa-fe
-  download_url: https://github.com/omeka/theme-santa-fe/releases/download/v2.5.2/theme-santa-fe-v2.5.2.zip
+  download_url: https://github.com/omeka/theme-santa-fe/releases/download/v2.6/theme-santa-fe-v2.6.zip
   folder_name: santa-fe
   name: Santa Fe
   note: Works
-  updated: September 23, 2021
-  version: 2.5.2
+  updated: June 29, 2022
+  version: '2.6'
 Seasons:
   available: true
   description: A colorful theme with a configuration option to switch style sheets
@@ -166,9 +166,9 @@ The Daily:
   available: true
   description: Image-oriented theme for Omeka.
   description_url: https://omeka.org/classic/themes/thedaily
-  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.5.3/theme-thedaily-v1.5.3.zip
+  download_url: https://github.com/omeka/theme-thedaily/releases/download/v1.6.1/thedaily-1.6.1.zip
   folder_name: thedaily
   name: The Daily
   note: Works
-  updated: September 23, 2021
-  version: 1.5.3
+  updated: December 22, 2022
+  version: 1.6.1

@@ -11,8 +11,6 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
  */
 
-//require_once dirname(__FILE__) . '/helpers/BulkMetadataEditorFunctions.php';
-
 /**
  * BulkMetadataEditor plugin class.
  *
@@ -24,7 +22,7 @@ class BulkMetadataEditorPlugin extends Omeka_Plugin_AbstractPlugin
     /**
      * @var array Hooks for the plugin.
      */
-    protected $_hooks = array('define_acl','admin_head','initialize');
+    protected $_hooks = array('define_acl', 'admin_head', 'initialize');
 
     /**
      * @var array Filters for the plugin.
@@ -52,7 +50,7 @@ class BulkMetadataEditorPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         $language = array(
-            'PleaseWait' => __('Please wait...'),
+            'PleaseWait' => __('Please wait'),
             'Title' => __('Title'),
             'Description' => __('Description'),
             'ItemType' => __('Item Type'),
@@ -60,7 +58,7 @@ class BulkMetadataEditorPlugin extends Omeka_Plugin_AbstractPlugin
             'Field' => __('Field'),
             'OldValue' => __('Old Value'),
             'NewValue' => __('New Value'),
-            'ErrorGeneratingPreview' => __('Error generating preview! :('),
+            'ErrorGeneratingPreview' => __('Error generating preview!'),
             'CouldNotGeneratePreview' => __('Apologies, but we could not generate a preview at this time.')
                 . ' ' . __('You may be asking for too many changes at once.')
                 . ' ' . __('Anyway, the bulk edition will be done in the background.'),
@@ -73,14 +71,21 @@ class BulkMetadataEditorPlugin extends Omeka_Plugin_AbstractPlugin
             'ChangesPreviewRequestTooLong' => __('The changes preview request is taking too long!')
                 . ' ' . __('You must be trying to make a ton of changes at once.')
                 . ' ' . __('Preview is not possible, but the bulk edition will be done in the background.'),
+            'SelectField' => __('Please select at least one field.'),
             'SelectActionPerform' => __('Please select an action to perform.'),
             'NoItemFound' => __('No matching items found.'),
             'NoFieldFound' => __('No matching field found.'),
             'NoChange' => __('No change or no preview.'),
             'PlusItems' => __('Plus %s more items.', '%s'),
             'PlusFields' => __('...and corresponding fields from a total of %s items.', '%s'),
-            'PlusChanges' => __('...and changes for a total of %s items.', '%s'),
+            'PlusChanges' => __('Only first %s changes shown.', '%s'),
             'ShowMore' => __('Show more.'),
+            'PreviewSelectedItems' => __('Preview Selected Items'),
+            'HideItemsPreview' => __('Hide Items Preview'),
+            'PreviewSelectedFields' => __('Preview Selected Fields'),
+            'HideFieldsPreview' => __('Hide Fields Preview'),
+            'PreviewChanges' => __('Preview Changes'),
+            'HideChangesPreview' => __('Hide Changes Preview'),
         );
         $language = json_encode($language);
         queue_js_string("Omeka.BulkMetadataEditor = {language: $language};");
@@ -92,7 +97,7 @@ class BulkMetadataEditorPlugin extends Omeka_Plugin_AbstractPlugin
      * Define the plugin's access control list.
      *
      * Add a new resource to the access control list
-     * corresponding the the metadata editing page
+     * corresponding to the metadata editing page
      *
      *@param array $args Parameters sent to the plugin hook
      *@return void
@@ -111,7 +116,7 @@ class BulkMetadataEditorPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterAdminNavigationMain($nav)
     {
         $nav[] = array(
-            'label' => __('Bulk Editor'),
+            'label' => __('Bulk Metadata Editor'),
             'uri' => url('bulk-metadata-editor'),
             'resource' => 'BulkMetadataEditor_Index',
             'privilege' => 'index'

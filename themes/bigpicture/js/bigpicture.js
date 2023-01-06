@@ -1,9 +1,7 @@
 (function($) {
     $(document).ready(function() {
-        $("#top-nav").mmenu({
-            "offCanvas": {
-                "position": "right"
-            }
+        $('.menu-toggle').click(function() {
+            $('#top-nav').focus();
         });
 
         $('.search-toggle').click(function() {
@@ -23,3 +21,19 @@
         });
     });
 })(jQuery)
+
+document.addEventListener(
+    "DOMContentLoaded", () => {
+        new Mmenu( "#top-nav", {
+            offCanvas: {
+                position: "right"
+            },
+        }, {
+            sidebar: {
+                expanded: {
+                    use: 800,
+                },
+            },
+        });
+    }
+);
