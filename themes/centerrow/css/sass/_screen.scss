@@ -4,15 +4,19 @@
 
 html {
     font: #{$base-font-size}/#{$base-line-height} "Crimson Text", serif;
-    color: #676767;
+    color: #444;
 }
 
 a {
     color: $red;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: double underline;
+    }
+
+    &:focus {
+        border: solid 1px $red;
     }
 }
 
@@ -52,12 +56,11 @@ img {image-orientation:from-image;}
 
 /* @group ----- Containers ----- */
 
-#wrap,
-footer {
+#wrap {
     max-width: 1100px;
     margin: auto;
-    padding: 0 gutter();
     position: relative;
+    padding: 0 gutter();
 }
 
 /* @end */
@@ -258,10 +261,6 @@ header nav li {
 
 header nav a {
     font-size: .875 * $base-font-size;
-}
-
-header a {
-    text-decoration: none;
 }
 
 #site-title {
@@ -475,7 +474,7 @@ header nav > ul > li > .sub-nav-toggle {
     content: "\00A0\00A0\f0da";
     font-family: "Font Awesome 5 Free";
     display: inline-block;
-    line-height: 1.5;
+    line-height: 1.4;
     font-weight: 900;
 }
 
@@ -783,28 +782,6 @@ footer {
     bottom: 0;
 }
 
-.lg-container button {
-    background-color: transparent;
-}
-
-.lg-icon.hidden {
-    display: none;
-}
-
-.lg-icon.o-icon-undo {
-    font-size: 16px;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
-
-    &:before {
-        content: "\f0e2";
-    }
-}
-
-.lg-outer .lg-thumb {
-    margin: auto;
-}
-
 .element-set {
     margin-bottom: (2 * $base-line-height);
 }
@@ -822,23 +799,24 @@ footer {
 }
 
 .element h3 {
-    width: span(3 of 16);
+    width: span(4 of 16);
     margin: 0;
     text-align: right;
-    padding: 0 gutter();
+    padding: 0 gutter() 0 0;
 }
 
 .element-text {
-    width: span(13 of 16);
-    padding: 0 gutter();
+    width: span(12 of 16);
+    padding: 0 gutter() 0 0;
 }
 
 .element-text > *:first-child {
     margin-top: 0;
 }
 
-.chocolat-overlay {
-    background-color: #000;
+.other-files-link {
+  display: inline-flex;
+  align-items: center;
 }
 
 .collections.show .view-items-link {

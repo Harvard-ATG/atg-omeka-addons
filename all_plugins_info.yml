@@ -1,16 +1,26 @@
 Admin Images:
   available: false
-  description: This Omeka 2.0+ plugin allows administrators to upload images not attached
-    to items for use in carousels and simple pages
+  description: Allows administrators to upload images not attached to Items for use
+    in carousels and Simple Pages
   description_url: https://omeka.org/classic/plugins/AdminImages
-  download_url: https://github.com/UCSCLibrary/AdminImages/releases/download/1.3/AdminImages.zip
+  download_url: https://github.com/UCSCLibrary/AdminImages/releases/download/1.6/AdminImages.zip
   folder_name: AdminImages
   name: Admin Images
   note: Doesn't work with our S3 storage adapter, but rather built for local file
     storage. Also of questionable utility, since it allows for uploading unattached
     images that need to be used via shortcode, rather than the normal Omeka tooling.
-  updated: July 17, 2017
-  version: '1.3'
+  updated: August 03, 2022
+  version: '1.6'
+Admin Tools:
+  available: false
+  description: Various administrative tools, previously available in different minor
+    plugins.
+  description_url: https://omeka.org/classic/plugins/AdminTools
+  download_url: https://github.com/DBinaghi/plugin-AdminTools/releases/download/v1.6/AdminTools.zip
+  name: Admin Tools
+  notes: Not yet evaluated
+  updated: November 18, 2022
+  version: '1.6'
 Annotator:
   available: true
   description: Adds hypothes.is scripts to Omeka items and collections, allowing registered
@@ -28,13 +38,22 @@ Archive Repertory:
     structure (collection / item / files) in order to get readable urls for files
     and to avoid an overloading of the file server.
   description_url: https://omeka.org/classic/plugins/ArchiveRepertory
-  download_url: https://github.com/Daniel-KM/ArchiveRepertory/releases/download/2.15.7/ArchiveRepertory-2.15.7.zip
+  download_url: https://github.com/Daniel-KM/ArchiveRepertory/releases/download/2.15.8/ArchiveRepertory-2.15.8.zip
   folder_name: ArchiveRepertory
   name: Archive Repertory
   note: Makes changes to how files are stored in ways that I do not fully understand,
     breaks the item creation, duplicates items, and has an empty config page somehow
-  updated: November 10, 2019
-  version: 2.15.7
+  updated: October 31, 2022
+  version: 2.15.8
+Archiviz:
+  available: false
+  description: ''
+  description_url: https://omeka.org/classic/plugins/Archiviz
+  download_url: https://github.com/BCWrit/Archiviz/releases/download/v1.0/Archiviz.zip
+  name: Archiviz
+  notes: Not yet evaluated
+  updated: December 26, 2022
+  version: 1.0.0
 AvantCommon:
   available: false
   description: Provides common support for, and is required by, the AvantRelationships,
@@ -112,35 +131,35 @@ Blogger:
   version: '1.1'
 Bulk Metadata Editor:
   available: true
-  description: Adds search and replace functionality allowing curators to update metadata
-    fields over many records quickly and easily.
+  description: Adds search and replace and other functionalities allowing curators
+    to update metadata fields over many records quickly and easily.
   description_url: https://omeka.org/classic/plugins/BulkMetadataEditor
-  download_url: https://github.com/UCSCLibrary/BulkMetadataEditor/releases/download/2.4/BulkMetadataEditor.zip
+  download_url: https://github.com/UCSCLibrary/BulkMetadataEditor/releases/download/v2.8.1/BulkMetadataEditor.zip
   folder_name: BulkMetadataEditor
   name: Bulk Metadata Editor
   note: Works
-  updated: April 05, 2017
-  version: '2.4'
+  updated: August 09, 2022
+  version: 2.8.1
 COinS:
   available: true
   description: Adds COinS metadata to item pages, making them Zotero readable.
   description_url: https://omeka.org/classic/plugins/Coins
-  download_url: https://github.com/omeka/plugin-Coins/releases/download/v2.1/Coins-2.1.zip
+  download_url: https://github.com/omeka/plugin-Coins/releases/download/v2.1.1/Coins-2.1.1.zip
   folder_name: Coins
   name: COinS
   note: Default plugin on our instance
-  updated: March 23, 2021
-  version: '2.1'
+  updated: December 20, 2022
+  version: 2.1.1
 CSS Editor:
   available: true
   description: Add public CSS styles through the admin interface.
   description_url: https://omeka.org/classic/plugins/CSSEditor
-  download_url: https://github.com/omeka/plugin-CSSEditor/releases/download/v1.1/CSSEditor-1.1.zip
+  download_url: https://github.com/omeka/plugin-CSSEditor/releases/download/v1.2/CSSEditor-1.2.zip
   folder_name: CSSEditor
   name: CSS Editor
   note: Works
-  updated: March 20, 2019
-  version: '1.1'
+  updated: November 18, 2022
+  version: '1.2'
 CSV Export Format:
   available: true
   description: Adds CSV as an item export format. Can optionally work with annotations
@@ -156,12 +175,12 @@ CSV Import:
   available: true
   description: Imports items, tags, and files from CSV files.
   description_url: https://omeka.org/classic/plugins/CsvImport
-  download_url: https://github.com/omeka/plugin-CsvImport/releases/download/v2.0.6/CsvImport-2.0.6.zip
+  download_url: https://github.com/omeka/plugin-CsvImport/releases/download/v2.0.7/CsvImport-2.0.7.zip
   folder_name: CsvImport
   name: CSV Import
   note: Works
-  updated: September 21, 2021
-  version: 2.0.6
+  updated: December 21, 2022
+  version: 2.0.7
 Carta:
   available: false
   description: Leaflet maps in Omeka
@@ -186,15 +205,14 @@ Clean URL:
   version: 2.16.1
 Clickable Links Plus:
   available: false
-  description: "Turns URLs in non-HTML text fields into \xBBtarget='_blank'\xAB clickable\
-    \ hyperlinks."
+  description: Turns URLs in non-HTML text fields into clickable hyperlinks.
   description_url: https://omeka.org/classic/plugins/ClickableLinksPlus
-  download_url: https://github.com/DBinaghi/plugin-ClickableLinksPlus/releases/download/v1.3.2/ClickableLinksPlus.zip
+  download_url: https://github.com/DBinaghi/plugin-ClickableLinksPlus/releases/download/v1.4/ClickableLinksPlus.zip
   folder_name: ClickableLinksPlus
   name: Clickable Links Plus
   note: Doesn't work, missing a required css file according to logged error message
-  updated: August 05, 2021
-  version: 1.3.2
+  updated: July 21, 2022
+  version: '1.4'
 Collection Tree:
   available: true
   description: Gives administrators the ability to create a hierarchical tree of their
@@ -274,7 +292,7 @@ Course Tools:
   folder_name: CourseTools
   name: Course Tools
   note: Default plugin on our instance
-  updated: December 14, 2021
+  updated: December 08, 2021
   version: '1.2'
 Default Dublin Core:
   available: true
@@ -363,12 +381,12 @@ Dublin Core Extended:
     Core element set, including element refinements and supplemental elements. See
     DCMI Metadata Terms: http://dublincore.org/documents/dcmi-terms/'
   description_url: https://omeka.org/classic/plugins/DublinCoreExtended
-  download_url: https://github.com/omeka/plugin-DublinCoreExtended/releases/download/v2.2/DublinCoreExtended-2.2.zip
+  download_url: https://github.com/omeka/plugin-DublinCoreExtended/releases/download/v2.3/DublinCoreExtended-2.3.zip
   folder_name: DublinCoreExtended
   name: Dublin Core Extended
   note: Works
-  updated: January 13, 2017
-  version: '2.2'
+  updated: July 26, 2022
+  version: '2.3'
 E-mail Notification:
   available: false
   description: Send e-mail notification when new Item or Collection or Exhibit is
@@ -466,12 +484,12 @@ Exhibit Builder:
   available: true
   description: Build rich exhibits using Omeka.
   description_url: https://omeka.org/classic/plugins/ExhibitBuilder
-  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.5.3/ExhibitBuilder-3.5.3.zip
+  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.6/ExhibitBuilder-3.6.zip
   folder_name: ExhibitBuilder
   name: Exhibit Builder
   note: Default plugin on our instance
-  updated: May 05, 2022
-  version: 3.5.3
+  updated: December 20, 2022
+  version: '3.6'
 Exhibit Image Annotation:
   available: true
   description: Annotate images in your exhibits.
@@ -498,11 +516,11 @@ Facets:
   description: Adds a faceted navigation block to narrow down Items and Collections
     search results by applying multiple filters
   description_url: https://omeka.org/classic/plugins/Facets
-  download_url: https://github.com/DBinaghi/plugin-Facets/releases/download/v2.8.1/Facets.zip
+  download_url: https://github.com/DBinaghi/plugin-Facets/releases/download/v2.9/Facets.zip
   name: Facets
   notes: Needs review
-  updated: December 11, 2021
-  version: 2.8.1
+  updated: August 04, 2022
+  version: '2.9'
 File Paginator:
   available: false
   description: Allow users to page through files on an item page.
@@ -540,12 +558,12 @@ Geolocation:
   available: true
   description: Adds location info and maps to Omeka
   description_url: https://omeka.org/classic/plugins/Geolocation
-  download_url: https://github.com/omeka/plugin-Geolocation/releases/download/v3.2.2/Geolocation-3.2.2.zip
+  download_url: https://github.com/omeka/plugin-Geolocation/releases/download/v3.2.3/Geolocation-3.2.3.zip
   folder_name: Geolocation
   name: Geolocation
   note: works
-  updated: September 21, 2021
-  version: 3.2.2
+  updated: December 21, 2022
+  version: 3.2.3
 Guest User:
   available: true
   description: Adds a guest user role. Can't access backend, but allows plugins to
@@ -704,12 +722,12 @@ Item Order:
   available: true
   description: Gives administrators the ability to custom order items in collections.
   description_url: https://omeka.org/classic/plugins/ItemOrder
-  download_url: https://github.com/omeka/plugin-ItemOrder/releases/download/v2.0.2/ItemOrder-2.0.2.zip
+  download_url: https://github.com/omeka/plugin-ItemOrder/releases/download/v2.1/plugin-ItemOrder-v2.1.zip
   folder_name: ItemOrder
   name: Item Order
   note: Works
-  updated: May 30, 2015
-  version: 2.0.2
+  updated: June 28, 2022
+  version: '2.1'
 Item Relations:
   available: true
   description: Allows administrators to define relations between items.
@@ -806,6 +824,16 @@ MapsAlive:
   notes: needs evaluation
   updated: April 27, 2022
   version: 1.0.0
+More Media Types:
+  available: false
+  description: Adds new media types and relative fallback images; can replace default
+    fallback images as well.
+  description_url: https://omeka.org/classic/plugins/MoreMediaTypes
+  download_url: https://github.com/DBinaghi/plugin-MoreMediaTypes/releases/download/v1.4/MoreMediaTypes.zip
+  name: More Media Types
+  notes: Not yet evaluated
+  updated: October 31, 2022
+  version: '1.4'
 Neatline:
   available: true
   description: Plot your course in space and time.
@@ -1138,15 +1166,15 @@ Simple Vocab:
   version: 2.2.3
 Simple Vocab Plus:
   available: true
-  description: Allows for cloud based vocabulary definition and autosuggest features
-    for Omeka elements
+  description: Allows administrators to create, edit and update controlled vocabularies,
+    either defined in the repository or in the cloud
   description_url: https://omeka.org/classic/plugins/SimpleVocabPlus
-  download_url: https://github.com/UCSCLibrary/SimpleVocabPlus/releases/download/2.4/SimpleVocabPlus.zip
+  download_url: https://github.com/UCSCLibrary/SimpleVocabPlus/releases/download/v3.1.2/SimpleVocabPlus.zip
   folder_name: SimpleVocabPlus
   name: Simple Vocab Plus
   note: Works
-  updated: November 14, 2016
-  version: '2.4'
+  updated: August 20, 2022
+  version: 3.1.2
 SimpleContactForm:
   available: false
   description: Adds a simple contact form for users to contact the administrator.
@@ -1280,6 +1308,15 @@ Vimeo Import:
   note: requires an API token from Vimeo, but works.
   updated: July 17, 2017
   version: '1.3'
+Wikipedia Citations:
+  available: false
+  description: Formats citations according to Wikipedia guidelines
+  description_url: https://omeka.org/classic/plugins/WikipediaCitations
+  download_url: https://github.com/DBinaghi/plugin-WikipediaCitations/releases/download/v1.1/WikipediaCitations.zip
+  name: Wikipedia Citations
+  notes: Not yet evaluated
+  updated: August 10, 2022
+  version: '1.1'
 YouTube Import:
   available: true
   description: Adds the ability to import Youtube videos into Omeka as items while

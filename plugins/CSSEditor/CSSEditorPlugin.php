@@ -34,12 +34,14 @@ class CSSEditorPlugin extends Omeka_Plugin_AbstractPlugin
 
         $config = HTMLPurifier_Config::createDefault();
         $config->set('Filter.ExtractStyleBlocks', TRUE);
+        $config->set('Filter.ExtractStyleBlocks.Escaping', false);
         $config->set('CSS.AllowImportant', TRUE);
         $config->set('CSS.AllowTricky', TRUE);
         $config->set('CSS.Proprietary', TRUE);
         $config->set('CSS.Trusted', TRUE);
         $config->set('HTML.DefinitionID', 'html5-definitions'); // unqiue id
         $config->set('HTML.DefinitionRev', 1);
+        $config->set('Cache.DefinitionImpl', null);
 
         if ($def = $config->maybeGetRawHTMLDefinition())
         {
@@ -64,6 +66,11 @@ class CSSEditorPlugin extends Omeka_Plugin_AbstractPlugin
         $def->addElement('wbr',  'Inline', 'Empty', 'Core');
         $def->addElement('ins', 'Block', 'Flow', 'Common');
         $def->addElement('del', 'Block', 'Flow', 'Common');
+        $def->addElement('input', 'Block', 'Flow', 'Common');
+        $def->addElement('button', 'Block', 'Flow', 'Common');
+        $def->addElement('input[type=submit]', 'Block', 'Flow', 'Common');
+        $def->addElement('input[type=\'submit\']', 'Block', 'Flow', 'Common');
+        $def->addElement('input[type="submit"]', 'Block', 'Flow', 'Common');
         }
 
         $purifier = new HTMLPurifier($config);
@@ -80,6 +87,14 @@ class CSSEditorPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $css = get_option('css_editor_css');
         if ($css) {
+            // HTML Purifier's escaping code (minus the >).
+            // Do it here to avoid round-trip issues with the form entry,
+            // and omit > to allow child selector usage
+            $css = str_replace(
+                array('<', '&'),
+                array('\3C ', '\26 '),
+                $css
+            );
             queue_css_string($css);
         }
     }

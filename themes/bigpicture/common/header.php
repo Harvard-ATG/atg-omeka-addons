@@ -27,29 +27,30 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_file(array('normalize','jquery.mmenu', 'jquery.mmenu.positioning','style'));
+    queue_css_file(array('normalize','mmenu', 'style'));
     queue_css_url('https://fonts.googleapis.com/css?family=Hind|Caudex:400,400i,700,700i');
     echo head_css();
     ?>
 
     <!-- JavaScripts -->
     <?php 
-    queue_js_file(array('jquery.mmenu.min','bigpicture'), 'js');
+    queue_js_file(array('mmenu','bigpicture'), 'js');
     echo head_js(); 
     ?>
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+    <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <div id="wrap">
         <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
 
-        <header role="banner">
+        <header>
 
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
             <?php echo theme_header_image(); ?>
 
-            <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
+            <div id="site-title"><?php echo link_to_home_page(theme_logo(), array('title' => __('Return to home page'))); ?></div>
             
             <a href="#" class="search-toggle" aria-label="<?php echo __('Search'); ?>"></a>
             <div id="search-container">
@@ -67,6 +68,6 @@
 
         </header>
         
-        <article id="content">
+        <article id="content" role="main">
         
             <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>

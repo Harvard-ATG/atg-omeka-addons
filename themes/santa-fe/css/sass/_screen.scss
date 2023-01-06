@@ -19,8 +19,7 @@ body {
         width: 100%;
         color: #fafafa;
         text-align: center;
-        padding: $spacing-unit 0;
-        padding-left: $gutter-width;
+        padding: $spacing-unit;
         
         a {
             color: #fafafa;
@@ -372,6 +371,13 @@ body {
         .vvvvvvvv-popular a {font-size:360%;}
 
 /* == Header == */
+
+#site-title img,
+#header-image img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
 #header {
     border: 1px solid #fff;
     border-width: 1px 0;
@@ -399,7 +405,7 @@ body {
 }
 
 #search-container {
-    padding: 0 $gutter-width $spacing-unit;
+    padding: 0 $spacing-unit $spacing-unit;
 }
 
 #search-form {
@@ -435,6 +441,11 @@ body {
     button {
         right: 0;
     }
+}
+
+#header-image,
+#header-image img {
+    width: 100%;
 }
 
 #query {
@@ -525,12 +536,11 @@ body {
     /* Structure */
     #content {
         background:#fff;
-        padding: $spacing-unit $gutter-width;
+        padding: $spacing-unit;
         overflow:hidden;
     }
     .center-div {
-        @include container;
-        margin: 0 $gutter-width;
+        margin: 0 $spacing-unit;
     }
     
     /* General */
@@ -541,7 +551,7 @@ body {
         clear:both;
         overflow: hidden;
         border-bottom: 2px solid #fff;
-        padding: $spacing-unit $gutter-width 0;
+        padding: $spacing-unit $spacing-unit 0;
         
         ul {
             display:none
@@ -549,6 +559,7 @@ body {
         select {
             width: 100%;
             display:block;
+            margin-bottom: $spacing-unit;
         }
     }
 
@@ -593,7 +604,6 @@ body {
     #featured-exhibit .exhibit {
         border-bottom: 0;
         padding: 0;
-        overflow: visible;
     }
 
     #recent-items {
@@ -657,6 +667,8 @@ body {
 
     .search-entry {
         margin-bottom: (.5 * $spacing-unit);
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .search-entry:first-child .advanced-search-joiner {
@@ -733,11 +745,11 @@ body {
         margin: 0;
         border: 1px solid $olive;
         border-width: 1px 0;
-        padding: ($spacing-unit - 1px) gutter(16);
+        padding: ($spacing-unit - 1px) $spacing-unit;
         
         
         & ~ * {
-            @include span(9 of 12);
+            width: 75%; // old span 9 of 12
             margin-right: 0;
             clear: right;
         }
@@ -762,8 +774,7 @@ body {
 
         & > h4 {
             font-size: 1.25 * $base-font-size;
-            margin-bottom: (.5 * $spacing-unit);
-            @include bleed-x(1 of 16);
+            margin: 0 (-6.25%) (.5 * $spacing-unit);
             border-bottom: 1px solid $olive;
             padding-bottom: ((.75 * $spacing-unit) - 1px);
         }
@@ -827,12 +838,13 @@ body {
 
 /* == Footer == */
 #footer {
-    margin: 0 gutter();
+    margin: 0 auto;
+    max-width: 1100px;
     clear:both;
     border: 1px solid #fff;
     background-color: $olive;
     overflow:hidden;
-    padding: 0 gutter();
+    padding: 0 $spacing-unit;
 }
 #footer li {display:inline;}
 #footer .navigation li {margin-right:.5em}

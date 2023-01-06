@@ -6,8 +6,8 @@
 
 html {
     font-family: $body-font;
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -19,20 +19,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1.75 * $scalable-font-size;
-    line-height: 2 * $scalable-line-height;
+    font-size: 1.75 * $base-font-size;
+    line-height: 2 * $base-line-height;
     margin: 0 0 $spacing-unit;
 }
 
 h2 {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 2 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 2 * $base-line-height;
     margin: $spacing-unit 0;
 }
 
 h3 {
-    font-size: 1.25 * $scalable-font-size;
-    line-height: $scalable-line-height;
+    font-size: 1.25 * $base-font-size;
+    line-height: $base-line-height;
     margin: $spacing-unit 0;
 }
 
@@ -73,7 +73,7 @@ img {
     button,
     select {
         font-family: $body-font;
-        font-size: $scalable-font-size;
+        font-size: $base-font-size;
         line-height: 1;
         margin: 0;
         border-radius: 0;
@@ -87,7 +87,7 @@ img {
         border: 1px solid #ccc;
         border-radius: 3px;
         background: #fff url('../img/select-arrow.svg') right (.5 * $spacing-unit) center no-repeat;
-        background-size: .5 * $scalable-font-size;
+        background-size: .5 * $base-font-size;
     }
 
     input[type="text"],
@@ -116,6 +116,16 @@ img {
         font-family: $heading-font;
         cursor: pointer;
     }
+
+    button:-moz-focusring,
+    [type="button"]:-moz-focusring,
+    [type="reset"]:-moz-focusring,
+    [type="submit"]:-moz-focusring {
+        outline: auto;
+        z-index: 1;
+        position: relative;
+    }
+
 
     [type="submit"] {
         margin: $spacing-unit 0;
@@ -213,12 +223,12 @@ nav li {
     font-family: $heading-font;
     color: #000;
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
     display: block;
 }
 
 .pagination {
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
     font-family: $heading-font;
     margin: 0 0 $spacing-unit;
 }
@@ -260,7 +270,7 @@ nav li {
     flex-wrap: wrap;
     justify-content: space-between;
     font-family: $heading-font;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 .item-pagination a {
@@ -277,7 +287,16 @@ nav li {
 }
 
 #skipnav {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    font-family: $heading-font;
+
+    &:focus {
+        height: auto;
+        padding: .25 * $spacing-unit;
+    }
 }
 
 #site-title {
@@ -388,8 +407,8 @@ header a {
 }
 
 #top-nav ul ul ul li {
-    font-size: .75 * $scalable-font-size;
-    line-height: .75 * $scalable-line-height;
+    font-size: .75 * $base-font-size;
+    line-height: .75 * $base-line-height;
 
     &:before {
         content: "\2014";
@@ -400,9 +419,12 @@ header a {
 #search-form {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-top: 20vh;
+}
+
+.search-contents:not(.with-advanced) {
+    display: flex;
 }
 
 #search-form input[type="text"] {
@@ -411,10 +433,9 @@ header a {
     background-color: transparent;
     color: #fff;
     display: inline-block;
-    width: 50%;
     margin-right: (.5 * $spacing-unit);
-    font-size: 2 * $scalable-font-size;
-    height: 2 * $scalable-line-height;
+    font-size: 2 * $base-font-size;
+    height: 2 * $base-line-height;
     padding: 0;
 }
 
@@ -423,23 +444,17 @@ header a {
 }
 
 #search-form button[type="submit"] {
-    background-color: transparent;
-    border: 3px solid #fff;
-    color: #fff;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 2 * $scalable-font-size;
-    height: 2 * $scalable-line-height;
+    font-size: 2 * $base-font-size;
+    height: 2 * $base-line-height;
     padding-left: (.25 * $spacing-unit);
     padding-right: (.25 * $spacing-unit);
     margin: 0;
     line-height: 0;
-    order: 2;
 }
 
 #advanced-form {
-    order: 3;
     display: flex;
+    margin: $spacing-unit 0;
 }
 
 #advanced-form fieldset,
@@ -479,7 +494,7 @@ div#featured {
 #featured .record:first-child,
 #featured.layout-2 .record:nth-child(2),
 #featured .record:nth-child(6n),
-#featured .record:nth-child(6n+1), {
+#featured .record:nth-child(6n+1) {
     width: 100%;
 }
 
@@ -574,7 +589,7 @@ footer {
 
 #sort-links {
     font-family: $heading-font;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 #sort-links ul {
@@ -627,8 +642,8 @@ footer {
 }
 
 .records .hentry {
-    font-size: .75 * $scalable-font-size;
-    line-height: .75 * $scalable-line-height;
+    font-size: .75 * $base-font-size;
+    line-height: .75 * $base-line-height;
     width: calc(25% - #{$spacing-unit});
     margin: 0 $spacing-unit (2 * $spacing-unit) 0;
 
@@ -652,7 +667,7 @@ footer {
 
 .browse #outputs {
     width: 100%;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 .browse .outputs-label:after {
@@ -664,9 +679,9 @@ footer {
 }
 
 .collection.hentry h2 {
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
-    margin: (.5 * $scalable-font-size) 0 0;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin: (.5 * $base-font-size) 0 0;
 }
 
 .popularity {
@@ -731,76 +746,6 @@ footer {
     height: auto;
 }
 
-#itemfiles {
-    padding-bottom: 0 !important;
-}
-
-#itemfiles,
-.lSSlideOuter .media-render {
-    margin: 0;
-    background-color: rgba(0,0,0,.8);
-    width: 100%;
-}
-
-#itemfiles {
-    margin: 0 auto $base-line-height;
-    text-align: center;
-    min-height: 50vh !important;
-}
-
-#itemfiles li {
-    bottom: 0;
-}
-
-.lSSlideOuter ul.lSPager.lSGallery {
-    margin: auto;
-    margin-bottom: $base-line-height;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.lSSlideOuter .media-render {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lSSlideOuter .media-render a {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lSSlideOuter .media-render img {
-    max-height: 100%;
-    width: auto;
-}
-
-.lSPager a {
-    margin: 0 (.25 * $base-line-height) (.5 * $base-line-height);
-    display: inline-block;
-}
-
-.lSPager li {
-    text-align: center;
-}
-
-.lSPager li:only-of-type {
-    display: none;
-}
-
-.lSPager img {
-    vertical-align: bottom;
-    width: 3 * $base-line-height;
-}
-
-.lg-outer .lg-thumb {
-    margin: auto;
-}
-
 .element {
     margin-bottom: $spacing-unit;
     vertical-align: top;
@@ -808,7 +753,7 @@ footer {
 }
 
 .element h3 {
-    font-size: $scalable-font-size;
+    font-size: $base-font-size;
     width: 25%;
     margin: 0;
     display: block;
@@ -856,6 +801,11 @@ footer {
     margin: $spacing-unit auto;
     font-family: $heading-font;
     padding: (.25 * $spacing-unit);
+}
+
+.other-files-link {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* @end */
@@ -910,7 +860,7 @@ button.remove_search:after {
 
 button.add_search {
     margin-left: calc(#{span(4 of 12)} + #{(.5 * $spacing-unit)});
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 #search-filters,
@@ -927,7 +877,7 @@ button.add_search {
     list-style: none;
     padding-left: 0;
     margin: 0;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 #search-filters li,
@@ -1003,8 +953,6 @@ button.add_search {
 
 #exhibit-pages {
     align-self: flex-start;
-    font-size: .6125 * $scalable-font-size;
-    line-height: .6125 * $scalable-line-height;
     width: 20%;
     margin: 0 0 $spacing-unit;
     
@@ -1106,8 +1054,8 @@ button.add_search {
     font-family: "Font Awesome 5 Free";
     content: "\f067";
     font-weight: 900;
-    font-size: .6125 * $scalable-font-size;
-    line-height: .6125 * $scalable-line-height;
+    font-size: .6125 * $base-font-size;
+    line-height: .6125 * $base-line-height;
     display: block;
 }
 

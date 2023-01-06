@@ -753,13 +753,13 @@ body.vertical-menu footer {
   }
 }
 
-#sort-links-list {
+.sort-links-list {
   @include style-type-unordered(none);
   display: flex;
   margin-bottom: 0;
 }
 
-#sort-links-list li {
+.sort-links-list li {
   margin: 0 $global-margin;
 }
 
@@ -1244,6 +1244,10 @@ body.vertical-menu footer {
 
 .layout-file-text .exhibit-items.captions-right {
   text-align: right;
+}
+
+.layout-file .exhibit-items.thumbnail {
+  border: 0;
 }
 
 .layout-gallery .exhibit-item-link *, 
