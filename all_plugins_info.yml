@@ -226,6 +226,16 @@ Collection Tree:
     items directly in collection. IIIF Catalogue Tree maintains collection groups.
   updated: January 13, 2017
   version: '2.1'
+Collections Plus:
+  available: false
+  description: Improves the Collection browsing admin interface and allows for further
+    customization of single Collections.
+  description_url: https://omeka.org/classic/plugins/CollectionsPlus
+  download_url: https://github.com/DBinaghi/plugin-CollectionsPlus/releases/download/v1.1/CollectionsPlus.zip
+  name: Collections Plus
+  notes: Not evaluated
+  updated: February 12, 2023
+  version: '1.1'
 Commenting:
   available: true
   description: Allows commenting on Items, Collections, Exhibits, and more
@@ -484,12 +494,12 @@ Exhibit Builder:
   available: true
   description: Build rich exhibits using Omeka.
   description_url: https://omeka.org/classic/plugins/ExhibitBuilder
-  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.6/ExhibitBuilder-3.6.zip
+  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.6.1/ExhibitBuilder-3.6.1.zip
   folder_name: ExhibitBuilder
   name: Exhibit Builder
   note: Default plugin on our instance
-  updated: December 20, 2022
-  version: '3.6'
+  updated: January 23, 2023
+  version: 3.6.1
 Exhibit Image Annotation:
   available: true
   description: Annotate images in your exhibits.
@@ -504,13 +514,13 @@ Export:
   available: false
   description: Extensible export plugin
   description_url: https://omeka.org/classic/plugins/Export
-  download_url: https://github.com/biblibre/omeka-plugin-Export/releases/download/v0.1.0/Export-0.1.0.zip
+  download_url: https://github.com/biblibre/omeka-plugin-Export/releases/download/v0.2.0/Export-0.2.0.zip
   folder_name: Export
   name: Export
   note: Not really an independent plugin, but rather a starting point and framework
     for a custom export plugin, so we don't need to offer it.
-  updated: October 31, 2017
-  version: 0.1.0
+  updated: March 16, 2023
+  version: 0.2.0
 Facets:
   available: false
   description: Adds a faceted navigation block to narrow down Items and Collections
@@ -1085,6 +1095,15 @@ Reports:
     with our storage adapter currently
   updated: September 21, 2021
   version: 2.0.3
+Resource Meta:
+  available: false
+  description: Add meta tags to resources
+  description_url: https://omeka.org/classic/plugins/ResourceMeta
+  download_url: https://github.com/omeka/plugin-ResourceMeta/releases/download/v1.0.0/ResourceMeta-1.0.0.zip
+  name: Resource Meta
+  notes: Not evaluated
+  updated: May 03, 2023
+  version: 1.0.0
 Scripto:
   available: false
   description: Adds the ability to transcribe items using the Scripto library.
@@ -1211,15 +1230,14 @@ Sitemap 2:
   version: '2.3'
 Social Bookmarking:
   available: true
-  description: Uses AddThis to insert a customizable list of social bookmarking sites
-    on each item page.
+  description: Insert a customizable list of social bookmarking links.
   description_url: https://omeka.org/classic/plugins/SocialBookmarking
-  download_url: https://github.com/omeka/plugin-SocialBookmarking/releases/download/v2.0.3/SocialBookmarking-2.0.3.zip
+  download_url: https://github.com/omeka/plugin-SocialBookmarking/releases/download/v2.1.1/SocialBookmarking-2.1.1.zip
   folder_name: SocialBookmarking
   name: Social Bookmarking
   note: Works, can be blocked by browser addons
-  updated: August 27, 2019
-  version: 2.0.3
+  updated: June 14, 2023
+  version: 2.1.1
 Taxonomy:
   available: false
   description: Allow to define taxonomies and declare an element type 'taxonomy-term'
@@ -1251,6 +1269,15 @@ Text Annotation:
   name: Text Annotation
   note: Works, same functionality as "Annotator" plugin
   updated: November 14, 2017
+  version: '1.0'
+Timeline:
+  available: false
+  description: Adds a TimelineJS block to ExhibitBuilder
+  description_url: https://omeka.org/classic/plugins/Timeline
+  download_url: https://github.com/omeka/plugin-Timeline/releases/download/v1.0/Timeline-1.0.zip
+  name: Timeline
+  notes: Not evaluated
+  updated: February 23, 2023
   version: '1.0'
 Timeline Shortcode:
   available: true
