@@ -98,7 +98,12 @@ blockquote {
         right: 2.6667em;
     }
 }
+
 #skipnav {
+    height: 0;
+}
+
+#skipnav a {
     border: 0;
     clip: rect(0, 0, 0, 0);
     height: 1px;
@@ -109,7 +114,7 @@ blockquote {
     width: 1px;
 }
 
-#skipnav:focus {
+#skipnav a:focus {
     top:0;
     z-index:9999;
     clip:initial;
@@ -119,8 +124,16 @@ blockquote {
     border:1px blue dashed;
 }
 
+@media screen and (max-width: 840px) {
+    #skipnav:focus {
+        display: block;
+        width: 100%;
+        position: static;
+    }
+}
+
 #content {
-    padding: 0 gutter();
+    padding: 0 $gutter-width;
 }
 
 /* @end */
@@ -144,11 +157,16 @@ blockquote {
 
 #content .item img,
 .item #content img,
-.image img {
+.image img,
+img.image {
     vertical-align: bottom;
     border: 1px solid #ccc;
     padding: ((.25 * $spacing-unit) - 1px);
     background-color: #fff;
+}
+
+#content img {
+    max-width: 100%;
     max-height: 100%;
 }
 
@@ -377,6 +395,7 @@ textarea.placeholder_text {
   box-shadow: none;
 }
 
+a.button:focus,
 button:focus,
 button:active,
 input:focus,
@@ -510,7 +529,7 @@ fieldset {
 .search-entry {
     background-color: rgba(0,0,0,.05);
     padding: (.5 * $spacing-unit) 2%;
-    margin-bottom: $spacing-unit;
+    margin-bottom: .5 * $spacing-unit;
     overflow: auto;
     margin-top: (.5 * $spacing-unit);
 }
@@ -529,7 +548,13 @@ fieldset {
     input, select {
         width: 100%;
         display: block;
-        margin-bottom: $spacing-unit;
+        margin-bottom: 0;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: initial;
+        float: none;
     }
 
     .search-entry select,
@@ -562,10 +587,8 @@ fieldset {
     }
 
     .field {
-        border-bottom:1px solid #ccc;
         width:100%;
-        overflow: auto;
-        padding: $spacing-unit 0;
+        padding: $spacing-unit 0 0;
         margin-bottom: 0;
 
         .inputs {
@@ -573,7 +596,11 @@ fieldset {
         }
 
         label {
+            display: block;
             margin: 0;
+        }
+
+        label:not(:last-of-type) {
             margin-bottom: $spacing-unit;
         }
 
@@ -581,10 +608,18 @@ fieldset {
 
         div:only-child { margin-bottom: 0; }
 
+        .add_search {
+            margin-bottom: $spacing-unit;
+        }
+
         .remove_search {
             margin: $spacing-unit 0 0;
         }
     }
+}
+
+#search-narrow-by-fields-remove-field {
+    display: none;
 }
 
 ul.items-list, ul.collections-list, ul.title-list {
@@ -661,7 +696,6 @@ div.error {
 
 header {
     background-size: auto !important;
-    -ms-behavior: url('../javascripts/backgroundsize.min.htc');
     background-position-x: right !important;
 }
 
@@ -705,9 +739,11 @@ ul.navigation { padding-left: 0; }
 
 .button.menu-button {
     cursor: pointer;
-    padding: (.5 * $spacing-unit) gutter();
+    padding: (.5 * $spacing-unit) $gutter-width;
     display: block;
+    width: 100%;
     text-transform: uppercase;
+    text-align: left;
 }
 
 .button.menu-button:after {
@@ -738,7 +774,7 @@ ul.navigation { padding-left: 0; }
             box-sizing: border-box;
             margin: 0;
 
-            a { padding: (.5 * $spacing-unit) gutter() (.5 * $spacing-unit) gutter(2); }
+            a { padding: (.5 * $spacing-unit) $gutter-width (.5 * $spacing-unit) gutter(2); }
 
             ul li a { padding-left: 4em; }
         }
@@ -768,11 +804,14 @@ ul.navigation { padding-left: 0; }
         a {
             border-bottom: 1px solid #ccc;
             display:block;
-            padding: (.5 * $spacing-unit) gutter();
+            padding: (.5 * $spacing-unit) $gutter-width;
 
             &:before {
-                content: "\BB\20";
-                display: inline;
+                content: "\f0da";
+                display: inline-block;
+                margin-right: .25 * $spacing-unit;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
             }
             &:focus {
               border: 1px dotted #ccc;
@@ -835,7 +874,7 @@ ul.navigation { padding-left: 0; }
 .pagination {
     padding-left: 0;
     float: left;
-    margin: (.5 * $base-line-height) 0;
+    margin: 0;
     height: 2 * $base-line-height;
     display: block;
     overflow: auto;
@@ -1004,17 +1043,17 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
     clear: both;
 }
 
-.desc a:after, .asc a:after {
+.desc span:after, .asc span:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     display: inline-block;
 }
 
-.desc a:after {
+.desc span:after {
     content: "\00a0\f0d8";
 }
 
-.asc a:after {
+.asc span:after {
     content: "\00a0\f0d7";
 }
 
@@ -1022,22 +1061,78 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
 
 /* @group ----- Content ----- */
 
-#featured-item,
-#featured-collection,
-#featured-exhibit {
-    background-color: rgba(0,0,0,.03);
-    padding: 0 gutter();
+#intro {
+    margin-bottom: $spacing-unit;
+    padding: $spacing-unit;
+    background-color: $gray;
+    font-size: 1.25 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
+}
+
+.subtitle {
+    display: none;
+}
+
+#home #featured-records .record {
+    padding: $spacing-unit;
     margin-bottom: $spacing-unit;
     overflow: auto;
 
-    h2 {
-        margin-top: $spacing-unit;
+    .subtitle {
+        display: block;
+        font-weight: none;
+        font-size: $base-font-size;
+    }
+
+    .title {
+        margin-bottom: .5 * $spacing-unit;
+    }
+
+    img {
+        display: block;
+        float: none;
+    }
+}
+
+.record .title {
+    @extend h3;
+    font-weight: bold;
+    overflow: hidden;
+
+    a:focus {
+        outline-offset: -2px;
+    }
+}
+
+.recent-title {
+    @extend h2;
+}
+
+.recent-title {
+    font-weight: bold;
+    margin-top: $spacing-unit;
+}
+
+#recent-items .item {
+    border-bottom: 1px solid #000;
+    padding-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit;
+
+    .title,
+    img.image {
+        margin-bottom: 0;
+        margin-right: 0;
     }
 }
 
 #recent-items .item,
 #recent-items .view-items-link {
     clear: both;
+}
+
+#recent-items .image {
+    float: right;
+    margin: 0 0 0 d$spacing-unit;
 }
 
 #simple-search {
@@ -1051,7 +1146,7 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
 #search-container {
     position: relative;
     box-sizing: border-box;
-    margin: $spacing-unit gutter();
+    margin: $spacing-unit $gutter-width;
 
     &:after {
       content: "";
@@ -1059,10 +1154,6 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
       height: 0;
       width: 100%;
       clear: both;
-    }
-
-    &.with-advanced .button {
-        right: 30px;
     }
 }
 
@@ -1072,21 +1163,26 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
     display: inline-block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 30px;
     font-weight: bold;
     border-left: 1px solid rgba(255,255,255,.3);
     box-sizing: border-box;
+    padding: (.25 * $spacing-unit) 0;
+    overflow: hidden;
 
 
     &:link, &:hover, &:active, &:visited { color: #fff; }
 }
 
-.show-advanced.button:after {
+.show-advanced .icon:after {
     content: "\2026";
     display: block;
     text-indent: 0;
     text-align: center;
-    margin-top: -1.75em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 #search-container {
@@ -1107,7 +1203,7 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
         line-height: $base-line-height;
     }
 
-    button {
+    #submit_search {
         width: 30px;
         border: 0;
         color: #fff;
@@ -1118,7 +1214,7 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
         border-radius: 0;
         text-indent: -9999px;
 
-        &:after {
+        .icon:after {
             font-family: "Font Awesome 5 Free";
             content: "\f002";
             font-weight: 900;
@@ -1258,9 +1354,14 @@ nav.pagination:nth-of-type(3) ul, #content > .pagination:nth-of-type(2) {
         overflow:hidden;
         border-top:1px solid #ccc;
         padding: $spacing-unit 0;
+        width: 100%;
 
         &:last-of-type { border-bottom: 0; }
     }
+}
+
+#browse-results {
+    width: 100%;
 }
 
 .items {
@@ -1404,9 +1505,6 @@ footer {
         margin-bottom: 0;
         position: relative;
         padding: .5 * $spacing-unit;
-    }
-
-    & > ul > li {
     }
 
     & > ul > li.parent:before,

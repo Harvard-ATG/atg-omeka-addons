@@ -152,8 +152,11 @@ a.button:hover,
 select {
     display: inline-block;
     height: 1.5 * $base-line-height;
-    line-height: 1.5 * $base-line-height;
+    padding-right: 30px;
     vertical-align: top;
+    appearance: none;
+    border: 1px solid #999;
+    background: #fff url('../../../admin/themes/default/images/dropdown-arrow.png') right center no-repeat;
 }
 
 fieldset {
@@ -292,6 +295,7 @@ header {
     .button,
     button {
         width: (1.5 * $spacing-unit);
+        height: (1.5 * $spacing-unit);
         position: absolute;
         top: (.5 * $spacing-unit);
         right: (.25 * $spacing-unit);
@@ -1054,33 +1058,32 @@ div.tags:last-child p {
     margin-right: 3px;
 }
 
+.search-entry {
+    border: 1px solid #ccc;
+    padding: (.5 * $spacing-unit) (.5 * $spacing-unit) 0;
+}
+
+.search-entry .input {
+    margin: 0 (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
+}
+
+.search-entry .input.advanced-search-terms {
+    flex-grow: 1;
+}
+
 .search-entry:first-child .advanced-search-joiner {
     display: none;
 }
 
 .search-entry select,
 .items .search-entry input {
-    margin-bottom: (.5 * $spacing-unit);
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .remove_search {
-    margin-bottom: $spacing-unit;
-    text-indent: -9999px;
-    width: 1.5 * $base-line-height;
-    position: relative;
-    
-    &:after {
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: "\f00d";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        text-indent: 0;
-        line-height: 1.5 * $base-line-height;
-    }
+    margin-bottom: .5 * $spacing-unit;
+    align-self: flex-end;
 }
 
 /* @end */
