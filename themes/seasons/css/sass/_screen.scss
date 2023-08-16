@@ -502,7 +502,7 @@ nav {
     }
 }
 
-.show-advanced.button {
+#search-form .show-advanced.button {
     width: (1.5 * $spacing-unit);
     height: 35px;
     text-indent: -9999px;
@@ -512,7 +512,6 @@ nav {
     top: 0;
     right: (1.5 * $spacing-unit);
     line-height: 30px;
-    background-color: #4b6569;
     box-sizing: content-box;
 
     &:focus {
@@ -1042,47 +1041,22 @@ footer {
         }
 
     .search-entry {
+        justify-content: space-between;
 
-        select {
-            width: calc(49% - 2.25em);
-            margin-bottom: (.25 * $spacing-unit);
-        }
-
+        select,
         input[type=text] {
-            width: calc(100% - #{(2 * $spacing-unit)});
-        }
-
-        select {
-            margin-right: 1%;
+            margin-bottom: 0 !important;
         }
 
         &:first-of-type { padding-bottom: 0; }
 
         &:first-of-type .advanced-search-joiner { display: none; }
 
-        .advanced-search-joiner { width: 4em; }
+        .advanced-search-joiner { width: 100%; }
 
-        &:only-of-type, { margin-bottom: 0; }
-    }
+        .advanced-search-joiner select { width: auto; }
 
-    .remove_search {
-        text-indent: -9999px;
-        width: 1.5 * $base-line-height;
-        position: relative;
-        height: 1.5 * $base-line-height;
-
-        &:after {
-            content: "\f00d";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            text-indent: 0;
-            text-align: center;
-            width: 100%;
-            top: 0;
-            left: 0;
-            position: absolute;
-            line-height: 1.5 * $base-line-height;
-        }
+        &:only-of-type { margin-bottom: 0; }
     }
 
     .advanced-search {

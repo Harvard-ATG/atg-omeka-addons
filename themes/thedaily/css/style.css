@@ -414,21 +414,19 @@ button,
 select {
     font-family: "Assistant", sans-serif;
     font-size: 18px;
-    line-height: 1;
+    line-height: 24px;
     margin: 0;
     border-radius: 0;
   }
 
   select {
     width: 100%;
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     padding: 6px 30px 6px 12px;
     font-family: "Assistant", sans-serif;
     border: 1px solid #ccc;
     border-radius: 3px;
-    background: #fff url("../img/select-arrow.svg") right 12px center no-repeat;
-    background-size: 9px;
+    background: #fff url("../../../admin/themes/default/images/dropdown-arrow.png") no-repeat center right;
   }
 
   input[type=text],
@@ -440,8 +438,7 @@ input[type=date],
 input[type=datetime-local],
 textarea {
     width: 100%;
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     border: 1px solid #ccc;
     background-color: #fff;
     padding: 6px;
@@ -451,8 +448,7 @@ textarea {
   .button,
 button,
 input[type=submit] {
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     padding: 6px 12px;
     background-color: yellow;
     border: 3px solid #000;
@@ -1120,8 +1116,11 @@ th {
   /* @group ----- Advanced Item Search ----- */
   .search-entry {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 12px;
+  }
+
+  .search-entry .input {
+    margin-right: 6px;
   }
 
   .search-entry:first-child .advanced-search-joiner {
@@ -1132,22 +1131,23 @@ th {
     margin-top: 12px;
   }
 
-  .search-entry:only-child > select,
-.search-entry:only-child > input[type=text] {
-    width: 33%;
+  #search-narrow-by-fields .advanced-search-terms {
+    flex-grow: 1;
   }
 
-  .search-entry > select,
-.search-entry > input[type=text] {
-    width: calc((100% - 66px) / 3);
+  #search-narrow-by-fields .advanced-search-terms input[type=text] {
+    margin-bottom: 0;
   }
 
   button.remove_search {
     text-indent: -9999px;
     width: 48px;
+    height: 38px;
     position: relative;
     background-color: #000;
     color: #fff;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
   }
 
   button.remove_search:after {
@@ -1584,6 +1584,10 @@ form .field > .inputs {
   button.add_search {
     margin-left: 0;
     font-size: 27px;
+  }
+
+  button.remove_search {
+    height: 48px;
   }
 
   /* @end */

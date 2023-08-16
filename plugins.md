@@ -4,12 +4,21 @@ This document contains a list of plugins that we know about, whether we have the
 
 ## :x: Admin Images
 
-* **Description:** This Omeka 2.0+ plugin allows administrators to upload images not attached to items for use in carousels and simple pages
+* **Description:** Allows administrators to upload images not attached to Items for use in carousels and Simple Pages
 * **[Description page](https://omeka.org/classic/plugins/AdminImages)**
-* **Version:** 1.3
-* **Updated:** July 17, 2017
+* **Version:** 1.6
+* **Updated:** August 03, 2022
 
 Doesn't work with our S3 storage adapter, but rather built for local file storage. Also of questionable utility, since it allows for uploading unattached images that need to be used via shortcode, rather than the normal Omeka tooling.
+
+## :x: Admin Tools
+
+* **Description:** Various administrative tools, previously available in different minor plugins.
+* **[Description page](https://omeka.org/classic/plugins/AdminTools)**
+* **Version:** 1.6
+* **Updated:** November 18, 2022
+
+Not yet evaluated
 
 ## :white_check_mark: Annotator
 
@@ -24,10 +33,19 @@ Works, same functionality as "Text Annotation" plugin
 
 * **Description:** Keeps original names of imported files and put them in a hierarchical structure (collection / item / files) in order to get readable urls for files and to avoid an overloading of the file server.
 * **[Description page](https://omeka.org/classic/plugins/ArchiveRepertory)**
-* **Version:** 2.15.7
-* **Updated:** November 10, 2019
+* **Version:** 2.15.8
+* **Updated:** October 31, 2022
 
 Makes changes to how files are stored in ways that I do not fully understand, breaks the item creation, duplicates items, and has an empty config page somehow
+
+## :x: Archiviz
+
+* **Description:** 
+* **[Description page](https://omeka.org/classic/plugins/Archiviz)**
+* **Version:** 1.0.0
+* **Updated:** December 26, 2022
+
+Not yet evaluated
 
 ## :x: AvantCommon
 
@@ -69,8 +87,8 @@ Errors on install, db user lacks REFERENCES permission
 
 * **Description:** Adds new, useful Exhibit blocks, like groups of Items, Collections, or other Exhibits.
 * **[Description page](https://omeka.org/classic/plugins/BlockParty)**
-* **Version:** 0.1
-* **Updated:** May 31, 2019
+* **Version:** 1.0.1
+* **Updated:** December 07, 2021
 
 [Jeremy](https://github.com/jaguillette/) made this, so if it's broken it's his fault.
 
@@ -94,10 +112,10 @@ I was not able to get the plugin to do what it describes in the documentation, n
 
 ## :white_check_mark: Bulk Metadata Editor
 
-* **Description:** Adds search and replace functionality allowing curators to update metadata fields over many records quickly and easily.
+* **Description:** Adds search and replace and other functionalities allowing curators to update metadata fields over many records quickly and easily.
 * **[Description page](https://omeka.org/classic/plugins/BulkMetadataEditor)**
-* **Version:** 2.4
-* **Updated:** April 05, 2017
+* **Version:** 2.8.1
+* **Updated:** August 09, 2022
 
 Works
 
@@ -105,8 +123,8 @@ Works
 
 * **Description:** Adds COinS metadata to item pages, making them Zotero readable.
 * **[Description page](https://omeka.org/classic/plugins/Coins)**
-* **Version:** 2.1
-* **Updated:** March 23, 2021
+* **Version:** 2.1.1
+* **Updated:** December 20, 2022
 
 Default plugin on our instance
 
@@ -114,8 +132,8 @@ Default plugin on our instance
 
 * **Description:** Add public CSS styles through the admin interface.
 * **[Description page](https://omeka.org/classic/plugins/CSSEditor)**
-* **Version:** 1.1
-* **Updated:** March 20, 2019
+* **Version:** 1.2
+* **Updated:** November 18, 2022
 
 Works
 
@@ -132,8 +150,8 @@ Default plugin on our instance
 
 * **Description:** Imports items, tags, and files from CSV files.
 * **[Description page](https://omeka.org/classic/plugins/CsvImport)**
-* **Version:** 2.0.6
-* **Updated:** September 21, 2021
+* **Version:** 2.0.7
+* **Updated:** December 21, 2022
 
 Works
 
@@ -157,10 +175,10 @@ Works on Imperiia and Beautiful Spaces sites. Not currently on form, but could b
 
 ## :x: Clickable Links Plus
 
-* **Description:** Turns URLs in non-HTML text fields into »target='_blank'« clickable hyperlinks.
+* **Description:** Turns URLs in non-HTML text fields into clickable hyperlinks.
 * **[Description page](https://omeka.org/classic/plugins/ClickableLinksPlus)**
-* **Version:** 1.3.2
-* **Updated:** August 05, 2021
+* **Version:** 1.4
+* **Updated:** July 21, 2022
 
 Doesn't work, missing a required css file according to logged error message
 
@@ -172,6 +190,15 @@ Doesn't work, missing a required css file according to logged error message
 * **Updated:** January 13, 2017
 
 Works, but interacts weird with IIIF Toolkit. If Collections show sub-collection items, all item images are included in collection manifest in order. If not, only items directly in collection. IIIF Catalogue Tree maintains collection groups.
+
+## :x: Collections Plus
+
+* **Description:** Improves the Collection browsing admin interface and allows for further customization of single Collections.
+* **[Description page](https://omeka.org/classic/plugins/CollectionsPlus)**
+* **Version:** 1.1
+* **Updated:** February 12, 2023
+
+Not yet evaluated
 
 ## :white_check_mark: Commenting
 
@@ -222,8 +249,8 @@ Fails to load correction page, wasn't able to locate the source of the error.
 
 * **Description:** Adds user roles useful for courses, including a student role with customizable permissions.
 * **[Description page](https://omeka.org/classic/plugins/CourseTools)**
-* **Version:** 0.1
-* **Updated:** November 12, 2021
+* **Version:** 1.2
+* **Updated:** December 08, 2021
 
 Default plugin on our instance
 
@@ -294,8 +321,8 @@ Default plugin on our instance
 
 * **Description:** Adds the full set of Dublin Core properties to the existing Dublin Core element set, including element refinements and supplemental elements. See DCMI Metadata Terms: http://dublincore.org/documents/dcmi-terms/
 * **[Description page](https://omeka.org/classic/plugins/DublinCoreExtended)**
-* **Version:** 2.2
-* **Updated:** January 13, 2017
+* **Version:** 2.3
+* **Updated:** July 26, 2022
 
 Works
 
@@ -339,8 +366,8 @@ maintained by Cole Crawford
 
 * **Description:** Integrate Elasticsearch into Omeka for searching.
 * **[Description page](https://omeka.org/classic/plugins/Elasticsearch)**
-* **Version:** 1.0.3
-* **Updated:** December 19, 2017
+* **Version:** 1.2.0
+* **Updated:** May 19, 2022
 
 Works
 
@@ -384,8 +411,8 @@ Works
 
 * **Description:** Build rich exhibits using Omeka.
 * **[Description page](https://omeka.org/classic/plugins/ExhibitBuilder)**
-* **Version:** 3.5
-* **Updated:** September 21, 2021
+* **Version:** 3.6.1
+* **Updated:** January 23, 2023
 
 Default plugin on our instance
 
@@ -402,8 +429,8 @@ Works
 
 * **Description:** Extensible export plugin
 * **[Description page](https://omeka.org/classic/plugins/Export)**
-* **Version:** 0.1.0
-* **Updated:** October 31, 2017
+* **Version:** 0.2.0
+* **Updated:** March 16, 2023
 
 Not really an independent plugin, but rather a starting point and framework for a custom export plugin, so we don't need to offer it.
 
@@ -411,8 +438,8 @@ Not really an independent plugin, but rather a starting point and framework for 
 
 * **Description:** Adds a faceted navigation block to narrow down Items and Collections search results by applying multiple filters
 * **[Description page](https://omeka.org/classic/plugins/Facets)**
-* **Version:** 2.7.1
-* **Updated:** October 03, 2021
+* **Version:** 2.9
+* **Updated:** August 04, 2022
 
 Not yet evaluated
 
@@ -447,8 +474,8 @@ Only works for files uploaded to Google Drive, and requires some manual editing 
 
 * **Description:** Adds location info and maps to Omeka
 * **[Description page](https://omeka.org/classic/plugins/Geolocation)**
-* **Version:** 3.2.2
-* **Updated:** September 21, 2021
+* **Version:** 3.2.3
+* **Updated:** December 21, 2022
 
 works
 
@@ -564,8 +591,8 @@ Install fails because db user doesn't have `REFERENCES` permission
 
 * **Description:** Allows duplicating items
 * **[Description page](https://omeka.org/classic/plugins/ItemDuplicator)**
-* **Version:** 1.3
-* **Updated:** December 30, 2020
+* **Version:** 1.4
+* **Updated:** May 15, 2022
 
 Duplicates items, not exactly sure what's happening with IIIF annotations, as initial test suggests they might be associated with both the original and the duplicate?
 
@@ -582,8 +609,8 @@ Jeremy made it, so if it's broken, it's his fault. However, it was made specific
 
 * **Description:** Gives administrators the ability to custom order items in collections.
 * **[Description page](https://omeka.org/classic/plugins/ItemOrder)**
-* **Version:** 2.0.2
-* **Updated:** May 30, 2015
+* **Version:** 2.1
+* **Updated:** June 28, 2022
 
 Works
 
@@ -658,6 +685,24 @@ Works
 * **Updated:** December 12, 2016
 
 Works, just activates a maintenance mode when installed. Deactivate to remove.
+
+## :x: MapsAlive
+
+* **Description:** Provides MapsAlive Live Data access to Omeka items
+* **[Description page](https://omeka.org/classic/plugins/MapsAlive)**
+* **Version:** 1.0.0
+* **Updated:** April 27, 2022
+
+Not yet evaluated
+
+## :x: More Media Types
+
+* **Description:** Adds new media types and relative fallback images; can replace default fallback images as well.
+* **[Description page](https://omeka.org/classic/plugins/MoreMediaTypes)**
+* **Version:** 1.4
+* **Updated:** October 31, 2022
+
+Not yet evaluated
 
 ## :white_check_mark: Neatline
 
@@ -749,6 +794,15 @@ Works
 
 Default plugin on our instance
 
+## :x: Omeka Devel
+
+* **Description:** This plugin adds Kint debugging functionality to your site.
+* **[Description page](https://omeka.org/classic/plugins/OmekaDevel)**
+* **Version:** 1.1
+* **Updated:** May 06, 2022
+
+Not yet evaluated
+
 ## :white_check_mark: Omeka Footnotes JS
 
 * **Description:** A plugin to add bigfoot.js footnote functionality to the WYSIWYG on simple or exhibit pages.
@@ -780,8 +834,8 @@ Works
 
 * **Description:** Extracts text from PDF files so they can be browsed and searched.
 * **[Description page](https://omeka.org/classic/plugins/PdfText)**
-* **Version:** 1.3
-* **Updated:** January 13, 2017
+* **Version:** 1.3.1
+* **Updated:** April 18, 2022
 
 Requires a `pdftotext` command line utility installed on the server.
 
@@ -866,6 +920,15 @@ Not yet evaluated
 
 Requires a folder on the server to be writable within files, not compatible with our storage adapter currently
 
+## :x: Resource Meta
+
+* **Description:** Add meta tags to resources
+* **[Description page](https://omeka.org/classic/plugins/ResourceMeta)**
+* **Version:** 1.0.0
+* **Updated:** May 03, 2023
+
+Not yet evaluated
+
 ## :x: Scripto
 
 * **Description:** Adds the ability to transcribe items using the Scripto library.
@@ -924,8 +987,8 @@ Not yet evaluated
 
 * **Description:** Allows administrators to create simple web pages for their public site.
 * **[Description page](https://omeka.org/classic/plugins/SimplePages)**
-* **Version:** 3.2
-* **Updated:** September 21, 2021
+* **Version:** 3.2.1
+* **Updated:** March 01, 2022
 
 Default plugin on our instance
 
@@ -940,10 +1003,10 @@ Works
 
 ## :white_check_mark: Simple Vocab Plus
 
-* **Description:** Allows for cloud based vocabulary definition and autosuggest features for Omeka elements
+* **Description:** Allows administrators to create, edit and update controlled vocabularies, either defined in the repository or in the cloud
 * **[Description page](https://omeka.org/classic/plugins/SimpleVocabPlus)**
-* **Version:** 2.4
-* **Updated:** November 14, 2016
+* **Version:** 3.1.2
+* **Updated:** August 20, 2022
 
 Works
 
@@ -976,10 +1039,10 @@ Works
 
 ## :white_check_mark: Social Bookmarking
 
-* **Description:** Uses AddThis to insert a customizable list of social bookmarking sites on each item page.
+* **Description:** Insert a customizable list of social bookmarking links.
 * **[Description page](https://omeka.org/classic/plugins/SocialBookmarking)**
-* **Version:** 2.0.3
-* **Updated:** August 27, 2019
+* **Version:** 2.1.1
+* **Updated:** June 14, 2023
 
 Works, can be blocked by browser addons
 
@@ -1009,6 +1072,15 @@ Errors on install
 * **Updated:** November 14, 2017
 
 Works, same functionality as "Annotator" plugin
+
+## :x: Timeline
+
+* **Description:** Adds a TimelineJS block to ExhibitBuilder
+* **[Description page](https://omeka.org/classic/plugins/Timeline)**
+* **Version:** 1.0
+* **Updated:** February 23, 2023
+
+Not yet evaluated
 
 ## :white_check_mark: Timeline Shortcode
 
@@ -1054,6 +1126,15 @@ Works
 * **Updated:** July 17, 2017
 
 requires an API token from Vimeo, but works.
+
+## :x: Wikipedia Citations
+
+* **Description:** Formats citations according to Wikipedia guidelines
+* **[Description page](https://omeka.org/classic/plugins/WikipediaCitations)**
+* **Version:** 1.1
+* **Updated:** August 10, 2022
+
+Not yet evaluated
 
 ## :white_check_mark: YouTube Import
 

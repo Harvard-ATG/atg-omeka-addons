@@ -1,11 +1,12 @@
 <?php 
 $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single';
 $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top';
-if (get_theme_option('item_show_media_display') == 'lightgallery') {
-    queue_css_file('lightgallery-bundle.min');
-    queue_js_file(array('show', 'lightgallery.min', 'lg-thumbnail.min', 'lg-video.min', 'lg-pager.min', 'lg-zoom.min'));
-}
+$mediaDisplay = get_theme_option('item_show_media_display');
 $showLayout = get_theme_option('item_show_inline_metadata');
+
+if ($mediaDisplay == 'lightgallery') {
+    queue_lightgallery_assets();
+}
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); 
 ?>
 <div class="resource-title">
@@ -14,18 +15,23 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
 </div>
 <div class="wrap">
     <?php if (metadata('item', 'has files') && (($mediaPosition == 'top') || ($layout == 'double'))): ?>
-        <?php echo foundation_display_attached_media($item); ?>
+        <?php echo foundation_display_attached_media($item, $mediaDisplay); ?>
     <?php endif; ?>
 
     <!-- Items metadata -->
     <div id="resource-values" class="<?php echo ($showLayout == 1) ? 'inline' : 'stack'; ?>">
         <?php echo all_element_texts('item'); ?>
 
-        <?php if (metadata('item', 'has files') && ($mediaPosition == 'embedded') && ($layout == 'single')): ?>
-        <div id="itemfiles" class="element">
-            <h3><?php echo __('Files'); ?></h3>
-            <div class="element-text"><?php echo foundation_display_attached_media($item); ?></div>
-        </div>
+        <?php if (metadata('item', 'has files') && ($layout == 'single')): ?>
+            <?php if ($mediaPosition == 'embedded'): ?>
+                <div class="<?php echo $mediaDisplay; ?>-files element">
+                    <h3><?php echo __('Files'); ?></h3>
+                    <div class="element-text"><?php echo foundation_display_attached_media($item, $mediaDisplay); ?></div>
+                </div>
+                <?php if ($mediaDisplay == 'lightgallery'): ?>
+                    <?php echo foundation_display_attached_media($item, 'lightgallery-list'); ?>
+                <?php endif; ?>
+            <?php endif; ?>
         <?php endif; ?>
 
         <?php if(metadata('item','Collection Name')): ?>
@@ -49,11 +55,11 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
             <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
         </div>
 
-       <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
-
-       <?php if (metadata('item', 'has files') && (($mediaPosition == 'bottom') && ($layout == 'single'))): ?>
-        <?php echo foundation_display_attached_media($item); ?>
+        <?php if (metadata('item', 'has files') && (($mediaPosition == 'bottom') && ($layout == 'single'))): ?>
+        <?php echo foundation_display_attached_media($item, $mediaDisplay); ?>
         <?php endif; ?>
+
+       <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
     </div>
 
     <div class="item-pagination navigation">
