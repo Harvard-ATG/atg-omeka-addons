@@ -434,7 +434,7 @@ Works
 
 Not really an independent plugin, but rather a starting point and framework for a custom export plugin, so we don't need to offer it.
 
-## :x: Facets
+## :white_check_mark: Facets
 
 * **Description:** Adds a faceted navigation block to narrow down Items and Collections search results by applying multiple filters
 * **[Description page](https://omeka.org/classic/plugins/Facets)**

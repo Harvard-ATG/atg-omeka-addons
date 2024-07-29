@@ -1,0 +1,162 @@
+#facets-container {
+	margin-bottom: 20px;
+}
+
+.facets-layout-vertical {
+	margin-left: 5.26316%;
+	margin-right: 5.26316%;
+}
+
+@media screen and (min-width: 768px) {
+	.facets-layout-vertical {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.facets-layout-horizontal {
+	margin-top: 20px;
+	width: 100%;
+}
+
+#facets-container button {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 0;
+	padding: 10px;
+}
+
+.facets-collapsed:after {
+	font-size: larger;
+	content: '\002B';
+	float: right;
+	margin-left: 5px;
+}
+
+.facets-collapsible:after {
+	font-size: larger;
+	content: "\2212";
+	float: right;
+	margin-left: 5px;
+}
+
+.facets-container-vertical {
+	/* max-width: 350px; */
+	clear: both;
+}
+
+.facets-container-vertical, .facets-container-horizontal:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.facets-container-horizontal {
+	max-width: 350px;
+	clear: both;
+	display: inline-block;
+}
+
+.facets-container-vertical label, .facets-container-horizontal label {
+	font-weight: bold;
+}
+
+.flex {
+	/* We first create a flex layout context */
+	display: flex;
+
+	/* Then we define the flow direction 
+	 and if we allow the items to wrap 
+	*/
+	flex-flow: row wrap;
+
+	/* Then we define how is distributed the remaining space */
+	justify-content: space-between;
+}
+
+#facets-container p.description {
+	text-align: left;
+	color: #545759;
+	font-size: 90%;
+	margin: 0;
+	border-bottom: 1px solid #545759;
+	font-style: italic;
+	line-height: 140%;
+	padding: 10px;
+}
+
+#facets-body {
+	width: 100%;
+	background-color: #F1F1F1;
+}
+
+#facets-container .hidden {
+	display: none;
+}
+
+#facets-container form {
+	padding: 10px 10px 20px 10px;
+}
+
+#facets-container form label {
+	color: #545759;
+}
+
+#facets-container form select {
+	width: 100%;
+	border: 0;
+	background-color: #FFF;
+	text-align: left;
+	font-size: 80%;
+}
+
+.facet-selected {
+	color: #FFF;
+	background-color: #545759!important;
+}
+
+.facet-checkbox, .facet-checkbox-all, .facet-visibility-toggle {
+	display: block;
+	font-size: 90%;
+}
+
+.facet-checkbox {
+	clear: both;
+}
+
+.facet-visibility-toggle {
+	float: left;
+	cursor: pointer;
+	font-size: 80%;
+	line-height: 100%;
+	margin-bottom: 20px;
+}
+
+.facet-visibility-toggle:hover {
+	font-weight: normal!important;
+}
+
+.facet-checkbox label {
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+.facet-checkbox input[type=checkbox] {
+	margin-right: .2em;
+	vertical-align: middle;
+	position: inherit;
+}
+
+.facet-checkbox-count {
+	float: right;
+	color: #545759;
+	margin-left: .5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.unhidden {
+    display: block;
+}
