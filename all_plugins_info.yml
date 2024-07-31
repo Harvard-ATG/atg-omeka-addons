@@ -522,13 +522,15 @@ Export:
   updated: March 16, 2023
   version: 0.2.0
 Facets:
-  available: false
+  available: true
   description: Adds a faceted navigation block to narrow down Items and Collections
     search results by applying multiple filters
   description_url: https://omeka.org/classic/plugins/Facets
   download_url: https://github.com/DBinaghi/plugin-Facets/releases/download/v2.9/Facets.zip
+  folder_name: Facets
   name: Facets
-  notes: Needs review
+  notes: Functions, but theme styling is not applied to the new interface elements,
+    and they are not positioned very intentionally.
   updated: August 04, 2022
   version: '2.9'
 File Paginator:
