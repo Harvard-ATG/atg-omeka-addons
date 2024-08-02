@@ -33,7 +33,7 @@ After adding that configuration, run `python refresh_cache.py plugins|themes`, s
 
 After refreshing the cache, you can look over changes to this repo, make sure everything looks okay, and submit a PR to add the new addon.
 
-The new addon will not be available to Omeka sites until the `ansible/vars_files/plugins.yml` file is updated to include the new plugin as an available option.
+The new addon will not be available to Omeka sites until the appropriate `ansible/vars_files/plugins.yml` or `ansible/vars_files/themes.yml` file is updated to include the new plugin or theme as an available option.
 
 ## Update addon info from omeka.org
 
