@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Authentication controller.
  *
@@ -12,8 +13,9 @@ if (!defined('HARVARDKEY_PLUGIN_DIR')) {
     define('HARVARDKEY_PLUGIN_DIR', dirname(dirname(__FILE__)));
 }
 
-require_once HARVARDKEY_PLUGIN_DIR.'/adapters/AuthAdapter.php';
-require_once(HARVARDKEY_PLUGIN_DIR.'/libraries/HarvardKey/JsonIdentityToken.php');
+require_once HARVARDKEY_PLUGIN_DIR . '/adapters/AuthAdapter.php';
+require_once(HARVARDKEY_PLUGIN_DIR . '/libraries/HarvardKey/JsonIdentityToken.php');
+require_once(HARVARDKEY_PLUGIN_DIR . '/libraries/HarvardKey/AlbOidcToken.php');
 
 class HarvardKey_AuthController extends Omeka_Controller_AbstractActionController
 {
@@ -25,7 +27,8 @@ class HarvardKey_AuthController extends Omeka_Controller_AbstractActionControlle
     /**
      * Initializes the controller with necessary resources.
      */
-    public function init() {
+    public function init()
+    {
         $this->_auth = $this->getInvokeArg('bootstrap')->getResource('Auth');
         $this->_config = new Zend_Config_Ini(HARVARDKEY_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'auth.ini', 'auth');
     }
@@ -33,7 +36,8 @@ class HarvardKey_AuthController extends Omeka_Controller_AbstractActionControlle
     /**
      * Allow the user to choose which authentication method they would like to use.
      */
-    public function chooseAction() {
+    public function chooseAction()
+    {
         $this->_handlePublicAction();
         $this->view->assign('omekaLoginUrl', $this->view->url('/harvard-key/users/login'));
         $this->view->assign('harvardKeyLoginUrl', $this->_getHarvardKeyAuthServiceUrl());
@@ -44,24 +48,58 @@ class HarvardKey_AuthController extends Omeka_Controller_AbstractActionControlle
      *
      * This action expects the Harvard Key credentials to be present in a cookie (signed to prevent tampering).
      */
-    public function loginAction() {
+    public function loginAction()
+    {
         $this->_handlePublicAction();
         $this->view->assign('chooseUrl', $this->view->url('/harvard-key/auth/choose'));
 
-        $cookie = $_COOKIE[$this->_config->get("cookie_name")];
+        // Try ALB OIDC authentication first
+        $jwt = $_SERVER['HTTP_X_AMZN_OIDC_DATA'] ?? null;
+
+        if ($jwt) {
+            $this->_log("loginAction: ALB OIDC header found, using AlbOidcToken");
+            try {
+                $token = new AlbOidcToken($jwt);
+                $authAdapter = new HarvardKey_Auth_Adapter($this->_helper->db->getDb(), $token);
+                $authResult = $this->_auth->authenticate($authAdapter);
+
+                if (!$authResult->isValid()) {
+                    $this->view->assign("authCls", "red");
+                    $this->view->assign("authResult", "Authentication Failed");
+                    $this->view->assign('authMessages', $authResult->getMessages());
+                    return;
+                }
+
+                $this->_log("auth success: logged in as {$authResult->getIdentity()}");
+                $this->view->assign("authResult", "Authentication Successful");
+                $this->view->assign('authMessages', array("Okta credentials accepted and you have been logged in as user {$authResult->getIdentity()}. You will be redirected."));
+                $this->_helper->redirector->gotoUrl('/');
+                return;
+            } catch (Exception $e) {
+                $this->_log("loginAction: ALB OIDC error: " . $e->getMessage());
+                $this->view->assign("authResult", "Authentication Failed");
+                $this->view->assign('authMessages', array("Error processing ALB authentication: " . $e->getMessage()));
+                return;
+            }
+        }
+
+        // Fall back to cookie-based authentication (for backward compatibility during migration)
+        $this->_log("loginAction: No ALB header, trying cookie-based auth");
+        $cookie = $_COOKIE[$this->_config->get("cookie_name")] ?? null;
         $secret_key = $this->_config->get("secret_key");
         $expires = intval($this->_config->get("expires", 600));
 
-        if(!$cookie) {
+        if (!$cookie) {
             $this->view->assign("authResult", "Authentication Failed");
-            $this->view->assign('authMessages', array("Cookies must be enabled to authenticate. Please ensure that you have cookies enabled in your browser and then try logging in again. If the problem persists, please contact support."));
+            $this->view->assign('authMessages', array("No authentication credentials found. Please ensure you are accessing this site through the proper authentication flow."));
             return;
         }
 
         $token = new JsonIdentityToken($cookie, $secret_key, $expires);
         $authAdapter = new HarvardKey_Auth_Adapter($this->_helper->db->getDb(), $token);
         $authResult = $this->_auth->authenticate($authAdapter);
-        if(!$authResult->isValid()) {
+
+        if (!$authResult->isValid()) {
             $this->view->assign("authCls", "red");
             $this->view->assign("authResult", "Authentication Failed");
             $this->view->assign('authMessages', $authResult->getMessages());
@@ -71,7 +109,6 @@ class HarvardKey_AuthController extends Omeka_Controller_AbstractActionControlle
         $this->_log("auth success: logged in as {$authResult->getIdentity()}");
         $this->view->assign("authResult", "Authentication Successful");
         $this->view->assign('authMessages', array("Harvard Key credentials accepted and you have been logged in as user {$authResult->getIdentity()}. You will be redirected."));
-        //queue_js_string("setTimeout(function() { window.location='".$this->view->url('/')."'; }, 2000);");
         $this->_helper->redirector->gotoUrl('/');
     }
 
@@ -104,7 +141,7 @@ class HarvardKey_AuthController extends Omeka_Controller_AbstractActionControlle
         $redirectcookie = "harvardkeyredirects";
         $redirectvalue = intval($_COOKIE[$redirectcookie], 10);
         $this->_log("cookie $redirectcookie = $redirectvalue");
-        if(isset($redirectvalue) && $redirectvalue > 0) {
+        if (isset($redirectvalue) && $redirectvalue > 0) {
             setcookie($redirectcookie, 0);
             return false;
         } else {
@@ -126,11 +163,11 @@ class HarvardKey_AuthController extends Omeka_Controller_AbstractActionControlle
     {
         $base_url = WEB_DIR;
         $login_url = $this->view->url('/harvard-key/auth/login');
-        if(substr( $base_url, -strlen( "/admin")) == "/admin") {
+        if (substr($base_url, -strlen("/admin")) == "/admin") {
             $base_url = substr($base_url, 0, strlen($base_url) - strlen("/admin"));
         }
         $return_to = $base_url . $login_url;
-        return $this->_config->get("url").'?return_to='.rawurlencode($return_to);
+        return $this->_config->get("url") . '?return_to=' . rawurlencode($return_to);
     }
 
     /**
