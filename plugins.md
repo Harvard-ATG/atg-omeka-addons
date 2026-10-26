@@ -362,14 +362,14 @@ Works
 
 maintained by Cole Crawford
 
-## :white_check_mark: Elasticsearch
+## :x: Elasticsearch
 
 * **Description:** Integrate Elasticsearch into Omeka for searching.
 * **[Description page](https://omeka.org/classic/plugins/Elasticsearch)**
 * **Version:** 1.2.0
 * **Updated:** May 19, 2022
 
-Works
+Support removed from our Omeka instance
 
 ## :x: Element Types
 

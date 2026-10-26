@@ -437,13 +437,13 @@ Eileen Southern:
   updated: July 22, 2021
   version: 0.1
 Elasticsearch:
-  available: true
+  available: false
   description: Integrate Elasticsearch into Omeka for searching.
   description_url: https://omeka.org/classic/plugins/Elasticsearch
   download_url: https://github.com/Harvard-ATG/omeka-plugin-Elasticsearch/releases/download/v1.2.0/Elasticsearch.zip
   folder_name: Elasticsearch
   name: Elasticsearch
-  note: Works
+  note: Support removed from our Omeka instance
   updated: May 19, 2022
   version: 1.2.0
 Element Types:
