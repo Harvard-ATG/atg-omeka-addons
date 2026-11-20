@@ -40,42 +40,76 @@ echo head(array('title'=> $title, 'bodyclass'=>'exhibits'));
                 <?php echo $this->formText('slug', $exhibit_page->slug); ?>
             </div>
         </div>
+        <h2><?php echo __('Page Layout Options'); ?></h2>
+        <div class="field">
+            <?php if (count($page_templates) > 1): ?>
+            <div class="two columns alpha">
+                <?php echo $this->formLabel('layout_data[template]', __('Template')); ?>
+            </div>
+            <div class="inputs five columns omega">
+                <?php echo $this->formSelect('layout_data[template]', $exhibit_page->getLayoutData('template'), [], $page_templates); ?>
+            </div>
+            <?php else: ?>
+            <div class="two columns alpha">
+                <label><?php echo __('Template'); ?></label>
+            </div>
+            <div class="inputs five columns omega">
+                <p class="value"><?php echo __('Default'); ?></p>
+            </div>
+            <?php endif; ?>
+        </div>
+        <div class="field">
+            <div class="two columns alpha">
+                <?php echo $this->formLabel('layout_data[class]', __('Class')); ?>
+            </div>
+            <div class="inputs five columns omega">
+                <?php echo $this->formText('layout_data[class]', $exhibit_page->getLayoutData('class')); ?>
+            </div>
+        </div>
     </fieldset>
     <fieldset id="block-container">
         <h2><?php echo __('Content'); ?></h2>
         <div class="expand-collapse">
-        <button type="button" class="small button expand"><?php echo __('Expand All'); ?></button>
-        <button type="button" class="small button collapse"><?php echo __('Collapse All'); ?></button>
+        <button type="button" class="small button expand" data-success-message="<?php echo __('All blocks are expanded.'); ?>"><?php echo __('Expand All'); ?></button>
+        <button type="button" class="small button collapse" data-success-message="<?php echo __('All blocks are collapsed.'); ?>"><?php echo __('Collapse All'); ?></button>
+        <div id="expand-collapse-sr-alerts" class="sr-only" aria-live="polite"></div>
+        <div id="expand-collapse-sr-alerts-repeat" class="sr-only" aria-live="polite"></div>
         </div>
         <p class="instructions"><?php echo __('To reorder blocks and items, click and drag them to the preferred location.'); ?></p>
         <?php
         foreach ($exhibit_page->getPageBlocks() as $index => $block):
             $block->order = $index + 1;
-            echo $this->partial('exhibits/block-form.php', array('block' => $block));
+            echo $this->partial('exhibits/block-form.php', array('block' => $block, 'exhibit' => $exhibit));
         endforeach;
         ?>
         <div class="add-block">
             <h2><?php echo __('New Block'); ?></h2>
-            <div class="layout-select">
-                <h3><?php echo __('Select layout'); ?></h3>
+            <div class="layout-select" role="group" aria-labelledby="select-layout-heading">
+                <h3 id="select-layout-heading"><?php echo __('Select layout'); ?></h3>
                 <div class="layout-thumbs">
                 <?php
                     $layouts = ExhibitLayout::getLayouts();
                     foreach ($layouts as $layout) {
                         $layout_id = html_escape($layout->id);
-                        echo '<div class="layout" id="' . $layout_id . '">';
-                        echo '<img src="' . html_escape($layout->getIconUrl()) . '">';
-                        echo '<span class="layout-name">' . $layout->name . '</span>';
-                        echo '<input type="radio" name="new-block-layout" value="'. $layout_id .'">';
+                        $layout_name = html_escape($layout->name);
+                        echo '<div class="layout" id="' . $layout_id . '" data-success-message="' . __('%s added above.', $layout_name) . '">';
+                        echo '<img src="' . html_escape($layout->getIconUrl()) . '" alt="">';
+                        echo '<label>';
+                        echo '<input type="radio" aria-describedby="layout-' . $layout_id . '-description" name="new-block-layout" value="'. $layout_id .'">';
+                        echo $layout_name;
+                        echo '</label>';
                         echo '</div>';
                     }
                     foreach ($layouts as $layout) {
-                        echo '<div class="'.html_escape($layout->id).' layout-description">';
+                        $layout_id = html_escape($layout->id);
+                        echo '<div id="layout-' . $layout_id . '-description" class="' . $layout_id . ' layout-description">';
                         echo $layout->description;
                         echo '</div>';
                     }
                 ?>
-                <a class="add-link big button" href="#"><?php echo __('Add new content block'); ?></a>
+                <div id="layout-sr-alert" aria-live="polite" class="sr-only"></div>
+                <div id="layout-sr-alert-repeat" aria-live="polite" class="sr-only"></div>
+                <button type="button" class="add-link big button" disabled><?php echo __('Add new content block'); ?></button>
                 </div>
             </div>
         </div>
@@ -127,9 +161,11 @@ echo head(array('title'=> $title, 'bodyclass'=>'exhibits'));
 </div>
 <script type="text/javascript">
 jQuery(document).ready(function () {
-    Omeka.ExhibitBuilder.setUpBlocks(<?php echo json_encode(url('exhibits/block-form')); ?>);
+    Omeka.ExhibitBuilder.setUpBlocks(<?php echo js_escape(url('exhibits/block-form/' . $exhibit->id)); ?>);
     Omeka.ExhibitBuilder.setUpItemsSelect(<?php echo js_escape(url('exhibits/attachment-item-options')); ?>);
     Omeka.ExhibitBuilder.setUpAttachments(<?php echo js_escape(url('exhibits/attachment')); ?>, <?php echo js_escape(url('exhibits/attachment-item-options')); ?>);
+    Omeka.manageDrawers('#block-container', '.block-form');
+    Omeka.manageDrawers('#block-container', '.layout-options');
     <?php
     if ($exhibit_page->exists()) {
         $validateUrl = url(
