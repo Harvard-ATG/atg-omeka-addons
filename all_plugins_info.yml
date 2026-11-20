@@ -494,12 +494,12 @@ Exhibit Builder:
   available: true
   description: Build rich exhibits using Omeka.
   description_url: https://omeka.org/classic/plugins/ExhibitBuilder
-  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.6.1/ExhibitBuilder-3.6.1.zip
+  download_url: https://github.com/omeka/plugin-ExhibitBuilder/releases/download/v3.11.1/ExhibitBuilder-3.11.1.zip
   folder_name: ExhibitBuilder
   name: Exhibit Builder
   note: Default plugin on our instance
-  updated: January 23, 2023
-  version: 3.6.1
+  updated: November 20, 2026
+  version: 3.11.1
 Exhibit Image Annotation:
   available: true
   description: Annotate images in your exhibits.
